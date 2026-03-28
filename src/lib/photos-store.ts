@@ -16,12 +16,16 @@ import fs from 'fs';
 import path from 'path';
 const PHOTOS_FILE = path.join(process.cwd(), 'data', 'photos.json');
 
+// Bundled seed data — always available even on Vercel serverless
+import seedPhotos from '@/data/seed-photos.json';
+
 function readPhotosLocal(): StoredPhoto[] {
   try {
     const raw = fs.readFileSync(PHOTOS_FILE, 'utf-8');
     return JSON.parse(raw);
   } catch {
-    return [];
+    // fs may not work on Vercel — use bundled seed
+    return seedPhotos as unknown as StoredPhoto[];
   }
 }
 
@@ -58,7 +62,16 @@ async function writeRegistryBlob(photos: StoredPhoto[]): Promise<void> {
 // ── Public API (works both locally and on Vercel) ──────────────────
 
 export async function readPhotos(): Promise<StoredPhoto[]> {
-  if (IS_VERCEL) return readRegistryBlob();
+  if (IS_VERCEL) {
+    const blobPhotos = await readRegistryBlob();
+    if (blobPhotos.length > 0) return blobPhotos;
+    // Seed from bundled data/photos.json on first run
+    const localPhotos = readPhotosLocal();
+    if (localPhotos.length > 0) {
+      await writeRegistryBlob(localPhotos);
+    }
+    return localPhotos;
+  }
   return readPhotosLocal();
 }
 
@@ -110,11 +123,14 @@ export async function uploadPhotoFile(
 
 export async function deletePhotoFile(src: string): Promise<void> {
   if (IS_VERCEL) {
-    // src is a full blob URL on Vercel
-    try {
-      await del(src);
-    } catch {
-      // blob may not exist
+    // Only delete from Blob if it's a blob URL (uploaded photos)
+    // Static photos from /public/photos/ can't be deleted at runtime
+    if (src.includes('blob.vercel-storage.com')) {
+      try {
+        await del(src);
+      } catch {
+        // blob may not exist
+      }
     }
     return;
   }
