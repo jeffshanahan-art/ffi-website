@@ -108,22 +108,23 @@ export default async function HistoryPage() {
 
         {/* Mobile layout */}
         <div className="mt-6 sm:hidden border-t-2 border-black">
-          <div className="grid grid-cols-[1fr_5rem_6rem] py-3 border-b border-black text-xs text-slate uppercase tracking-wider">
+          <div className="grid grid-cols-[1fr_5rem_6rem_1.5rem] py-3 border-b border-black text-xs text-slate uppercase tracking-wider">
             <span>Year</span>
             <span className="text-right">Score</span>
             <span className="text-right">Champion</span>
+            <span />
           </div>
 
           {tournaments.map((t) => (
             <Link
               key={t.year}
               href={`/events/${t.year}`}
-              className="grid grid-cols-[1fr_5rem_6rem] items-start py-4 border-b border-gray hover:bg-gray-light transition-colors"
+              className="grid grid-cols-[1fr_5rem_6rem_1.5rem] items-center py-4 border-b border-gray hover:bg-gray-light transition-colors group"
             >
               <div>
                 <div className="flex items-baseline gap-1.5">
                   <span className="font-serif text-blue text-xs">{toOrdinal(t.edition)}</span>
-                  <span className="font-serif text-base text-black">{t.displayYear}</span>
+                  <span className="font-serif text-base text-black group-hover:text-blue transition-colors">{t.displayYear}</span>
                 </div>
                 <p className="text-slate text-xs mt-0.5">{getHostLabel(t.hostCity)}</p>
               </div>
@@ -137,13 +138,14 @@ export default async function HistoryPage() {
                   ? getTeamLabel(t.champion)
                   : <span className="text-slate italic font-normal">TBD</span>}
               </span>
+              <span className="text-slate group-hover:text-blue group-hover:translate-x-0.5 transition-all text-sm text-right self-center">→</span>
             </Link>
           ))}
         </div>
 
         {/* Desktop layout */}
         <div className="mt-6 hidden sm:block overflow-x-auto">
-          <div className="grid grid-cols-[3rem_8rem_8rem_1fr_6rem_7rem_9rem] items-center py-3 border-b-2 border-black text-xs text-slate uppercase tracking-wider min-w-[750px]">
+          <div className="grid grid-cols-[3rem_8rem_8rem_1fr_6rem_7rem_9rem_2rem] items-center py-3 border-b-2 border-black text-xs text-slate uppercase tracking-wider min-w-[750px]">
             <span />
             <span>Year</span>
             <span>Host City</span>
@@ -151,18 +153,19 @@ export default async function HistoryPage() {
             <span className="text-right">Score</span>
             <span className="text-right">Champion</span>
             <span className="text-right">MVP</span>
+            <span />
           </div>
 
           {tournaments.map((t) => (
             <Link
               key={t.year}
               href={`/events/${t.year}`}
-              className="grid grid-cols-[3rem_8rem_8rem_1fr_6rem_7rem_9rem] items-center py-4 border-b border-gray hover:bg-gray-light transition-colors min-w-[750px]"
+              className="grid grid-cols-[3rem_8rem_8rem_1fr_6rem_7rem_9rem_2rem] items-center py-4 border-b border-gray hover:bg-gray-light transition-colors min-w-[750px] group"
             >
               <span className="font-serif text-blue text-sm">
                 {toOrdinal(t.edition)}
               </span>
-              <span className="font-serif text-lg text-black">
+              <span className="font-serif text-lg text-black group-hover:text-blue transition-colors">
                 {t.displayYear}
               </span>
               <span className="text-slate text-sm">
@@ -184,6 +187,7 @@ export default async function HistoryPage() {
               <span className="text-right text-sm text-black">
                 {t.mvpName || <span className="text-slate italic">--</span>}
               </span>
+              <span className="text-slate group-hover:text-blue group-hover:translate-x-0.5 transition-all text-sm text-right">→</span>
             </Link>
           ))}
         </div>

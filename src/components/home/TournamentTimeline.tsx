@@ -37,16 +37,16 @@ export function TournamentTimeline({ tournaments }: { tournaments: Tournament[] 
               <Link
                 key={t.year}
                 href={`/events/${t.year}`}
-                className="grid grid-cols-2 items-center py-4 border-b border-gray hover:bg-gray-light transition-colors"
+                className="flex items-center py-4 border-b border-gray hover:bg-gray-light transition-colors group"
               >
-                <div>
+                <div className="flex-1">
                   <div className="flex items-baseline gap-1.5">
                     <span className="font-serif text-blue text-xs">{toOrdinal(t.edition)}</span>
-                    <span className="font-serif text-base text-black">{getSeasonYear(t)}</span>
+                    <span className="font-serif text-base text-black group-hover:text-blue transition-colors">{getSeasonYear(t)}</span>
                   </div>
                   <span className="text-slate text-xs">{getHostLabel(t.hostCity)}</span>
                 </div>
-                <div className="text-right">
+                <div className="text-right mr-3">
                   {score.home !== null && score.away !== null ? (
                     <p className="font-serif text-blue">{score.home}&ndash;{score.away}</p>
                   ) : (
@@ -60,6 +60,7 @@ export function TournamentTimeline({ tournaments }: { tournaments: Tournament[] 
                     <p className="text-slate text-xs italic">TBD</p>
                   )}
                 </div>
+                <span className="text-slate group-hover:text-blue group-hover:translate-x-0.5 transition-all text-sm shrink-0">→</span>
               </Link>
             );
           })}
@@ -67,13 +68,14 @@ export function TournamentTimeline({ tournaments }: { tournaments: Tournament[] 
 
         {/* Desktop layout */}
         <div className="hidden sm:block overflow-x-auto">
-          <div className="grid grid-cols-[3rem_10rem_8rem_1fr_8rem_8rem] items-center py-3 border-b-2 border-black text-xs text-slate uppercase tracking-wider min-w-[700px]">
+          <div className="grid grid-cols-[3rem_10rem_8rem_1fr_8rem_8rem_2rem] items-center py-3 border-b-2 border-black text-xs text-slate uppercase tracking-wider min-w-[700px]">
             <span />
             <span>Year</span>
             <span>Host</span>
             <span>Location</span>
             <span className="text-right">Score</span>
             <span className="text-right">Champion</span>
+            <span />
           </div>
 
           {tournaments.map((t) => {
@@ -82,13 +84,13 @@ export function TournamentTimeline({ tournaments }: { tournaments: Tournament[] 
               <Link
                 key={t.year}
                 href={`/events/${t.year}`}
-                className="grid grid-cols-[3rem_10rem_8rem_1fr_8rem_8rem] items-center py-4 border-b border-gray hover:bg-gray-light transition-colors min-w-[700px]"
+                className="grid grid-cols-[3rem_10rem_8rem_1fr_8rem_8rem_2rem] items-center py-4 border-b border-gray hover:bg-gray-light transition-colors min-w-[700px] group"
               >
                 <span className="font-serif text-blue text-sm">
                   {toOrdinal(t.edition)}
                 </span>
 
-                <span className="font-serif text-lg text-black">
+                <span className="font-serif text-lg text-black group-hover:text-blue transition-colors">
                   {getSeasonYear(t)}
                 </span>
 
@@ -119,6 +121,8 @@ export function TournamentTimeline({ tournaments }: { tournaments: Tournament[] 
                     <span className="text-slate text-sm italic">TBD</span>
                   )}
                 </span>
+
+                <span className="text-slate group-hover:text-blue group-hover:translate-x-0.5 transition-all text-sm text-right">→</span>
               </Link>
             );
           })}
