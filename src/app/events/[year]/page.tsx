@@ -1,11 +1,12 @@
 export const dynamic = 'force-dynamic';
 
-import { getTournamentByYear, getTournaments } from '@/lib/data';
+import fs from 'fs';
+import path from 'path';
+import { getTournamentByYear, getTournaments, getCourses } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { EventHeader } from '@/components/events/EventHeader';
-import { EventCourses } from '@/components/events/EventCourses';
 import { EventWeather } from '@/components/events/EventWeather';
 import { EventRosters } from '@/components/events/EventRosters';
 import { EventPairings } from '@/components/events/EventPairings';
@@ -40,6 +41,36 @@ export default async function EventPage(props: { params: Promise<{ year: string 
   const prev = currentIndex > 0 ? tournaments[currentIndex - 1] : null;
   const next = currentIndex < tournaments.length - 1 ? tournaments[currentIndex + 1] : null;
 
+  // Pick banner photo for this edition
+  let photos: { id: string; src: string; year: string }[] = [];
+  try {
+    const photosFile = path.join(process.cwd(), 'data', 'photos.json');
+    const raw = fs.readFileSync(photosFile, 'utf-8');
+    const allPhotos = JSON.parse(raw);
+    photos = allPhotos.filter((p: any) => p.year === year);
+  } catch {
+    // photos.json may not exist yet
+  }
+  // Preferred banners per edition (hand-picked)
+  const bannerMap: Record<string, string> = {
+    'S2018': 's2018_2',
+    'F2018': 'f2018_4',
+    '2020': '2020_2',
+    '2022': '2022_3',
+    '2023': '2023_10',
+    '2024': '2024_1',
+    '2025': '2025_1',
+  };
+  const preferredId = bannerMap[year];
+  const bannerPhoto = photos.find((p) => p.id === preferredId) || photos[0] || null;
+
+  // Get course details with location info
+  const allCourses = await getCourses();
+  const courseDetails = tournament.courses.map((name) => {
+    const found = allCourses.find((c) => c.name === name);
+    return found || { name, location: '', city: tournament.hostCity as 'philly' | 'dc' };
+  });
+
   return (
     <main className="min-h-screen">
       {/* Back link */}
@@ -54,13 +85,11 @@ export default async function EventPage(props: { params: Promise<{ year: string 
         </div>
       </div>
 
-      <EventHeader tournament={tournament} />
+      <EventHeader tournament={tournament} bannerSrc={bannerPhoto?.src} courseDetails={courseDetails} />
 
       <EventNotes notes={tournament.notes} />
 
       <EventWeather weather={tournament.weather} />
-
-      <EventCourses courses={tournament.courses} hostCity={tournament.hostCity} />
 
       <EventRosters teamPhilly={tournament.teamPhilly} teamDC={tournament.teamDC} />
 
