@@ -22,63 +22,108 @@ function getHostScore(t: Tournament): { home: number | null; away: number | null
 export function TournamentTimeline({ tournaments }: { tournaments: Tournament[] }) {
   return (
     <section className="py-12 px-4">
-      <div className="max-w-5xl mx-auto overflow-x-auto">
-        {/* Column header */}
-        <div className="grid grid-cols-[3rem_10rem_8rem_1fr_8rem_8rem] items-center py-3 border-b-2 border-black text-xs text-slate uppercase tracking-wider min-w-[700px]">
-          <span />
-          <span>Year</span>
-          <span>Host</span>
-          <span>Location</span>
-          <span className="text-right">Score</span>
-          <span className="text-right">Champion</span>
+      <div className="max-w-5xl mx-auto">
+
+        {/* Mobile layout */}
+        <div className="sm:hidden border-t-2 border-black">
+          <div className="grid grid-cols-2 py-3 border-b border-black text-xs text-slate uppercase tracking-wider">
+            <span>Year</span>
+            <span className="text-right">Result</span>
+          </div>
+
+          {tournaments.map((t) => {
+            const score = getHostScore(t);
+            return (
+              <Link
+                key={t.year}
+                href={`/events/${t.year}`}
+                className="grid grid-cols-2 items-center py-4 border-b border-gray hover:bg-gray-light transition-colors"
+              >
+                <div>
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="font-serif text-blue text-xs">{toOrdinal(t.edition)}</span>
+                    <span className="font-serif text-base text-black">{getSeasonYear(t)}</span>
+                  </div>
+                  <span className="text-slate text-xs">{getHostLabel(t.hostCity)}</span>
+                </div>
+                <div className="text-right">
+                  {score.home !== null && score.away !== null ? (
+                    <p className="font-serif text-blue">{score.home}&ndash;{score.away}</p>
+                  ) : (
+                    <p className="text-slate text-sm italic">TBD</p>
+                  )}
+                  {t.champion ? (
+                    <p className="text-xs text-black font-medium">
+                      {t.champion === 'philly' ? 'Team Philly' : 'Team DC'}
+                    </p>
+                  ) : (
+                    <p className="text-slate text-xs italic">TBD</p>
+                  )}
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
-        {tournaments.map((t) => {
-          const score = getHostScore(t);
-          return (
-            <Link
-              key={t.year}
-              href={`/events/${t.year}`}
-              className="grid grid-cols-[3rem_10rem_8rem_1fr_8rem_8rem] items-center py-4 border-b border-gray hover:bg-gray-light transition-colors min-w-[700px]"
-            >
-              <span className="font-serif text-blue text-sm">
-                {toOrdinal(t.edition)}
-              </span>
+        {/* Desktop layout */}
+        <div className="hidden sm:block overflow-x-auto">
+          <div className="grid grid-cols-[3rem_10rem_8rem_1fr_8rem_8rem] items-center py-3 border-b-2 border-black text-xs text-slate uppercase tracking-wider min-w-[700px]">
+            <span />
+            <span>Year</span>
+            <span>Host</span>
+            <span>Location</span>
+            <span className="text-right">Score</span>
+            <span className="text-right">Champion</span>
+          </div>
 
-              <span className="font-serif text-lg text-black">
-                {getSeasonYear(t)}
-              </span>
-
-              <span className="text-slate text-sm">
-                {getHostLabel(t.hostCity)}
-              </span>
-
-              <span className="text-slate text-sm truncate pr-4">
-                {t.courses.join(', ')}
-              </span>
-
-              {score.home !== null && score.away !== null ? (
-                <span className="font-serif text-lg text-blue text-right">
-                  {score.home} &ndash; {score.away}
+          {tournaments.map((t) => {
+            const score = getHostScore(t);
+            return (
+              <Link
+                key={t.year}
+                href={`/events/${t.year}`}
+                className="grid grid-cols-[3rem_10rem_8rem_1fr_8rem_8rem] items-center py-4 border-b border-gray hover:bg-gray-light transition-colors min-w-[700px]"
+              >
+                <span className="font-serif text-blue text-sm">
+                  {toOrdinal(t.edition)}
                 </span>
-              ) : (
-                <span className="text-slate text-sm italic text-right">
-                  TBD
-                </span>
-              )}
 
-              <span className="text-right">
-                {t.champion ? (
-                  <span className="font-serif text-sm font-semibold text-black">
-                    {t.champion === 'philly' ? 'Team Philly' : 'Team DC'}
+                <span className="font-serif text-lg text-black">
+                  {getSeasonYear(t)}
+                </span>
+
+                <span className="text-slate text-sm">
+                  {getHostLabel(t.hostCity)}
+                </span>
+
+                <span className="text-slate text-sm truncate pr-4">
+                  {t.courses.join(', ')}
+                </span>
+
+                {score.home !== null && score.away !== null ? (
+                  <span className="font-serif text-lg text-blue text-right">
+                    {score.home} &ndash; {score.away}
                   </span>
                 ) : (
-                  <span className="text-slate text-sm italic">TBD</span>
+                  <span className="text-slate text-sm italic text-right">
+                    TBD
+                  </span>
                 )}
-              </span>
-            </Link>
-          );
-        })}
+
+                <span className="text-right">
+                  {t.champion ? (
+                    <span className="font-serif text-sm font-semibold text-black">
+                      {t.champion === 'philly' ? 'Team Philly' : 'Team DC'}
+                    </span>
+                  ) : (
+                    <span className="text-slate text-sm italic">TBD</span>
+                  )}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );
