@@ -106,8 +106,43 @@ export default async function HistoryPage() {
           subtitle="Every Edition of the FFI"
         />
 
-        <div className="mt-6 overflow-x-auto">
-          {/* Header row */}
+        {/* Mobile layout */}
+        <div className="mt-6 sm:hidden border-t-2 border-black">
+          <div className="grid grid-cols-[1fr_5rem_6rem] py-3 border-b border-black text-xs text-slate uppercase tracking-wider">
+            <span>Year</span>
+            <span className="text-right">Score</span>
+            <span className="text-right">Champion</span>
+          </div>
+
+          {tournaments.map((t) => (
+            <Link
+              key={t.year}
+              href={`/events/${t.year}`}
+              className="grid grid-cols-[1fr_5rem_6rem] items-start py-4 border-b border-gray hover:bg-gray-light transition-colors"
+            >
+              <div>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-serif text-blue text-xs">{toOrdinal(t.edition)}</span>
+                  <span className="font-serif text-base text-black">{t.displayYear}</span>
+                </div>
+                <p className="text-slate text-xs mt-0.5">{getHostLabel(t.hostCity)}</p>
+              </div>
+              <span className="text-right font-serif text-blue self-center">
+                {t.scorePhilly !== null && t.scoreDC !== null
+                  ? getScore(t)
+                  : <span className="text-slate text-xs italic font-sans">TBD</span>}
+              </span>
+              <span className="text-right text-xs font-medium text-black self-center">
+                {t.champion
+                  ? getTeamLabel(t.champion)
+                  : <span className="text-slate italic font-normal">TBD</span>}
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Desktop layout */}
+        <div className="mt-6 hidden sm:block overflow-x-auto">
           <div className="grid grid-cols-[3rem_8rem_8rem_1fr_6rem_7rem_9rem] items-center py-3 border-b-2 border-black text-xs text-slate uppercase tracking-wider min-w-[750px]">
             <span />
             <span>Year</span>
@@ -176,7 +211,7 @@ export default async function HistoryPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 py-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 py-6">
             <div>
               <h3 className="font-serif text-lg text-black mb-3">Team Philly</h3>
               <div className="space-y-1 text-sm">
@@ -222,7 +257,48 @@ export default async function HistoryPage() {
           subtitle="MVP and Pat Shanahan Award Winners"
         />
 
-        <div className="mt-6 overflow-x-auto">
+        {/* Mobile layout */}
+        <div className="mt-6 sm:hidden border-t-2 border-black divide-y divide-gray">
+          {tournaments.map((t) => (
+            <div key={t.year} className="py-4">
+              <div className="flex items-baseline gap-1.5 mb-2">
+                <span className="font-serif text-blue text-xs">{toOrdinal(t.edition)}</span>
+                <span className="font-serif text-black">{t.displayYear}</span>
+              </div>
+              <div className="space-y-1 pl-1">
+                <p className="text-xs text-slate uppercase tracking-wider">MVP</p>
+                <p className="text-sm text-black">
+                  {t.mvpName ? (
+                    <>
+                      {t.mvpName}
+                      {t.mvpTeam && (
+                        <span className="text-slate ml-1">({getTeamLabel(t.mvpTeam)})</span>
+                      )}
+                    </>
+                  ) : (
+                    <span className="text-slate italic">--</span>
+                  )}
+                </p>
+                <p className="text-xs text-slate uppercase tracking-wider mt-2">Pat Shanahan Award</p>
+                <p className="text-sm text-black">
+                  {t.patShanahanAwardName ? (
+                    <>
+                      {t.patShanahanAwardName}
+                      {t.patShanahanAwardTeam && (
+                        <span className="text-slate ml-1">({getTeamLabel(t.patShanahanAwardTeam)})</span>
+                      )}
+                    </>
+                  ) : (
+                    <span className="text-slate italic">--</span>
+                  )}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop layout */}
+        <div className="mt-6 hidden sm:block overflow-x-auto">
           <div className="grid grid-cols-[3rem_8rem_1fr_1fr] items-center py-3 border-b-2 border-black text-xs text-slate uppercase tracking-wider min-w-[500px]">
             <span />
             <span>Year</span>
@@ -277,7 +353,25 @@ export default async function HistoryPage() {
           subtitle="All Courses in FFI History"
         />
 
-        <div className="mt-6 overflow-x-auto">
+        {/* Mobile layout */}
+        <div className="mt-6 sm:hidden border-t-2 border-black divide-y divide-gray">
+          {courseUsage.map(({ course, count }) => (
+            <div key={course.name} className="flex items-start justify-between py-4 gap-4">
+              <div>
+                <p className="text-sm text-black font-medium">{course.name}</p>
+                {course.location && (
+                  <p className="text-xs text-slate mt-0.5">
+                    {course.location} &middot; {getHostLabel(course.city)}
+                  </p>
+                )}
+              </div>
+              <span className="font-serif text-blue shrink-0">{count}×</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop layout */}
+        <div className="mt-6 hidden sm:block overflow-x-auto">
           <div className="grid grid-cols-[1fr_10rem_6rem_5rem] items-center py-3 border-b-2 border-black text-xs text-slate uppercase tracking-wider min-w-[450px]">
             <span>Course</span>
             <span>Location</span>
