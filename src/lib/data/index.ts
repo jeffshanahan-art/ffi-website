@@ -1,4 +1,4 @@
-import ffiData from '@/data/ffi-data.json';
+import staticData from '@/data/ffi-data.json';
 import type {
   Tournament,
   TournamentDetail,
@@ -9,7 +9,22 @@ import type {
   SiteConfig,
 } from '@/types';
 
+// In dev, re-read the JSON from disk on every call so edits are picked up
+// without restarting the server. In production, use the bundled static import.
+function getFfiData(): typeof staticData {
+  if (process.env.NODE_ENV === 'development') {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const fs = require('fs');
+    const path = require('path');
+    const filePath = path.join(process.cwd(), 'src', 'data', 'ffi-data.json');
+    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  }
+  return staticData;
+}
+
+
 export async function getSiteConfig(): Promise<SiteConfig> {
+  const ffiData = getFfiData();
   return {
     tournamentName: ffiData.tournament.name,
     abbreviation: ffiData.tournament.abbreviation,
@@ -19,7 +34,7 @@ export async function getSiteConfig(): Promise<SiteConfig> {
   };
 }
 
-function mapEventToTournament(event: (typeof ffiData.events)[number]): Tournament {
+function mapEventToTournament(event: (typeof staticData.events)[number]): Tournament {
   const format = 'format' in event ? (event as any).format : undefined;
   const rounds = format?.rounds;
   const formatDescription = rounds
@@ -55,12 +70,14 @@ function mapEventToTournament(event: (typeof ffiData.events)[number]): Tournamen
 }
 
 export async function getTournaments(): Promise<Tournament[]> {
+  const ffiData = getFfiData();
   return ffiData.events.map(mapEventToTournament);
 }
 
 export async function getTournamentByYear(
   year: string
 ): Promise<TournamentDetail | null> {
+  const ffiData = getFfiData();
   const event = ffiData.events.find((e) => e.year === year);
   if (!event) return null;
 
@@ -111,6 +128,7 @@ export async function getTournamentByYear(
 }
 
 export async function getSeriesRecord(): Promise<SeriesRecord> {
+  const ffiData = getFfiData();
   return {
     phillyWins: ffiData.seriesRecord.confirmed.philly,
     dcWins: ffiData.seriesRecord.confirmed.dc,
@@ -119,6 +137,7 @@ export async function getSeriesRecord(): Promise<SeriesRecord> {
 }
 
 export async function getPlayers(): Promise<Player[]> {
+  const ffiData = getFfiData();
   return ffiData.allPlayers.map((p: any) => ({
     name: p.name,
     team: p.team as 'philly' | 'dc',
@@ -139,6 +158,7 @@ export async function getPlayersByTeam(
 }
 
 export async function getCourses(): Promise<Course[]> {
+  const ffiData = getFfiData();
   return ffiData.courses.map((c) => ({
     name: c.name,
     location: c.location,
