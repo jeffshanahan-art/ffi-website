@@ -1,14 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-import { readPhotos, addPhoto, removePhoto, generateId } from '@/lib/photos-store';
+import {
+  readPhotos,
+  addPhoto,
+  removePhoto,
+  uploadPhotoFile,
+  deletePhotoFile,
+  generateId,
+} from '@/lib/photos-store';
 
 const VALID_YEARS = [
   'S2018', 'F2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025',
 ];
 
 export async function GET() {
-  const photos = readPhotos();
+  const photos = await readPhotos();
   return NextResponse.json(photos);
 }
 
@@ -26,42 +31,27 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid edition year' }, { status: 400 });
     }
 
-    // Validate file type
     const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/heic'];
     if (!allowedTypes.includes(file.type)) {
       return NextResponse.json({ error: 'File must be JPEG, PNG, or WebP' }, { status: 400 });
     }
 
-    // Validate file size (10MB max)
     if (file.size > 10 * 1024 * 1024) {
       return NextResponse.json({ error: 'File must be under 10MB' }, { status: 400 });
     }
 
-    // Create year directory if needed
-    const yearDir = path.join(process.cwd(), 'public', 'photos', year);
-    if (!fs.existsSync(yearDir)) {
-      fs.mkdirSync(yearDir, { recursive: true });
-    }
-
-    // Generate unique filename
-    const ext = file.name.split('.').pop()?.toLowerCase() || 'jpeg';
     const id = generateId();
-    const filename = `${id}.${ext}`;
-    const filePath = path.join(yearDir, filename);
+    const src = await uploadPhotoFile(file, year, id);
 
-    // Write file to disk
-    const buffer = Buffer.from(await file.arrayBuffer());
-    fs.writeFileSync(filePath, buffer);
-
-    // Add to registry
     const photo = {
       id,
-      src: `/photos/${year}/${filename}`,
+      src,
       year,
       caption: caption || undefined,
       uploadedAt: new Date().toISOString(),
+      ...(process.env.BLOB_READ_WRITE_TOKEN ? { blobUrl: src } : {}),
     };
-    addPhoto(photo);
+    await addPhoto(photo);
 
     return NextResponse.json(photo, { status: 201 });
   } catch (err) {
@@ -71,7 +61,6 @@ export async function POST(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-  // Check admin cookie
   const cookie = request.cookies.get('ffi_admin');
   if (cookie?.value !== 'authenticated') {
     return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
@@ -82,20 +71,12 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ error: 'Photo ID required' }, { status: 400 });
   }
 
-  const removed = removePhoto(id);
+  const removed = await removePhoto(id);
   if (!removed) {
     return NextResponse.json({ error: 'Photo not found' }, { status: 404 });
   }
 
-  // Delete file from disk
-  try {
-    const filePath = path.join(process.cwd(), 'public', removed.src);
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
-    }
-  } catch {
-    // File may not exist, that's ok
-  }
+  await deletePhotoFile(removed);
 
   return NextResponse.json({ success: true, removed });
 }
