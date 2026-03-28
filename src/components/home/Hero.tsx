@@ -3,7 +3,7 @@ import Image from 'next/image';
 export function Hero() {
   return (
     <section className="bg-white">
-      <div className="max-w-5xl mx-auto pt-12 pb-8 px-4">
+      <div className="max-w-5xl mx-auto pt-12 pb-0 px-4">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-blue font-normal">
           Founding Fathers Invitational
         </h1>

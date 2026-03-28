@@ -2,7 +2,7 @@ import type { SeriesRecord } from '@/types';
 
 export function SeriesRecordDisplay({ record }: { record: SeriesRecord }) {
   return (
-    <section className="py-12 px-4">
+    <section className="pt-2 pb-12 px-4">
       <div className="max-w-5xl mx-auto">
         <h2 className="font-serif text-3xl md:text-4xl text-blue font-normal pb-3 border-b border-[#e0e0e0]">
           The Series

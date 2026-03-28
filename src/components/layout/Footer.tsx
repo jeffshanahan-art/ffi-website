@@ -17,7 +17,7 @@ const footerColumns = [
   {
     links: [
       { href: '/photos', label: 'Photos' },
-      { href: '#', label: 'Programs' },
+      { href: '/programs', label: 'Programs' },
     ],
   },
   {
