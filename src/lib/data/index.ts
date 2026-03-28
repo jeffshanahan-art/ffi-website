@@ -149,7 +149,8 @@ export async function getCourses(): Promise<Course[]> {
 export async function getPhotos(): Promise<(Photo & { id?: string })[]> {
   // Dynamic import to avoid bundling fs in client
   const { readPhotos } = await import('@/lib/photos-store');
-  return readPhotos().map((p) => ({
+  const photos = await readPhotos();
+  return photos.map((p) => ({
     id: p.id,
     src: p.src,
     year: p.year,

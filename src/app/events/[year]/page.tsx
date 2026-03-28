@@ -1,8 +1,6 @@
 export const dynamic = 'force-dynamic';
 
-import fs from 'fs';
-import path from 'path';
-import { getTournamentByYear, getTournaments, getCourses } from '@/lib/data';
+import { getTournamentByYear, getTournaments, getCourses, getPhotosByYear } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -42,15 +40,7 @@ export default async function EventPage(props: { params: Promise<{ year: string 
   const next = currentIndex < tournaments.length - 1 ? tournaments[currentIndex + 1] : null;
 
   // Pick banner photo for this edition
-  let photos: { id: string; src: string; year: string }[] = [];
-  try {
-    const photosFile = path.join(process.cwd(), 'data', 'photos.json');
-    const raw = fs.readFileSync(photosFile, 'utf-8');
-    const allPhotos = JSON.parse(raw);
-    photos = allPhotos.filter((p: any) => p.year === year);
-  } catch {
-    // photos.json may not exist yet
-  }
+  const photos = await getPhotosByYear(year);
   // Preferred banners per edition (hand-picked)
   const bannerMap: Record<string, string> = {
     'S2018': 's2018_2',
