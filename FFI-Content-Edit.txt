@@ -1,0 +1,246 @@
+================================================================================
+  FFI WEBSITE — EDITABLE CONTENT FILE (REVISED)
+================================================================================
+
+  HOW TO USE:
+  - Edit any text between the markers below
+  - Keep the section headers (lines starting with ===) and field labels intact
+  - When done, give this file back to Claude Code and say "upload the changes"
+  - Only change what you want — leave the rest as-is
+
+================================================================================
+
+
+================================================================================
+  SECTION 1: ABOUT PAGE
+================================================================================
+
+--- ORIGIN STORY ---
+
+The Founding Fathers Invitational began in the spring of 2018 when Matt Hopkins and Jeff Shanahan — childhood friends since the 4th grade — and their respective groups of college and local friends, half rooted in the Philadelphia suburbs, half entrenched in Washington, DC, decided their annual golf outings needed stakes, structure, and eventually, a trophy. What followed was an arms race of escalating formality that no one asked for and no one has been able to stop. The inaugural edition — a two-course affair across Applebrook Golf Club and Aronimink Golf Club — ended in a 12–6 Team Philly victory. Team DC demanded a rematch within six months. They got one. Nine editions later, the FFI features professionally bound tournament programs complete with footnotes, corporate press releases announcing roster transactions, a pewter trophy whose authenticity has been tested by at least one MVP, a Director of Player Personnel who doubles as Co-Director of Apparel, and an expense collection process that has been described as both ruthless and inevitable.
+
+--- FORMAT ---
+
+The FFI is a team match-play event between 8-player squads representing Team Philly and Team DC. The competition is played over 36 holes, typically in a single day, with the format varying each year at the Host Captain's discretion. Past editions have featured fourball, foursomes, singles, and alternate shot. The host city typically arranges a practice round the day before, which has occasionally doubled as a one-day member-guest tournament.
+
+--- TRADITIONS ---
+
+>> The Founding Fathers Cup
+
+Officially known as the Founding Fathers Cup — also called 'The Goblet of Immortality' and 'The Founders Cup of Pewter and Glory' — the trophy is awarded to the winning team. In the event of a tie, the defending champion (Team DC per 2022 rules) retains the Cup.
+
+>> The Captain's Dinner
+
+The night before competition, both teams gather for dinner, drinks, and the unveiling of pairings. Past venues have included Dutton's Barn, Casa De Hopkins, and the Everly's Barn.
+
+>> The Tournament Program
+
+First produced for the 3rd Edition in 2019, the tournament program has become an annual institution. Each edition is packed with matchup writeups, course guides, player profiles, hole-by-hole scouting reports, and commentary that ranges from insightful to cruel. Both teams have taken turns producing the program, and authorship is taken seriously.
+
+>> Host Gift
+
+Players receive custom gifts each year that are selected by the host team. Selections have included team polos, quarter-zips (since retired by popular demand), water color course paintings and — as of the 9th Edition — Peter Millar vests.
+
+--- AWARDS ---
+
+>> MVP Award
+
+Awarded to the outstanding player on the winning team.
+
+>> Pat Shanahan Award
+
+Named after Pat Shanahan — Team Philly's Vice Captain, 1st Edition MVP, and the man who once emergency-purchased BioFreeze at Wegmans after tweaking his neck on a morning run — this award honors the best player on the losing team. A recognition that excellence doesn't always result in victory.
+
+--- CLOSING TAGLINE ---
+
+"Play well gentlemen. Don't forget to enjoy the walk."
+
+
+================================================================================
+  SECTION 2: EDITION STORIES
+================================================================================
+
+--- 1ST EDITION (Spring 2018) ---
+
+The one that started it all. In the spring of 2018, Captain Jeff Shanahan and Team Philly hosted Captain Matt Hopkins and Team DC for the inaugural Founding Fathers Invitational — a two-course affair across Applebrook Golf Club and Aronimink Golf Club. There was no trophy yet, no program, no welcome letter. Just two eight-man squads, 18 points on the line, and a vague sense that this might become a thing. It became a thing. Team Philly rolled to a 12–6 victory, and Pat Shanahan took home the first-ever MVP award. The rivalry was born. The formalities would follow.
+
+--- 2ND EDITION (Fall 2018) ---
+
+Just six months after losing the inaugural edition, Team DC demanded a rematch — and got one. Dubbed the DC Challenge Match, the 2nd Edition brought the fight to Washington for the first time, a two-course affair across Columbia Country Club and Chevy Chase Club. Team Philly loaded onto a bus in Wayne, PA at 3:30 PM sharp — $110 a head, no jeans allowed — and rolled south to Chevy Chase Club, where rooms were waiting and strategy sessions commenced over dinner. Captain Shanahan assigned rooms with military precision: the Shanahan brothers in one double, the Etherington brothers in the other, Mundy in a single, and Grecco and Nathan sharing a room with 'an extra bed provided.' Luke Etherington drew cooler duty. On the course, Roland 'The Silverback' Miller led Team DC to a 15.5–12.5 victory, earning MVP honors. The series was tied at one apiece, and suddenly this thing was real.
+
+--- 3RD EDITION (2019) ---
+
+The 3rd Edition marked the FFI's arrival as a legitimate institution. For the first time, a full tournament program was produced — complete with matchup writeups, course guides, and the kind of commentary that would become an FFI hallmark. The action took place entirely at Applebrook, with 28 points on the line across three rounds: 18 holes of Better Ball in the morning, 9 holes of Singles after lunch, and 9 holes of Alternate Shot to close. The night before, both teams gathered at The Flying Pig in Malvern for drinks and the ceremonial unveiling of pairings. On the course, Ben Etherington was sensational, earning MVP honors as Team Philly cruised to a 17.5–10.5 victory. Behind the scenes, the roster had undergone a quiet revolution — Captain Shanahan had reshuffled Team Philly's lineup, a move that prompted Vice Captain Pat Shanahan to observe: 'Going scorched earth.' Matt Hopkins served as Team DC's Captain. The Founding Fathers Cup, newly made for this edition, had found its first home in Philadelphia.
+
+--- 4TH EDITION (2020) ---
+
+The year was 2020, and nothing was normal — including the FFI. COVID protocols were in full effect, but the show went on. The 4th Edition brought the tournament back to DC for a two-venue affair: 18 holes of Fourball at Chevy Chase Club in the morning, followed by 9 holes of Fourball and 9 holes of Singles at Columbia Country Club in the afternoon. The night before, Team DC hosted the 1st Annual Crabfeast at the Hopkins Homestead — a tradition that would stick. Two rookies made their FFI debuts: Brian Shevland and Nick Aceto for Team Philly. It would be remembered as the 'Caddy Massacre' year (the details of which remain classified). Matt Hopkins, the hometown Captain, earned MVP honors as Team DC won 14.5–9.5, evening the series at two apiece. Team Philly's bus ride home was reportedly a quiet one.
+
+--- 5TH EDITION (2021) ---
+
+The 5th Edition returned to Philadelphia with the series knotted at two apiece. After deliberation with Team DC leadership, all 36 holes were played at Applebrook, and the format featured 18 holes of Better Ball in the morning, 9 holes of Better Ball after lunch, and 9 holes of Alternate Shot to close. The Captain's Dinner was held at Dutton's Barn the night before, where Eagles vs. Buccaneers played on the screens — a fitting backdrop for a room full of men about to go to war. Team DC announced roster shakeups via formal press release: Michael Kearns and Ben Fritz were added, replacing Connolly and Miller, who reportedly sprained their pinkie toes on a fox hunt at Chevy Chase Club. On the course, it was Devin Tuohey who stole the show, earning MVP as Team DC pulled out a 15–13 nail-biter. DC now led the series 3–2, and the Goblet remained in Washington.
+
+--- 6TH EDITION (2022) ---
+
+There are losses, there are blowouts, and then there is the 6th Edition. Team DC delivered the most lopsided result in FFI history — a 21–11 demolition across Columbia Country Club and Chevy Chase Club. Brendan Delany, the perennial Vice Captain with an 18+ handicap and a flair for the dramatic, was named MVP in what remains one of the great underdog performances in tournament lore. Team Philly had made roster moves: Murphy Barton (Bear's brother) and Mark 'Dr. Beeper' Kurd made their FFI debuts, while Rob Nathan was notably absent. None of it helped. The bus ride home to Philadelphia reportedly caused major changes — the kind of organizational soul-searching that precedes either a dynasty or a complete implosion. DC now led the series 4–2, and the Goblet showed no signs of leaving Washington.
+
+--- 7TH EDITION (2023) ---
+
+After three consecutive losses — including the 21–11 humiliation in DC — Team Philly arrived at the 7th Edition with something to prove. The format was stripped down to its purest form: two rounds of 18-hole Better Ball, no singles, no alternate shot. Morning at Applebrook, afternoon at Aronimink. The two-day event opened with lunch and the Aronimink One Day Member-Guest Oktoberfest on Wednesday, followed by the after-party at Everly's Barn. Team DC, staying in the Applebrook Club House, had won three straight and entered with a .571 all-time winning percentage. It didn't matter. Ben 'Two Gloves' Quereau — also known as 2G, Queso, and Q — was magnificent, earning MVP as Team Philly won decisively and snapped the losing streak. The Goblet of Immortality was finally coming home to Philadelphia. The exact score remains a matter of some dispute ('A lot to a little,' per one Team Philly source).
+
+--- 8TH EDITION (2024) ---
+
+The 8th Edition broke new ground — literally. For the first time, the FFI left the DC–Philly corridor entirely, venturing south to Farmington Country Club in Charlottesville, Virginia. The two-day format featured Fourball Closeout matches on both Thursday and Friday, with a 3-Club Challenge Exhibition sandwiched in between on Farmington's East Course. There were no caddies (a first), the 10th hole was closed for renovations (forcing creative routing), and the program included a hole-by-hole course guide that read like a travel magazine. Team Philly flew into Charlottesville Airport on Thursday morning, hit the ground running with breakfast and warm-ups, and were on the first tee by 11:40 AM. The evening featured cocktails on the Blue Ridge Terrace followed by a seated dinner in the Pine Room — a far cry from the bus rides and borrowed couches of earlier editions. Mark Kurd returned to the Team Philly roster, and Ben Quereau arrived with a 0.6 handicap, his lowest in FFI history. Results for this edition are still pending official confirmation.
+
+--- 9TH EDITION (2025) ---
+
+The 9th Edition returned the FFI to Philadelphia for what promised to be the most ambitious edition yet. For the first time, the tournament featured Foursomes (alternate shot off the tee) — a format that demands partnership, trust, and the obligatory "don't be sorry, I am not playing great either" when your partner dumps one in the bunker. The morning round took place at Gulph Mills Golf Club, a new addition to the course rotation, with the afternoon Fourball match at Aronimink Golf Club. The two-day event kicked off Wednesday with the traditional exhibition at Applebrook, including lunch and the Member-Guest. Wayne Lesage made his FFI debut for Team Philly, while Dan Murray joined Team DC — fresh blood on both sides. The apparel gift this year: Peter Millar vests, because nothing says 'we take this seriously' quite like matching outerwear. Team DC went up big in the morning Foursomes only to hang on to win 15-13 after a furious Team Philly comeback. Vince Burke earned MVP honors. Dinner at Aronimink's Belmont Room on Thursday evening crowned Team DC as the champion of the 9th Edition.
+
+
+================================================================================
+  SECTION 3: PLAYER BIOS
+================================================================================
+
+========================
+  TEAM PHILLY
+========================
+
+--- Jeff Shanahan ---
+Nickname: J Shan
+Home Club: Applebrook Golf Club
+Bio: The founding captain of Team Philly and the driving force behind the FFI. Runs the tightest ship in amateur golf — no spot is safe, no debt goes unpaid, and no roster decision is made without his blessing. The self-anointed Head Urban Cowboy leads the Cobbs Creek Foundation off the course and leads with an iron fist wrapped in a Peter Millar quarter-zip on it. Has been known to make shocking roster announcements that leave his own teammates questioning their job security.
+
+--- Pat Shanahan ---
+Nickname: P Shan
+Home Club: Applebrook Golf Club
+Bio: The other half of the Shanahan dynasty and Team Philly's Vice Captain from day one. The namesake of the Pat Shanahan Award — given to the best player on the losing team — and the 1st Edition MVP. Handles logistics, welcome letters, and expense collection with quiet authority. The always gracious P Shan once tweaked his neck on a morning run before the 2nd Edition and had to emergency-purchase BioFreeze at Wegmans. Together with Jeff, the brothers Shanahan make every roster and strategy decision between them.
+
+--- Will Mundy ---
+Nickname: Case of the Mundys
+Home Club: Aronimink Golf Club
+Bio: Secretary, COO, Director of Transportation, and permanent interim everything. A Senior Vice President at Morgan Stanley's Mundy Wealth Management Group — where alignment is more than something you learn at golf school. Jeff once told Mundy he could see him as Deputy Assistant Captain in two to three years. That was in 2018. Arranged the team's road trips, procured the annual apparel gifts, and had a bunker at Farmington literally renamed 'Case of the Mundies' in his honor. After seven consecutive editions, the long-time Philly veteran was told to retire ahead of the 9th Edition.
+
+--- Ben Etherington ---
+Nickname: Beverly
+Home Club: Applebrook Golf Club
+Bio: One half of the Everly Brothers and a founding member of Team Philly. Known as Beverly, B Everly, or Phil Everly depending on the program edition. Won MVP at the 3rd Edition after Team Philly's dominant 17.5–10.5 victory at Applebrook. Works at Nathan Trotter & Co. alongside his brother Luke. Famously photographed testing the pewter content of The Goblet of Immortality. His banter-free rounds alongside Pat Shanahan have become the stuff of legend.
+
+--- Luke Etherington ---
+Nickname: L Everly
+Home Club: Applebrook Golf Club
+Bio: The other Everly Brother and a steadfast member of Team Philly since the 2nd Edition. Also employed at Nathan Trotter & Co., making the Etherington–Nathan Trotter pipeline one of the FFI's most reliable feeder systems. Known for checking the volatile tin market mid-round and for ordering twin lobster tails at the 6th Edition dinner — prompting Jon Carr to respond simply: 'Unbelievable.' Does Hoka make golf shoes? Luke would like to know.
+
+--- Rob Nathan ---
+Nickname: Mr. Cashmere
+Home Club: Applebrook Golf Club
+Bio: The Cashmere Queen. A founding member of Team Philly whose wardrobe philosophy is fully aligned with Chevy Chase Club's dress code encouraging cashmere sweaters. Once paid his FFI debts at 4:22 AM, suggesting either impressive dedication or alarming insomnia. Jeff's scouting report was characteristically succinct: 'Rob is Rob.' Missed the 6th Edition, prompting the program to mourn the perhaps temporary loss of an FFI stalwart and cashmere aficionado. Need help placing a bet? Call Mr. Cashmere.
+
+--- Ben Quereau ---
+Nickname: Two Gloves
+Home Club: Waynesborough Country Club
+Bio: 2G. Queso. Q. A man of many names and even more gloves. Added to the roster ahead of the 3rd Edition, Hopkins himself declared that Team Philly must have Benny Two Gloves on the squad to have a fighter's chance at winning the cup. Captured the 7th Edition MVP as a true competitor and man of integrity. Casual dress at the crabfeast — gloves required, for Quereau.
+
+--- Bear Barton ---
+Nickname: Papa Bear
+Home Club:
+Bio: Berenstain Papa. Featured in what the 2019 program called the primal battle for animal kingdom supremacy — the Bear vs the Silverback — when paired against Roland Miller. A four-time FFI veteran whose steady play and quiet intensity anchored Team Philly's middle order. The 2022 program once asked: is Bear secretly rooting for Team DC, a leadership group clearly more fun to be around? Departed after the 7th Edition, prompting the wistful caption: 'Bear and Murph — we miss you.'
+
+--- Murphy Barton ---
+Nickname: Murph
+Home Club:
+Bio: Brother of Bear and owner of the paralyzing Blue Steel stare. Competed in the 6th Edition — Team DC's historic 21–11 dismantling, the biggest beatdown in tournament history. The Bros Barton were not skerred. Fondly remembered: 'Bear and Murph — we miss you.'
+
+--- Mark Kurd ---
+Nickname: Dr. Beeper
+Home Club: Aronimink Golf Club
+Bio: Doc McStuffins. Dr. Frasier Crane. The FFI's resident physician carries more nicknames than most players carry clubs. The good Dr. Kurd takes time away from the OR to endure four hours of silence next to the always gracious P Shan. Joined the roster in the 6th Edition, missed the 7th, and was warmly welcomed back for the 8th — the 2024 program noting it was the fewest roster changes Team Philly had made in years.
+
+--- Nick Aceto ---
+Nickname: Nick A
+Home Club:
+Bio: A roster addition during the great reshuffling era who competed in the 4th and 5th Editions. Paired with Jeff Shanahan against Hopkins and Tuohey at the 5th Edition — directly in the crosshairs of Team DC's leadership.
+
+--- Angelo Grecco ---
+Nickname: The Greek
+Home Club:
+Bio: The original Co-President of the FFI and a repeat participant in the early years. Once described as a fuzzy Italian feel good guy. Paid his FFI debts 36.2 seconds after the email was sent — a record that will likely never be broken.
+
+--- Kevin Keating ---
+Nickname:
+Home Club:
+Bio: A major free-agent acquisition whose entire 2nd Edition pairing strategy was built around him — enveloped by Pat in the morning and Grecco in the afternoon. Works at Millcreek Capital. Dropped out of the 3rd Edition due to a nanny crisis, opening the door for Grecco's dramatic reinstatement. Was the last Team Philly member to pay his expenses in 2018. Still has not offered Merion access.
+
+--- Brian Shevland ---
+Nickname:
+Home Club:
+Bio: An acting rookie at the 4th Edition in Washington, DC. Paired with Two Gloves Quereau in the first round at Chevy Chase Club. A one-edition appearance in the annals of FFI history.
+
+--- Wayne Lesage ---
+Nickname:
+Home Club:
+Bio: The newest addition to Team Philly for the 9th Edition, replacing the retired Will Mundy. A Philly Mainline classic paired with Mark Kurd for foursomes at Gulph Mills and with Rob Nathan for fourball at Aronimink. Fresh blood for Team Philly's quest to reclaim the Goblet.
+
+
+========================
+  TEAM DC
+========================
+
+--- Matt Hopkins ---
+Nickname: Harambe
+Home Club: Columbia Country Club
+Bio: Captain of Team DC and the FFI's most eloquent communicator — a man whose mock-corporate press releases and formal dispatches have become as essential to the tournament as the golf itself. What Captain Hopkins wants, Captain Hopkins gets. A Managing Director at Wells Fargo, previously at Eastdil Secured. Won the 4th Edition MVP after leading DC to a 14.5–9.5 victory at Chevy Chase and Columbia. Famously photographed in his natural habitat: surrounded by red meat, red wine, hoppy beer, quarter-zips, and deep mahogany.
+
+--- Brendan Delany ---
+Nickname: Delaaaahny
+Home Club: Columbia Country Club
+Bio: Team DC's Vice Captain and one of the tournament's most reliable presences. An attorney at Blank Rome LLP in Washington, DC, whose father — the legendary Dr. Gael Delany — apparently coined the phrase 'fast payments makes fast friends.' Won the 6th Edition MVP after DC's historic 21–11 beatdown, the biggest margin of victory in FFI history. Known for quick-witted email responses, an unwavering commitment to the cause, and strong opinions on beanie-appropriate temperatures for the golf course. Please contact VCBIV for any specific Clubman hygienic product requirements.
+
+--- Jon Carr ---
+Nickname: Sergio Carrcia
+Home Club: Chevy Chase Club
+Bio: Carrski. America's Guest. The self-described resident country club non-member expert and Team DC's Senior Coordinator of Communications, Chairman of Apparel and Logo Creation, and Associate Coordinator of Food and Beverage. Works at Grosvenor. Fresh off an attempt at early retirement, Carr has used his ample time visiting prestigious golf communities. Authored the legendary hole-by-hole course guide in the 2024 welcome program. Once told he was a great 8 but a terrible 6 — and no one has proven the doubters wrong yet. His response to Luke Etherington's twin lobster tail order — 'Unbelievable' — may be the most perfectly concise email in FFI history.
+
+--- Vince Burke ---
+Nickname: Vincenzo
+Home Club: Columbia Country Club
+Bio: VCB4. Vinny. A Vice President at B.F. Saul Company & Affiliates and a member of the inaugural Team DC roster who hasn't missed an edition since. Longtime bestie of Delaaaahny and a congenial presence known for respectful eye contact and plenty of storytelling. Known for being chronically late on expense payments — a pattern that the tournament committee has noted with characteristic passive aggression. By a wide margin, the friendliest man in the field.
+
+--- Chris Connolly ---
+Nickname:
+Home Club: Chevy Chase Club
+Bio: The best stick in FFI history — a player who makes the rest of the field look like they're playing a different sport. Works at B.F. Saul Company & Affiliates alongside Vince Burke, forming DC's corporate power corridor. Featured in the classic clash of the titans big dollar match between the brothers Shanahan and Connolly/Keegan at the 3rd Edition. Found in his natural habitat surrounded by red meat for breakfast, lunch, dinner, and late night snack. Wears Brooks Brothers button-down pajamas. A member at Chevy Chase Club.
+
+--- Sean Keegan ---
+Nickname: Nighttime Keegan
+Home Club: Columbia Country Club
+Bio: PM Keegan. AM Keegan. Keegs. The man with the most time-of-day-specific nicknames in amateur golf — his performance and personality shift depending on the decisions made at three imperative milestones: the breakfast table, the shack, and the tap room bar. Runs Rockspring Contracting and once introduced himself to Team Philly: 'I've had braces twice and still have an absurd snaggletooth. My eyebrows are massive and my nose is crooked. Look forward to meeting all you PA boys so you can laugh at my face.' The 2024 program's closing words were a sincere hope that Sean doesn't get them kicked off property.
+
+--- Devin Tuohey ---
+Nickname: DT
+Home Club: Philadelphia Country Club
+Bio: DC's native son who, despite being a member at Philadelphia Country Club, has remained loyal to Team DC through eight editions. Won the 5th Edition MVP after DC's narrow 15–13 victory at Applebrook — winning on enemy soil. Works at the Concordia Group. A perennial point earner known for his black high tops and AND1 shorts, which the 2021 program declared welcome in DC into perpetuity. Missed the 9th Edition for important business reasons — an absence felt by the entire DC roster. If DT needs back, ankle, or emotional support, an alpha male silverback gorilla may not necessarily be the right one to ask.
+
+--- Roland Miller ---
+Nickname: The Silverback
+Home Club: Chevy Chase Club
+Bio: The original Silverback and a man of many club memberships. Won the 2nd Edition MVP after Team DC's 15.5–12.5 comeback victory at Columbia and Chevy Chase. Was once unceremoniously dismissed from Team Philly, making his switch to DC one of the FFI's great redemption arcs. Welcomed back alongside Connolly for the 6th Edition as an old friend. His housekeeper once inspired a Carrski course tip involving the phrase 'no bueno senor Miller.'
+
+--- Michael Kearns ---
+Nickname:
+Home Club:
+Bio: One of Team DC's roster additions for the 5th Edition at Applebrook. A one-edition appearance in the FFI record book.
+
+--- Ben Fritz ---
+Nickname:
+Home Club:
+Bio: One of Team DC's roster additions for the 5th Edition at Applebrook. A one-edition appearance in the FFI record book.
+
+--- Dan Murray ---
+Nickname:
+Home Club:
+Bio: The newest addition to Team DC for the 9th Edition. Paired with Hopkins for fourball at Aronimink and with Connolly for foursomes at Gulph Mills — a debut that places him squarely in the deep end. Fresh blood on the DC side.
+
+
+================================================================================
+  END OF FILE
+================================================================================

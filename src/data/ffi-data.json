@@ -8,13 +8,21 @@
         "name": "Team Philly",
         "city": "Philadelphia",
         "captain": "Jeff Shanahan",
-        "homeClubs": ["Applebrook Golf Club", "Aronimink Golf Club", "Gulph Mills Golf Club"]
+        "homeClubs": [
+          "Applebrook Golf Club",
+          "Aronimink Golf Club",
+          "Gulph Mills Golf Club"
+        ]
       },
       "dc": {
         "name": "Team DC",
         "city": "Washington, DC",
         "captain": "Matt Hopkins",
-        "homeClubs": ["Columbia Country Club", "Chevy Chase Club", "Farmington Country Club"]
+        "homeClubs": [
+          "Columbia Country Club",
+          "Chevy Chase Club",
+          "Farmington Country Club"
+        ]
       }
     },
     "awards": {
@@ -30,12 +38,36 @@
     "trophy": "The Founding Fathers Cup (aka The Goblet of Immortality / The Founders Cup of Pewter and Glory)"
   },
   "courses": [
-    {"name": "Applebrook Golf Club", "location": "Malvern, PA", "city": "philly"},
-    {"name": "Aronimink Golf Club", "location": "Newtown Square, PA", "city": "philly"},
-    {"name": "Gulph Mills Golf Club", "location": "King of Prussia, PA", "city": "philly"},
-    {"name": "Columbia Country Club", "location": "Chevy Chase, MD", "city": "dc"},
-    {"name": "Chevy Chase Club", "location": "Chevy Chase, MD", "city": "dc"},
-    {"name": "Farmington Country Club", "location": "Charlottesville, VA", "city": "dc"}
+    {
+      "name": "Applebrook Golf Club",
+      "location": "Malvern, PA",
+      "city": "philly"
+    },
+    {
+      "name": "Aronimink Golf Club",
+      "location": "Newtown Square, PA",
+      "city": "philly"
+    },
+    {
+      "name": "Gulph Mills Golf Club",
+      "location": "King of Prussia, PA",
+      "city": "philly"
+    },
+    {
+      "name": "Columbia Country Club",
+      "location": "Chevy Chase, MD",
+      "city": "dc"
+    },
+    {
+      "name": "Chevy Chase Club",
+      "location": "Chevy Chase, MD",
+      "city": "dc"
+    },
+    {
+      "name": "Farmington Country Club",
+      "location": "Charlottesville, VA",
+      "city": "dc"
+    }
   ],
   "events": [
     {
@@ -43,21 +75,42 @@
       "edition": 1,
       "displayYear": "Spring 2018",
       "hostCity": "philly",
-      "courses": ["Applebrook Golf Club", "Aronimink Golf Club"],
-      "score": {"philly": 12, "dc": 6},
+      "courses": [
+        "Applebrook Golf Club",
+        "Aronimink Golf Club"
+      ],
+      "score": {
+        "philly": 12,
+        "dc": 6
+      },
       "champion": "philly",
-      "mvp": {"name": "Pat Shanahan", "team": "philly"},
-      "patShanahanAward": null,
+      "mvp": {
+        "name": "Pat Shanahan",
+        "team": "philly"
+      },
+      "patShanahanAward": {
+        "name": "Devin Tuohey",
+        "team": "dc"
+      },
       "teamPhilly": [
-        {"name": "Jeff Shanahan", "role": "Captain"},
-        {"name": "Pat Shanahan", "role": "Vice Captain"}
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain"
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Vice Captain"
+        }
       ],
       "teamDC": [
-        {"name": "Matt Hopkins", "role": "Captain"}
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain"
+        }
       ],
       "matches": [],
       "schedule": [],
-      "notes": "It all started here. In the spring of 2018, a group of college friends — half scattered across the Philadelphia suburbs, half entrenched in Washington, DC — decided that their annual golf outings needed stakes, structure, and a trophy. Captain Jeff Shanahan assembled Team Philly for the inaugural Founding Fathers Invitational, a two-course affair across Applebrook and Aronimink. The home side never looked back. Team Philly rolled to a 12–6 victory, and Pat Shanahan took home the first-ever MVP award. The Goblet of Immortality had found its first home — and a rivalry was born.",
+      "notes": "The one that started it all. In the spring of 2018, Captain Jeff Shanahan and Team Philly hosted Captain Matt Hopkins and Team DC for the inaugural Founding Fathers Invitational — a two-course affair across Applebrook Golf Club and Aronimink Golf Club. There was no trophy yet, no program, no welcome letter. Just two eight-man squads, 18 points on the line, and a vague sense that this might become a thing. It became a thing. Team Philly rolled to a 12–6 victory, and Pat Shanahan took home the first-ever MVP award. The rivalry was born. The formalities would follow.",
       "weather": "Spring conditions in the Philadelphia area."
     },
     {
@@ -65,34 +118,83 @@
       "edition": 2,
       "displayYear": "Fall 2018",
       "hostCity": "dc",
-      "courses": ["Columbia Country Club", "Chevy Chase Club"],
-      "score": {"philly": 12.5, "dc": 15.5},
+      "courses": [
+        "Columbia Country Club",
+        "Chevy Chase Club"
+      ],
+      "score": {
+        "philly": 12.5,
+        "dc": 15.5
+      },
       "champion": "dc",
-      "mvp": {"name": "Roland Miller", "team": "dc"},
-      "patShanahanAward": null,
+      "mvp": {
+        "name": "Roland Miller",
+        "team": "dc"
+      },
+      "patShanahanAward": {
+        "name": "Pat Shanahan",
+        "team": "philly"
+      },
       "teamPhilly": [
-        {"name": "Jeff Shanahan", "role": "Captain"},
-        {"name": "Pat Shanahan", "role": "Vice Captain"},
-        {"name": "Ben Etherington"},
-        {"name": "Luke Etherington"},
-        {"name": "Will Mundy"},
-        {"name": "Rob Nathan"},
-        {"name": "Angelo Grecco"},
-        {"name": "Kevin Keating"}
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain"
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Vice Captain"
+        },
+        {
+          "name": "Ben Etherington"
+        },
+        {
+          "name": "Luke Etherington"
+        },
+        {
+          "name": "Will Mundy"
+        },
+        {
+          "name": "Rob Nathan"
+        },
+        {
+          "name": "Angelo Grecco"
+        },
+        {
+          "name": "Kevin Keating"
+        }
       ],
       "teamDC": [
-        {"name": "Matt Hopkins", "role": "Captain"},
-        {"name": "Brendan Delany", "role": "Vice Captain"},
-        {"name": "Jon Carr", "role": "Secretary"},
-        {"name": "Roland Miller"},
-        {"name": "Vince Burke"},
-        {"name": "Devin Tuohey"},
-        {"name": "Sean Keegan"},
-        {"name": "Chris Connolly"}
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain"
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Vice Captain"
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Secretary"
+        },
+        {
+          "name": "Roland Miller"
+        },
+        {
+          "name": "Vince Burke"
+        },
+        {
+          "name": "Devin Tuohey"
+        },
+        {
+          "name": "Sean Keegan"
+        },
+        {
+          "name": "Chris Connolly"
+        }
       ],
       "matches": [],
       "schedule": [],
-      "notes": "Just six months after losing the inaugural edition, Team DC demanded a rematch — and got one. Dubbed the 'DC Challenge Match,' The 2nd Edition brought the fight to Washington for the first time. Team Philly loaded onto a bus in Wayne, PA at 3:30 PM sharp — $110 a head, no jeans allowed — and rolled south to Chevy Chase Club, where rooms were waiting and strategy sessions commenced over dinner. Captain Shanahan assigned rooms with military precision: the Shanahan brothers in one double, the Etherington brothers in the other, Mundy in a single, and Grecco and Nathan sharing a room with 'an extra bed provided.' Luke Etherington drew cooler duty. On the course, Roland 'The Silverback' Miller led Team DC to a 15.5–12.5 victory, earning MVP honors and bringing the Goblet of Immortality to Washington for the first time. The series was tied at one apiece, and suddenly this thing was real.",
+      "notes": "Just six months after losing the inaugural edition, Team DC demanded a rematch — and got one. Dubbed the DC Challenge Match, the 2nd Edition brought the fight to Washington for the first time, a two-course affair across Columbia Country Club and Chevy Chase Club. Team Philly loaded onto a bus in Wayne, PA at 3:30 PM sharp — $110 a head, no jeans allowed — and rolled south to Chevy Chase Club, where rooms were waiting and strategy sessions commenced over dinner. Captain Shanahan assigned rooms with military precision: the Shanahan brothers in one double, the Etherington brothers in the other, Mundy in a single, and Grecco and Nathan sharing a room with 'an extra bed provided.' Luke Etherington drew cooler duty. On the course, Roland 'The Silverback' Miller led Team DC to a 15.5–12.5 victory, earning MVP honors. The series was tied at one apiece, and suddenly this thing was real.",
       "weather": "Late October in the DC area. Typical fall conditions."
     },
     {
@@ -100,17 +202,43 @@
       "edition": 3,
       "displayYear": "2019",
       "hostCity": "philly",
-      "courses": ["Applebrook Golf Club"],
+      "courses": [
+        "Applebrook Golf Club"
+      ],
       "date": "October 17, 2019",
-      "score": {"philly": 17.5, "dc": 10.5},
+      "score": {
+        "philly": 17.5,
+        "dc": 10.5
+      },
       "champion": "philly",
-      "mvp": {"name": "Ben Etherington", "team": "philly"},
-      "patShanahanAward": null,
+      "mvp": {
+        "name": "Ben Etherington",
+        "team": "philly"
+      },
+      "patShanahanAward": {
+        "name": "Roland Miller",
+        "team": "dc"
+      },
       "format": {
         "rounds": [
-          {"name": "Match 1", "type": "Team Better Ball", "holes": 18, "points": 12},
-          {"name": "Match 2", "type": "Singles", "holes": 9, "points": 8},
-          {"name": "Match 3", "type": "Team Alternate Shot", "holes": 9, "points": 8}
+          {
+            "name": "Match 1",
+            "type": "Team Better Ball",
+            "holes": 18,
+            "points": 12
+          },
+          {
+            "name": "Match 2",
+            "type": "Singles",
+            "holes": 9,
+            "points": 8
+          },
+          {
+            "name": "Match 3",
+            "type": "Team Alternate Shot",
+            "holes": 9,
+            "points": 8
+          }
         ],
         "totalPoints": 28,
         "handicapRule": "90% for Better Ball/Singles, 30% combined for Alt Shot",
@@ -118,68 +246,303 @@
         "prizePool": 1600
       },
       "teamPhilly": [
-        {"name": "Jeff Shanahan", "role": "Captain", "handicap": 1.7},
-        {"name": "Pat Shanahan", "role": "Vice Captain", "handicap": -1},
-        {"name": "Will Mundy", "role": "Treasurer/Secretary", "handicap": 16},
-        {"name": "Bear Barton", "handicap": 5.2},
-        {"name": "Luke Etherington", "handicap": 6.5},
-        {"name": "Ben Etherington", "handicap": 7.1},
-        {"name": "Angelo Grecco", "handicap": 6.2},
-        {"name": "Ben Quereau", "handicap": 5.7}
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain",
+          "handicap": 1.7
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Vice Captain",
+          "handicap": -1
+        },
+        {
+          "name": "Will Mundy",
+          "role": "Treasurer/Secretary",
+          "handicap": 16
+        },
+        {
+          "name": "Bear Barton",
+          "handicap": 5.2
+        },
+        {
+          "name": "Luke Etherington",
+          "handicap": 6.5
+        },
+        {
+          "name": "Ben Etherington",
+          "handicap": 7.1
+        },
+        {
+          "name": "Angelo Grecco",
+          "handicap": 6.2
+        },
+        {
+          "name": "Ben Quereau",
+          "handicap": 5.7
+        }
       ],
       "teamDC": [
-        {"name": "Matt Hopkins", "role": "Captain", "handicap": 14.5},
-        {"name": "Brendan Delany", "role": "Vice Captain", "handicap": 18.6},
-        {"name": "Jon Carr", "role": "Treasurer/Secretary", "handicap": 6.6},
-        {"name": "Vince Burke", "handicap": 14.9},
-        {"name": "Chris Connolly", "handicap": -0.9},
-        {"name": "Sean Keegan", "handicap": 1.7},
-        {"name": "Devin Tuohey", "handicap": 11.3},
-        {"name": "Roland Miller", "handicap": 11.8}
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain",
+          "handicap": 14.5
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Vice Captain",
+          "handicap": 18.6
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Treasurer/Secretary",
+          "handicap": 6.6
+        },
+        {
+          "name": "Vince Burke",
+          "handicap": 14.9
+        },
+        {
+          "name": "Chris Connolly",
+          "handicap": -0.9
+        },
+        {
+          "name": "Sean Keegan",
+          "handicap": 1.7
+        },
+        {
+          "name": "Devin Tuohey",
+          "handicap": 11.3
+        },
+        {
+          "name": "Roland Miller",
+          "handicap": 11.8
+        }
       ],
       "matches": [
         {
-          "round": 1, "type": "Team Better Ball", "course": "Applebrook Golf Club",
+          "round": 1,
+          "type": "Team Better Ball",
+          "course": "Applebrook Golf Club",
           "pairings": [
-            {"philly": ["Ben Etherington", "Pat Shanahan"], "dc": ["Jon Carr", "Sean Keegan"], "teeTime": "7:50AM"},
-            {"philly": ["Ben Quereau", "Will Mundy"], "dc": ["Brendan Delany", "Chris Connolly"], "teeTime": "8:00AM"},
-            {"philly": ["Jeff Shanahan", "Bear Barton"], "dc": ["Devin Tuohey", "Matt Hopkins"], "teeTime": "8:10AM"},
-            {"philly": ["Luke Etherington", "Angelo Grecco"], "dc": ["Vince Burke", "Roland Miller"], "teeTime": "8:20AM"}
+            {
+              "philly": [
+                "Ben Etherington",
+                "Pat Shanahan"
+              ],
+              "dc": [
+                "Jon Carr",
+                "Sean Keegan"
+              ],
+              "teeTime": "7:50AM"
+            },
+            {
+              "philly": [
+                "Ben Quereau",
+                "Will Mundy"
+              ],
+              "dc": [
+                "Brendan Delany",
+                "Chris Connolly"
+              ],
+              "teeTime": "8:00AM"
+            },
+            {
+              "philly": [
+                "Jeff Shanahan",
+                "Bear Barton"
+              ],
+              "dc": [
+                "Devin Tuohey",
+                "Matt Hopkins"
+              ],
+              "teeTime": "8:10AM"
+            },
+            {
+              "philly": [
+                "Luke Etherington",
+                "Angelo Grecco"
+              ],
+              "dc": [
+                "Vince Burke",
+                "Roland Miller"
+              ],
+              "teeTime": "8:20AM"
+            }
           ]
         },
         {
-          "round": 2, "type": "Singles", "course": "Applebrook Golf Club",
+          "round": 2,
+          "type": "Singles",
+          "course": "Applebrook Golf Club",
           "pairings": [
-            {"philly": ["Will Mundy"], "dc": ["Matt Hopkins"], "teeTime": "1:30PM"},
-            {"philly": ["Angelo Grecco"], "dc": ["Jon Carr"], "teeTime": "1:30PM"},
-            {"philly": ["Ben Quereau"], "dc": ["Devin Tuohey"], "teeTime": "1:40PM"},
-            {"philly": ["Bear Barton"], "dc": ["Roland Miller"], "teeTime": "1:40PM"},
-            {"philly": ["Luke Etherington"], "dc": ["Vince Burke"], "teeTime": "1:50PM"},
-            {"philly": ["Ben Etherington"], "dc": ["Brendan Delany"], "teeTime": "1:50PM"},
-            {"philly": ["Jeff Shanahan"], "dc": ["Sean Keegan"], "teeTime": "2:00PM"},
-            {"philly": ["Pat Shanahan"], "dc": ["Chris Connolly"], "teeTime": "2:00PM"}
+            {
+              "philly": [
+                "Will Mundy"
+              ],
+              "dc": [
+                "Matt Hopkins"
+              ],
+              "teeTime": "1:30PM"
+            },
+            {
+              "philly": [
+                "Angelo Grecco"
+              ],
+              "dc": [
+                "Jon Carr"
+              ],
+              "teeTime": "1:30PM"
+            },
+            {
+              "philly": [
+                "Ben Quereau"
+              ],
+              "dc": [
+                "Devin Tuohey"
+              ],
+              "teeTime": "1:40PM"
+            },
+            {
+              "philly": [
+                "Bear Barton"
+              ],
+              "dc": [
+                "Roland Miller"
+              ],
+              "teeTime": "1:40PM"
+            },
+            {
+              "philly": [
+                "Luke Etherington"
+              ],
+              "dc": [
+                "Vince Burke"
+              ],
+              "teeTime": "1:50PM"
+            },
+            {
+              "philly": [
+                "Ben Etherington"
+              ],
+              "dc": [
+                "Brendan Delany"
+              ],
+              "teeTime": "1:50PM"
+            },
+            {
+              "philly": [
+                "Jeff Shanahan"
+              ],
+              "dc": [
+                "Sean Keegan"
+              ],
+              "teeTime": "2:00PM"
+            },
+            {
+              "philly": [
+                "Pat Shanahan"
+              ],
+              "dc": [
+                "Chris Connolly"
+              ],
+              "teeTime": "2:00PM"
+            }
           ]
         },
         {
-          "round": 3, "type": "Team Alternate Shot", "course": "Applebrook Golf Club",
+          "round": 3,
+          "type": "Team Alternate Shot",
+          "course": "Applebrook Golf Club",
           "pairings": [
-            {"philly": ["Will Mundy", "Angelo Grecco"], "dc": ["Matt Hopkins", "Jon Carr"]},
-            {"philly": ["Bear Barton", "Ben Quereau"], "dc": ["Devin Tuohey", "Roland Miller"]},
-            {"philly": ["Luke Etherington", "Ben Etherington"], "dc": ["Vince Burke", "Brendan Delany"]},
-            {"philly": ["Jeff Shanahan", "Pat Shanahan"], "dc": ["Sean Keegan", "Chris Connolly"]}
+            {
+              "philly": [
+                "Will Mundy",
+                "Angelo Grecco"
+              ],
+              "dc": [
+                "Matt Hopkins",
+                "Jon Carr"
+              ]
+            },
+            {
+              "philly": [
+                "Bear Barton",
+                "Ben Quereau"
+              ],
+              "dc": [
+                "Devin Tuohey",
+                "Roland Miller"
+              ]
+            },
+            {
+              "philly": [
+                "Luke Etherington",
+                "Ben Etherington"
+              ],
+              "dc": [
+                "Vince Burke",
+                "Brendan Delany"
+              ]
+            },
+            {
+              "philly": [
+                "Jeff Shanahan",
+                "Pat Shanahan"
+              ],
+              "dc": [
+                "Sean Keegan",
+                "Chris Connolly"
+              ]
+            }
           ]
         }
       ],
       "schedule": [
-        {"date": "Oct 16", "time": "7:30PM", "event": "Drinks & Food", "location": "The Flying Pig, Malvern"},
-        {"date": "Oct 17", "time": "7:00AM", "event": "Breakfast Sammies", "location": "Applebrook"},
-        {"date": "Oct 17", "time": "7:50AM", "event": "Match 1 - Better Ball (18 holes)", "location": "Applebrook"},
-        {"date": "Oct 17", "time": "12:30PM", "event": "Lunch on Patio", "location": "Applebrook"},
-        {"date": "Oct 17", "time": "1:30PM", "event": "Match 2 - Singles (9 holes)", "location": "Applebrook"},
-        {"date": "Oct 17", "time": "TBD", "event": "Match 3 - Alternate Shot (9 holes)", "location": "Applebrook"},
-        {"date": "Oct 17", "time": "TBD", "event": "Dinner in the Clubhouse", "location": "Applebrook"}
+        {
+          "date": "Oct 16",
+          "time": "7:30PM",
+          "event": "Drinks & Food",
+          "location": "The Flying Pig, Malvern"
+        },
+        {
+          "date": "Oct 17",
+          "time": "7:00AM",
+          "event": "Breakfast Sammies",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 17",
+          "time": "7:50AM",
+          "event": "Match 1 - Better Ball (18 holes)",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 17",
+          "time": "12:30PM",
+          "event": "Lunch on Patio",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 17",
+          "time": "1:30PM",
+          "event": "Match 2 - Singles (9 holes)",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 17",
+          "time": "TBD",
+          "event": "Match 3 - Alternate Shot (9 holes)",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 17",
+          "time": "TBD",
+          "event": "Dinner in the Clubhouse",
+          "location": "Applebrook"
+        }
       ],
-      "notes": "The 3rd Edition marked the FFI's arrival as a legitimate institution. For the first time, a full tournament program was produced — complete with matchup writeups, course guides, and the kind of satirical commentary that would become an FFI hallmark. The action took place entirely at Applebrook, with 28 points on the line across three rounds: 18 holes of Better Ball in the morning, 9 holes of Singles after lunch, and 9 holes of Alternate Shot to close. The night before, both teams gathered at The Flying Pig in Malvern for drinks and the ceremonial unveiling of pairings. On the course, Ben Etherington was sensational, earning MVP honors as Team Philly cruised to a 17.5–10.5 victory. Behind the scenes, the roster had undergone a quiet revolution — Captain Shanahan had reshuffled Team Philly's lineup, a move that prompted Vice Captain Pat Shanahan to observe: 'Going scorched earth.' Matt Hopkins, now at Wells Fargo, served as Team DC's Captain and Co-Chair. The Goblet was heading back to Philadelphia.",
+      "notes": "The 3rd Edition marked the FFI's arrival as a legitimate institution. For the first time, a full tournament program was produced — complete with matchup writeups, course guides, and the kind of commentary that would become an FFI hallmark. The action took place entirely at Applebrook, with 28 points on the line across three rounds: 18 holes of Better Ball in the morning, 9 holes of Singles after lunch, and 9 holes of Alternate Shot to close. The night before, both teams gathered at The Flying Pig in Malvern for drinks and the ceremonial unveiling of pairings. On the course, Ben Etherington was sensational, earning MVP honors as Team Philly cruised to a 17.5–10.5 victory. Behind the scenes, the roster had undergone a quiet revolution — Captain Shanahan had reshuffled Team Philly's lineup, a move that prompted Vice Captain Pat Shanahan to observe: 'Going scorched earth.' Matt Hopkins served as Team DC's Captain. The Founding Fathers Cup, newly made for this edition, had found its first home in Philadelphia.",
       "weather": "Cool mid-October day in Malvern, PA. High of 59°F, low of 36°F. Crisp fall golf weather."
     },
     {
@@ -187,55 +550,200 @@
       "edition": 4,
       "displayYear": "2020",
       "hostCity": "dc",
-      "courses": ["Chevy Chase Club", "Columbia Country Club"],
+      "courses": [
+        "Chevy Chase Club",
+        "Columbia Country Club"
+      ],
       "date": "October 1, 2020",
-      "score": {"philly": 9.5, "dc": 14.5},
+      "score": {
+        "philly": 9.5,
+        "dc": 14.5
+      },
       "champion": "dc",
-      "mvp": {"name": "Matt Hopkins", "team": "dc"},
-      "patShanahanAward": null,
+      "mvp": {
+        "name": "Matt Hopkins",
+        "team": "dc"
+      },
+      "patShanahanAward": {
+        "name": "Pat Shanahan",
+        "team": "philly"
+      },
       "format": {
         "rounds": [
-          {"name": "Round 1", "type": "Fourball", "holes": 18, "points": 12, "course": "Chevy Chase Club"},
-          {"name": "Round 2", "type": "Fourball", "holes": 9, "points": 4, "course": "Columbia Country Club"},
-          {"name": "Round 3", "type": "Singles", "holes": 9, "points": 8, "course": "Columbia Country Club"}
+          {
+            "name": "Round 1",
+            "type": "Fourball",
+            "holes": 18,
+            "points": 12,
+            "course": "Chevy Chase Club"
+          },
+          {
+            "name": "Round 2",
+            "type": "Fourball",
+            "holes": 9,
+            "points": 4,
+            "course": "Columbia Country Club"
+          },
+          {
+            "name": "Round 3",
+            "type": "Singles",
+            "holes": 9,
+            "points": 8,
+            "course": "Columbia Country Club"
+          }
         ],
         "totalPoints": 24,
         "handicapRule": "100% handicaps",
         "entryFee": 200,
-        "prizePool": null
+        "prizePool": 1600
       },
       "teamPhilly": [
-        {"name": "Jeff Shanahan", "role": "Captain", "handicap": 0.9, "record": "2-1"},
-        {"name": "Pat Shanahan", "role": "Vice Captain", "handicap": -3.0, "record": "2-1"},
-        {"name": "Will Mundy", "role": "Secretary", "handicap": 17.2, "record": "1-1"},
-        {"name": "Brian Shevland", "handicap": 2.2, "record": "ROOKIE"},
-        {"name": "Ben Quereau", "handicap": 3.2, "record": "2-0"},
-        {"name": "Ben Etherington", "handicap": 6.8, "record": "2-1"},
-        {"name": "Rob Nathan", "handicap": 7.4, "record": "1-1"},
-        {"name": "Nick Aceto", "handicap": 15.9, "record": "ROOKIE"}
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain",
+          "handicap": 0.9,
+          "record": "2-1"
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Vice Captain",
+          "handicap": -3,
+          "record": "2-1"
+        },
+        {
+          "name": "Will Mundy",
+          "role": "Secretary",
+          "handicap": 17.2,
+          "record": "1-1"
+        },
+        {
+          "name": "Brian Shevland",
+          "handicap": 2.2,
+          "record": "ROOKIE"
+        },
+        {
+          "name": "Ben Quereau",
+          "handicap": 3.2,
+          "record": "2-0"
+        },
+        {
+          "name": "Ben Etherington",
+          "handicap": 6.8,
+          "record": "2-1"
+        },
+        {
+          "name": "Rob Nathan",
+          "handicap": 7.4,
+          "record": "1-1"
+        },
+        {
+          "name": "Nick Aceto",
+          "handicap": 15.9,
+          "record": "ROOKIE"
+        }
       ],
       "teamDC": [
-        {"name": "Matt Hopkins", "role": "Captain", "handicap": 13.6, "record": "1-2"},
-        {"name": "Brendan Delany", "role": "Vice Captain", "handicap": 17.9, "record": "1-2"},
-        {"name": "Jon Carr", "role": "Secretary", "handicap": 5.3, "record": "1-2"},
-        {"name": "Chris Connolly", "handicap": -0.7, "record": "1-1"},
-        {"name": "Sean Keegan", "handicap": 0.4, "record": "1-1"},
-        {"name": "Roland Miller", "handicap": 4.7, "record": "1-1"},
-        {"name": "Devin Tuohey", "handicap": 10.4, "record": "1-2"},
-        {"name": "Vince Burke", "handicap": 13.2, "record": "1-2"}
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain",
+          "handicap": 13.6,
+          "record": "1-2"
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Vice Captain",
+          "handicap": 17.9,
+          "record": "1-2"
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Secretary",
+          "handicap": 5.3,
+          "record": "1-2"
+        },
+        {
+          "name": "Chris Connolly",
+          "handicap": -0.7,
+          "record": "1-1"
+        },
+        {
+          "name": "Sean Keegan",
+          "handicap": 0.4,
+          "record": "1-1"
+        },
+        {
+          "name": "Roland Miller",
+          "handicap": 4.7,
+          "record": "1-1"
+        },
+        {
+          "name": "Devin Tuohey",
+          "handicap": 10.4,
+          "record": "1-2"
+        },
+        {
+          "name": "Vince Burke",
+          "handicap": 13.2,
+          "record": "1-2"
+        }
       ],
       "schedule": [
-        {"date": "Sep 30", "time": "12:48PM", "event": "Practice Round", "location": "Chevy Chase Club"},
-        {"date": "Sep 30", "time": "6:30PM", "event": "1st Annual Crabfeast", "location": "Hopkins Homestead"},
-        {"date": "Oct 1", "time": "7:00AM", "event": "Breakfast", "location": "Chevy Chase Club"},
-        {"date": "Oct 1", "time": "8:00AM", "event": "FFI 2020 Begins - Round 1 Fourball", "location": "Chevy Chase Club"},
-        {"date": "Oct 1", "time": "12:30PM", "event": "Lunch", "location": "Chevy Chase Club Patio"},
-        {"date": "Oct 1", "time": "1:40PM", "event": "Round 2 Fourball (9 holes)", "location": "Columbia Country Club"},
-        {"date": "Oct 1", "time": "TBD", "event": "Round 3 Singles (9 holes)", "location": "Columbia Country Club"},
-        {"date": "Oct 1", "time": "5:40PM", "event": "Cocktails of Champions", "location": "Columbia CC Patio"},
-        {"date": "Oct 1", "time": "8:00PM", "event": "Champions Dinner & Awards", "location": "Columbia CC Terrace Room"}
+        {
+          "date": "Sep 30",
+          "time": "12:48PM",
+          "event": "Practice Round",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Sep 30",
+          "time": "6:30PM",
+          "event": "1st Annual Crabfeast",
+          "location": "Hopkins Homestead"
+        },
+        {
+          "date": "Oct 1",
+          "time": "7:00AM",
+          "event": "Breakfast",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Oct 1",
+          "time": "8:00AM",
+          "event": "FFI 2020 Begins - Round 1 Fourball",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Oct 1",
+          "time": "12:30PM",
+          "event": "Lunch",
+          "location": "Chevy Chase Club Patio"
+        },
+        {
+          "date": "Oct 1",
+          "time": "1:40PM",
+          "event": "Round 2 Fourball (9 holes)",
+          "location": "Columbia Country Club"
+        },
+        {
+          "date": "Oct 1",
+          "time": "TBD",
+          "event": "Round 3 Singles (9 holes)",
+          "location": "Columbia Country Club"
+        },
+        {
+          "date": "Oct 1",
+          "time": "5:40PM",
+          "event": "Cocktails of Champions",
+          "location": "Columbia CC Patio"
+        },
+        {
+          "date": "Oct 1",
+          "time": "8:00PM",
+          "event": "Champions Dinner & Awards",
+          "location": "Columbia CC Terrace Room"
+        }
       ],
-      "notes": "The year was 2020, and nothing was normal — including the FFI. COVID protocols were in full effect, but the show went on. The 4th Edition brought the tournament back to DC for a two-venue affair: 18 holes of Fourball at Chevy Chase Club in the morning, followed by 9 holes of Fourball and 9 holes of Singles at Columbia Country Club in the afternoon. The night before, Team DC hosted the 1st Annual Crabfeast at the Hopkins Homestead — a tradition that would stick. Two rookies made their FFI debuts: Brian Shevland and Nick Aceto for Team Philly. It would be remembered as the 'Caddy Massacre' year (the details of which remain classified). Matt Hopkins, the hometown Captain, earned MVP honors as Team DC won 14.5–9.5, extending their Cup hold and pushing the series lead to 3–1. Team Philly's bus ride home was reportedly a quiet one.",
+      "notes": "The year was 2020, and nothing was normal — including the FFI. COVID protocols were in full effect, but the show went on. The 4th Edition brought the tournament back to DC for a two-venue affair: 18 holes of Fourball at Chevy Chase Club in the morning, followed by 9 holes of Fourball and 9 holes of Singles at Columbia Country Club in the afternoon. The night before, Team DC hosted the 1st Annual Crabfeast at the Hopkins Homestead — a tradition that would stick. Two rookies made their FFI debuts: Brian Shevland and Nick Aceto for Team Philly. It would be remembered as the 'Caddy Massacre' year (the details of which remain classified). Matt Hopkins, the hometown Captain, earned MVP honors as Team DC won 14.5–9.5, evening the series at two apiece. Team Philly's bus ride home was reportedly a quiet one.",
       "weather": "Pleasant early October conditions. Highs around 70°F with comfortable temperatures throughout the day."
     },
     {
@@ -243,17 +751,43 @@
       "edition": 5,
       "displayYear": "2021",
       "hostCity": "philly",
-      "courses": ["Applebrook Golf Club"],
+      "courses": [
+        "Applebrook Golf Club"
+      ],
       "date": "October 15, 2021",
-      "score": {"philly": 13, "dc": 15},
+      "score": {
+        "philly": 13,
+        "dc": 15
+      },
       "champion": "dc",
-      "mvp": {"name": "Devin Tuohey", "team": "dc"},
-      "patShanahanAward": null,
+      "mvp": {
+        "name": "Devin Tuohey",
+        "team": "dc"
+      },
+      "patShanahanAward": {
+        "name": "Pat Shanahan",
+        "team": "philly"
+      },
       "format": {
         "rounds": [
-          {"name": "Match 1", "type": "Team Better Ball", "holes": 18, "points": 12},
-          {"name": "Match 2", "type": "Team Better Ball", "holes": 9, "points": 8},
-          {"name": "Match 3", "type": "Team Alternate Shot", "holes": 9, "points": 8}
+          {
+            "name": "Match 1",
+            "type": "Team Better Ball",
+            "holes": 18,
+            "points": 12
+          },
+          {
+            "name": "Match 2",
+            "type": "Team Better Ball",
+            "holes": 9,
+            "points": 8
+          },
+          {
+            "name": "Match 3",
+            "type": "Team Alternate Shot",
+            "holes": 9,
+            "points": 8
+          }
         ],
         "totalPoints": 28,
         "handicapRule": "90% for Better Ball, 30% combined for Alt Shot",
@@ -261,35 +795,124 @@
         "prizePool": 1600
       },
       "teamPhilly": [
-        {"name": "Jeff Shanahan", "role": "Captain", "handicap": 2.1},
-        {"name": "Pat Shanahan", "role": "Vice Captain", "handicap": -1.1},
-        {"name": "Will Mundy", "role": "Secretary", "handicap": 16.5},
-        {"name": "Bear Barton", "handicap": 3.1},
-        {"name": "Nick Aceto", "handicap": 16.3},
-        {"name": "Luke Etherington", "handicap": 4.9},
-        {"name": "Ben Etherington", "handicap": 7.2},
-        {"name": "Rob Nathan", "handicap": 7.7}
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain",
+          "handicap": 2.1
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Vice Captain",
+          "handicap": -1.1
+        },
+        {
+          "name": "Will Mundy",
+          "role": "Secretary",
+          "handicap": 16.5
+        },
+        {
+          "name": "Bear Barton",
+          "handicap": 3.1
+        },
+        {
+          "name": "Nick Aceto",
+          "handicap": 16.3
+        },
+        {
+          "name": "Luke Etherington",
+          "handicap": 4.9
+        },
+        {
+          "name": "Ben Etherington",
+          "handicap": 7.2
+        },
+        {
+          "name": "Rob Nathan",
+          "handicap": 7.7
+        }
       ],
       "teamDC": [
-        {"name": "Matt Hopkins", "role": "Captain", "handicap": 12.5},
-        {"name": "Brendan Delany", "role": "Vice Captain", "handicap": 19.1},
-        {"name": "Jon Carr", "role": "Secretary", "handicap": 4.1},
-        {"name": "Vince Burke", "handicap": 10.3},
-        {"name": "Chris Connolly", "handicap": 1},
-        {"name": "Sean Keegan", "handicap": 0.4},
-        {"name": "Devin Tuohey", "handicap": 11.6},
-        {"name": "Roland Miller", "handicap": 4.7}
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain",
+          "handicap": 12.5
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Vice Captain",
+          "handicap": 19.1
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Secretary",
+          "handicap": 4.1
+        },
+        {
+          "name": "Vince Burke",
+          "handicap": 10.3
+        },
+        {
+          "name": "Michael Kearns",
+          "handicap": 1
+        },
+        {
+          "name": "Sean Keegan",
+          "handicap": 0.4
+        },
+        {
+          "name": "Devin Tuohey",
+          "handicap": 11.6
+        },
+        {
+          "name": "Ben Fritz",
+          "handicap": 4.7
+        }
       ],
       "schedule": [
-        {"date": "Oct 14", "time": "6:00PM", "event": "Captain's Dinner", "location": "Dutton's Barn"},
-        {"date": "Oct 15", "time": "7:00AM", "event": "Breakfast", "location": "Applebrook"},
-        {"date": "Oct 15", "time": "8:20AM", "event": "Match 1 - Better Ball (18 holes)", "location": "Applebrook"},
-        {"date": "Oct 15", "time": "12:30PM", "event": "Lunch", "location": "Applebrook Patio"},
-        {"date": "Oct 15", "time": "1:50PM", "event": "Match 2 - Better Ball (9 holes)", "location": "Applebrook"},
-        {"date": "Oct 15", "time": "TBD", "event": "Match 3 - Alternate Shot (9 holes)", "location": "Applebrook"},
-        {"date": "Oct 15", "time": "7:00PM", "event": "Dinner", "location": "Applebrook"}
+        {
+          "date": "Oct 14",
+          "time": "6:00PM",
+          "event": "Captain's Dinner",
+          "location": "Dutton's Barn"
+        },
+        {
+          "date": "Oct 15",
+          "time": "7:00AM",
+          "event": "Breakfast",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 15",
+          "time": "8:20AM",
+          "event": "Match 1 - Better Ball (18 holes)",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 15",
+          "time": "12:30PM",
+          "event": "Lunch",
+          "location": "Applebrook Patio"
+        },
+        {
+          "date": "Oct 15",
+          "time": "1:50PM",
+          "event": "Match 2 - Better Ball (9 holes)",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 15",
+          "time": "TBD",
+          "event": "Match 3 - Alternate Shot (9 holes)",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 15",
+          "time": "7:00PM",
+          "event": "Dinner",
+          "location": "Applebrook"
+        }
       ],
-      "notes": "The 5th Edition returned to Philadelphia with Team Philly desperate to stop the bleeding — DC had won three straight. All 36 holes were played at Applebrook after deliberation with Team DC, and the format featured two rounds of Better Ball bookending an Alternate Shot closer. The Captain's Dinner was held at Dutton's Barn the night before, where Eagles vs. Buccaneers played on the screens — a fitting backdrop for a room full of men about to go to war. The program announced roster shakeups for Team DC: Michael Kearns and Ben Fritz were added, reportedly replacing Connolly and Miller, though both Connolly and Miller mysteriously appeared on the welcome letter roster anyway. Make of that what you will. On the course, it was Devin Tuohey who stole the show, earning MVP as Team DC pulled out a 15–13 nail-biter. Four straight for DC. The Goblet remained in Washington, and Team Philly was left wondering if they'd ever see it again.",
+      "notes": "The 5th Edition returned to Philadelphia with the series knotted at two apiece. After deliberation with Team DC leadership, all 36 holes were played at Applebrook, and the format featured 18 holes of Better Ball in the morning, 9 holes of Better Ball after lunch, and 9 holes of Alternate Shot to close. The Captain's Dinner was held at Dutton's Barn the night before, where Eagles vs. Buccaneers played on the screens — a fitting backdrop for a room full of men about to go to war. Team DC announced roster shakeups via formal press release: Michael Kearns and Ben Fritz were added, replacing Connolly and Miller, who reportedly sprained their pinkie toes on a fox hunt at Chevy Chase Club. On the course, it was Devin Tuohey who stole the show, earning MVP as Team DC pulled out a 15–13 nail-biter. DC now led the series 3–2, and the Goblet remained in Washington.",
       "weather": "Beautiful mid-October day. High of 73°F, low of 45°F. Warm for the season with ideal golf conditions."
     },
     {
@@ -297,54 +920,190 @@
       "edition": 6,
       "displayYear": "2022",
       "hostCity": "dc",
-      "courses": ["Columbia Country Club", "Chevy Chase Club"],
+      "courses": [
+        "Columbia Country Club",
+        "Chevy Chase Club"
+      ],
       "date": "October 7, 2022",
-      "score": {"philly": 11, "dc": 21},
+      "score": {
+        "philly": 11,
+        "dc": 21
+      },
       "champion": "dc",
-      "mvp": {"name": "Brendan Delany", "team": "dc"},
-      "patShanahanAward": null,
+      "mvp": {
+        "name": "Brendan Delany",
+        "team": "dc"
+      },
+      "patShanahanAward": {
+        "name": "Pat Shanahan",
+        "team": "philly"
+      },
       "format": {
         "rounds": [
-          {"name": "Match 1", "type": "Fourball", "holes": 18, "points": 12, "course": "Columbia Country Club"},
-          {"name": "Match 2", "type": "Fourball Closeout", "holes": 9, "points": "8-12", "course": "Chevy Chase Club"},
-          {"name": "Match 3", "type": "Singles", "holes": 9, "points": 8, "course": "Chevy Chase Club"}
+          {
+            "name": "Match 1",
+            "type": "Fourball",
+            "holes": 18,
+            "points": 12,
+            "course": "Columbia Country Club"
+          },
+          {
+            "name": "Match 2",
+            "type": "Fourball Closeout",
+            "holes": 9,
+            "points": "8-12",
+            "course": "Chevy Chase Club"
+          },
+          {
+            "name": "Match 3",
+            "type": "Singles",
+            "holes": 9,
+            "points": 8,
+            "course": "Chevy Chase Club"
+          }
         ],
         "totalPoints": "28-32",
         "handicapRule": "Per program",
         "entryFee": 250,
-        "prizePool": null
+        "prizePool": 2000
       },
       "teamPhilly": [
-        {"name": "Jeff Shanahan", "role": "Captain", "handicap": 1.4, "lowIndex": 0.5},
-        {"name": "Pat Shanahan", "role": "Alt Captain/CFO", "handicap": -1.0, "lowIndex": -1.5},
-        {"name": "Will Mundy", "role": "COO, Perm Interim", "handicap": 15.9},
-        {"name": "Ben Etherington", "handicap": 6.6, "lowIndex": 6.2},
-        {"name": "Luke Etherington", "handicap": 5.6, "lowIndex": 4.9},
-        {"name": "Bear Barton", "handicap": 5.7, "lowIndex": 3.1},
-        {"name": "Murphy Barton", "handicap": 2.8},
-        {"name": "Mark Kurd", "handicap": 5.3, "lowIndex": 5.0}
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain",
+          "handicap": 1.4,
+          "lowIndex": 0.5
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Alt Captain/CFO",
+          "handicap": -1,
+          "lowIndex": -1.5
+        },
+        {
+          "name": "Will Mundy",
+          "role": "COO, Perm Interim",
+          "handicap": 15.9
+        },
+        {
+          "name": "Ben Etherington",
+          "handicap": 6.6,
+          "lowIndex": 6.2
+        },
+        {
+          "name": "Luke Etherington",
+          "handicap": 5.6,
+          "lowIndex": 4.9
+        },
+        {
+          "name": "Bear Barton",
+          "handicap": 5.7,
+          "lowIndex": 3.1
+        },
+        {
+          "name": "Murphy Barton",
+          "handicap": 2.8
+        },
+        {
+          "name": "Mark Kurd",
+          "handicap": 5.3,
+          "lowIndex": 5
+        }
       ],
       "teamDC": [
-        {"name": "Matt Hopkins", "role": "Captain", "handicap": 11.5, "lowIndex": 10.8},
-        {"name": "Brendan Delany", "role": "Alt Captain", "handicap": 19.0, "lowIndex": 18.9},
-        {"name": "Jon Carr", "role": "Director, Player Personnel", "handicap": 3.3},
-        {"name": "Vince Burke", "handicap": 11.5},
-        {"name": "Chris Connolly", "handicap": 0.2, "lowIndex": -0.7},
-        {"name": "Sean Keegan", "handicap": 1.0, "lowIndex": 0.4},
-        {"name": "Roland Miller", "handicap": 5.8, "lowIndex": 4.7},
-        {"name": "Devin Tuohey", "handicap": 10.1, "lowIndex": 9.5}
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain",
+          "handicap": 11.5,
+          "lowIndex": 10.8
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Alt Captain",
+          "handicap": 19,
+          "lowIndex": 18.9
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Director, Player Personnel",
+          "handicap": 3.3
+        },
+        {
+          "name": "Vince Burke",
+          "handicap": 11.5
+        },
+        {
+          "name": "Chris Connolly",
+          "handicap": 0.2,
+          "lowIndex": -0.7
+        },
+        {
+          "name": "Sean Keegan",
+          "handicap": 1,
+          "lowIndex": 0.4
+        },
+        {
+          "name": "Roland Miller",
+          "handicap": 5.8,
+          "lowIndex": 4.7
+        },
+        {
+          "name": "Devin Tuohey",
+          "handicap": 10.1,
+          "lowIndex": 9.5
+        }
       ],
       "schedule": [
-        {"date": "Oct 6", "time": "12:50PM", "event": "Exhibition Round", "location": "Chevy Chase Club"},
-        {"date": "Oct 6", "time": "7:00PM", "event": "Cocktails/Dinner", "location": "Casa De Hopkins"},
-        {"date": "Oct 7", "time": "7:15AM", "event": "Warm-up", "location": "Columbia Country Club"},
-        {"date": "Oct 7", "time": "8:00AM", "event": "Match 1 - Fourball (18 holes)", "location": "Columbia Country Club"},
-        {"date": "Oct 7", "time": "1:00PM", "event": "Lunch", "location": "Chevy Chase Club Tap Room"},
-        {"date": "Oct 7", "time": "1:48PM", "event": "Match 2 - Fourball Closeout (9 holes)", "location": "Chevy Chase Club"},
-        {"date": "Oct 7", "time": "B9", "event": "Match 3 - Singles (9 holes)", "location": "Chevy Chase Club"},
-        {"date": "Oct 7", "time": "TBD", "event": "Champions Dinner", "location": "Chevy Chase Club Tap Room"}
+        {
+          "date": "Oct 6",
+          "time": "12:50PM",
+          "event": "Exhibition Round",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Oct 6",
+          "time": "7:00PM",
+          "event": "Cocktails/Dinner",
+          "location": "Casa De Hopkins"
+        },
+        {
+          "date": "Oct 7",
+          "time": "7:15AM",
+          "event": "Warm-up",
+          "location": "Columbia Country Club"
+        },
+        {
+          "date": "Oct 7",
+          "time": "8:00AM",
+          "event": "Match 1 - Fourball (18 holes)",
+          "location": "Columbia Country Club"
+        },
+        {
+          "date": "Oct 7",
+          "time": "1:00PM",
+          "event": "Lunch",
+          "location": "Chevy Chase Club Tap Room"
+        },
+        {
+          "date": "Oct 7",
+          "time": "1:48PM",
+          "event": "Match 2 - Fourball Closeout (9 holes)",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Oct 7",
+          "time": "B9",
+          "event": "Match 3 - Singles (9 holes)",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Oct 7",
+          "time": "TBD",
+          "event": "Champions Dinner",
+          "location": "Chevy Chase Club Tap Room"
+        }
       ],
-      "notes": "There are losses, there are blowouts, and then there is the 6th Edition. Team DC delivered the most lopsided result in FFI history — a 21–11 demolition across Columbia Country Club and Chevy Chase Club. Brendan Delany, the perennial Vice Captain with an 18+ handicap and a flair for the dramatic, was named MVP in what remains one of the great underdog performances in tournament lore. Team Philly had made roster moves: Murphy Barton (Bear's brother) and Mark 'Dr. Beeper' Kurd made their FFI debuts, while Rob Nathan was notably absent. The exhibition round the day before had been played at Chevy Chase, followed by cocktails and dinner at Casa De Hopkins. None of it helped. The bus ride home to Philadelphia reportedly caused 'major changes' — the kind of organizational soul-searching that precedes either a dynasty or a complete implosion. The Goblet stayed in DC for a fifth consecutive year.",
+      "notes": "There are losses, there are blowouts, and then there is the 6th Edition. Team DC delivered the most lopsided result in FFI history — a 21–11 demolition across Columbia Country Club and Chevy Chase Club. Brendan Delany, the perennial Vice Captain with an 18+ handicap and a flair for the dramatic, was named MVP in what remains one of the great underdog performances in tournament lore. Team Philly had made roster moves: Murphy Barton (Bear's brother) and Mark 'Dr. Beeper' Kurd made their FFI debuts, while Rob Nathan was notably absent. None of it helped. The bus ride home to Philadelphia reportedly caused major changes — the kind of organizational soul-searching that precedes either a dynasty or a complete implosion. DC now led the series 4–2, and the Goblet showed no signs of leaving Washington.",
       "weather": "Cool early October in Chevy Chase, MD. High of 66°F, low of 52°F. Below-average temperatures but dry."
     },
     {
@@ -352,16 +1111,40 @@
       "edition": 7,
       "displayYear": "2023",
       "hostCity": "philly",
-      "courses": ["Applebrook Golf Club", "Aronimink Golf Club"],
+      "courses": [
+        "Applebrook Golf Club",
+        "Aronimink Golf Club"
+      ],
       "date": "October 12-13, 2023",
-      "score": {"philly": null, "dc": null, "displayScore": "A lot - A Lil"},
+      "score": {
+        "philly": null,
+        "dc": null,
+        "displayScore": "A lot - A Lil"
+      },
       "champion": "philly",
-      "mvp": {"name": "Ben Quereau", "team": "philly"},
+      "mvp": {
+        "name": "Ben Quereau",
+        "team": "philly"
+      },
       "patShanahanAward": null,
       "format": {
         "rounds": [
-          {"name": "Morning", "type": "Team Better Ball", "holes": 18, "points": 12, "course": "Applebrook Golf Club", "pointsBreakdown": "3 pts per match: front + back + total"},
-          {"name": "Afternoon", "type": "Team Better Ball", "holes": 18, "points": 16, "course": "Aronimink Golf Club", "pointsBreakdown": "4 pts per match: 1 front, 2 back, 1 total"}
+          {
+            "name": "Morning",
+            "type": "Team Better Ball",
+            "holes": 18,
+            "points": 12,
+            "course": "Applebrook Golf Club",
+            "pointsBreakdown": "3 pts per match: front + back + total"
+          },
+          {
+            "name": "Afternoon",
+            "type": "Team Better Ball",
+            "holes": 18,
+            "points": 16,
+            "course": "Aronimink Golf Club",
+            "pointsBreakdown": "4 pts per match: 1 front, 2 back, 1 total"
+          }
         ],
         "totalPoints": 28,
         "handicapRule": "80% of course handicap, played off the lowest handicap in the group",
@@ -369,57 +1152,250 @@
         "prizePool": 2400
       },
       "teamPhilly": [
-        {"name": "Jeff Shanahan", "role": "Captain", "handicap": 2.4},
-        {"name": "Pat Shanahan", "role": "Vice Captain", "handicap": -1.9},
-        {"name": "Will Mundy", "role": "Secretary", "handicap": 14.9},
-        {"name": "Bear Barton", "handicap": 6.5},
-        {"name": "Ben Quereau", "handicap": 3.0},
-        {"name": "Luke Etherington", "handicap": 4.4},
-        {"name": "Ben Etherington", "handicap": 6.0},
-        {"name": "Rob Nathan", "handicap": 11.0}
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain",
+          "handicap": 2.4
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Vice Captain",
+          "handicap": -1.9
+        },
+        {
+          "name": "Will Mundy",
+          "role": "Secretary",
+          "handicap": 14.9
+        },
+        {
+          "name": "Bear Barton",
+          "handicap": 6.5
+        },
+        {
+          "name": "Ben Quereau",
+          "handicap": 3
+        },
+        {
+          "name": "Luke Etherington",
+          "handicap": 4.4
+        },
+        {
+          "name": "Ben Etherington",
+          "handicap": 6
+        },
+        {
+          "name": "Rob Nathan",
+          "handicap": 11
+        }
       ],
       "teamDC": [
-        {"name": "Matt Hopkins", "role": "Captain", "handicap": 10.9},
-        {"name": "Brendan Delany", "role": "Vice Captain", "handicap": 18.3},
-        {"name": "Jon Carr", "role": "Secretary", "handicap": 2.9},
-        {"name": "Vince Burke", "handicap": 10.7},
-        {"name": "Chris Connolly", "handicap": 1.0},
-        {"name": "Sean Keegan", "handicap": 1.9},
-        {"name": "Devin Tuohey", "handicap": 10.8},
-        {"name": "Roland Miller", "handicap": 4.0}
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain",
+          "handicap": 10.9
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Vice Captain",
+          "handicap": 18.3
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Secretary",
+          "handicap": 2.9
+        },
+        {
+          "name": "Vince Burke",
+          "handicap": 10.7
+        },
+        {
+          "name": "Chris Connolly",
+          "handicap": 1
+        },
+        {
+          "name": "Sean Keegan",
+          "handicap": 1.9
+        },
+        {
+          "name": "Devin Tuohey",
+          "handicap": 10.8
+        },
+        {
+          "name": "Roland Miller",
+          "handicap": 4
+        }
       ],
       "matches": [
         {
-          "round": 1, "type": "Team Better Ball", "course": "Applebrook Golf Club", "holes": 18,
+          "round": 1,
+          "type": "Team Better Ball",
+          "course": "Applebrook Golf Club",
+          "holes": 18,
           "pairings": [
-            {"group": 1, "philly": ["Ben Etherington", "Pat Shanahan"], "dc": ["Matt Hopkins", "Roland Miller"], "teeTime": "8:00AM"},
-            {"group": 2, "philly": ["Jeff Shanahan", "Ben Quereau"], "dc": ["Jon Carr", "Devin Tuohey"], "teeTime": "8:10AM"},
-            {"group": 3, "philly": ["Luke Etherington", "Rob Nathan"], "dc": ["Chris Connolly", "Vince Burke"], "teeTime": "8:20AM"},
-            {"group": 4, "philly": ["Bear Barton", "Will Mundy"], "dc": ["Brendan Delany", "Sean Keegan"], "teeTime": "8:30AM"}
+            {
+              "group": 1,
+              "philly": [
+                "Ben Etherington",
+                "Pat Shanahan"
+              ],
+              "dc": [
+                "Matt Hopkins",
+                "Roland Miller"
+              ],
+              "teeTime": "8:00AM"
+            },
+            {
+              "group": 2,
+              "philly": [
+                "Jeff Shanahan",
+                "Ben Quereau"
+              ],
+              "dc": [
+                "Jon Carr",
+                "Devin Tuohey"
+              ],
+              "teeTime": "8:10AM"
+            },
+            {
+              "group": 3,
+              "philly": [
+                "Luke Etherington",
+                "Rob Nathan"
+              ],
+              "dc": [
+                "Chris Connolly",
+                "Vince Burke"
+              ],
+              "teeTime": "8:20AM"
+            },
+            {
+              "group": 4,
+              "philly": [
+                "Bear Barton",
+                "Will Mundy"
+              ],
+              "dc": [
+                "Brendan Delany",
+                "Sean Keegan"
+              ],
+              "teeTime": "8:30AM"
+            }
           ]
         },
         {
-          "round": 2, "type": "Team Better Ball", "course": "Aronimink Golf Club", "holes": 18,
+          "round": 2,
+          "type": "Team Better Ball",
+          "course": "Aronimink Golf Club",
+          "holes": 18,
           "pairings": [
-            {"group": 1, "philly": ["Pat Shanahan", "Jeff Shanahan"], "dc": ["Sean Keegan", "Chris Connolly"], "teeTime": "1:36PM"},
-            {"group": 2, "philly": ["Will Mundy", "Rob Nathan"], "dc": ["Devin Tuohey", "Matt Hopkins"], "teeTime": "1:48PM"},
-            {"group": 3, "philly": ["Ben Quereau", "Ben Etherington"], "dc": ["Vince Burke", "Roland Miller"], "teeTime": "2:00PM"},
-            {"group": 4, "philly": ["Luke Etherington", "Bear Barton"], "dc": ["Brendan Delany", "Jon Carr"], "teeTime": "2:12PM"}
+            {
+              "group": 1,
+              "philly": [
+                "Pat Shanahan",
+                "Jeff Shanahan"
+              ],
+              "dc": [
+                "Sean Keegan",
+                "Chris Connolly"
+              ],
+              "teeTime": "1:36PM"
+            },
+            {
+              "group": 2,
+              "philly": [
+                "Will Mundy",
+                "Rob Nathan"
+              ],
+              "dc": [
+                "Devin Tuohey",
+                "Matt Hopkins"
+              ],
+              "teeTime": "1:48PM"
+            },
+            {
+              "group": 3,
+              "philly": [
+                "Ben Quereau",
+                "Ben Etherington"
+              ],
+              "dc": [
+                "Vince Burke",
+                "Roland Miller"
+              ],
+              "teeTime": "2:00PM"
+            },
+            {
+              "group": 4,
+              "philly": [
+                "Luke Etherington",
+                "Bear Barton"
+              ],
+              "dc": [
+                "Brendan Delany",
+                "Jon Carr"
+              ],
+              "teeTime": "2:12PM"
+            }
           ]
         }
       ],
       "schedule": [
-        {"date": "Oct 12", "time": "11:30AM", "event": "Lunch", "location": "Aronimink"},
-        {"date": "Oct 12", "time": "12:30PM", "event": "Aronimink One Day Member Guest Oktoberfest (Shotgun)", "location": "Aronimink"},
-        {"date": "Oct 12", "time": "5:30PM", "event": "Dinner and Drinks", "location": "Aronimink Golf Patio"},
-        {"date": "Oct 12", "time": "7:30PM", "event": "Everly's After Party", "location": "Everly's Barn"},
-        {"date": "Oct 13", "time": "7:00AM", "event": "Breakfast", "location": "Applebrook"},
-        {"date": "Oct 13", "time": "8:00AM", "event": "Match 1 - Better Ball (18 holes)", "location": "Applebrook"},
-        {"date": "Oct 13", "time": "12:30PM", "event": "Lunch", "location": "Aronimink Golf Patio"},
-        {"date": "Oct 13", "time": "1:36PM", "event": "Match 2 - Better Ball (18 holes)", "location": "Aronimink"},
-        {"date": "Oct 13", "time": "7:00PM", "event": "Dinner", "location": "Aronimink"}
+        {
+          "date": "Oct 12",
+          "time": "11:30AM",
+          "event": "Lunch",
+          "location": "Aronimink"
+        },
+        {
+          "date": "Oct 12",
+          "time": "12:30PM",
+          "event": "Aronimink One Day Member Guest Oktoberfest (Shotgun)",
+          "location": "Aronimink"
+        },
+        {
+          "date": "Oct 12",
+          "time": "5:30PM",
+          "event": "Dinner and Drinks",
+          "location": "Aronimink Golf Patio"
+        },
+        {
+          "date": "Oct 12",
+          "time": "7:30PM",
+          "event": "Everly's After Party",
+          "location": "Everly's Barn"
+        },
+        {
+          "date": "Oct 13",
+          "time": "7:00AM",
+          "event": "Breakfast",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 13",
+          "time": "8:00AM",
+          "event": "Match 1 - Better Ball (18 holes)",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 13",
+          "time": "12:30PM",
+          "event": "Lunch",
+          "location": "Aronimink Golf Patio"
+        },
+        {
+          "date": "Oct 13",
+          "time": "1:36PM",
+          "event": "Match 2 - Better Ball (18 holes)",
+          "location": "Aronimink"
+        },
+        {
+          "date": "Oct 13",
+          "time": "7:00PM",
+          "event": "Dinner",
+          "location": "Aronimink"
+        }
       ],
-      "notes": "After four consecutive losses — including the 21–11 humiliation in DC — Team Philly arrived at the 7th Edition with something to prove. The format was stripped down to its purest form: two rounds of 18-hole Better Ball, no singles, no alternate shot. Morning at Applebrook, afternoon at Aronimink. The two-day event opened with lunch and the Aronimink One Day Member-Guest Oktoberfest on Wednesday, followed by the now-legendary after-party at Everly's Barn (the Etherington brothers' property). Team DC, staying in the Applebrook Club House, had won four straight and entered with a .571 all-time winning percentage. It didn't matter. Ben 'Two Gloves' Quereau — also known as 2G, Queso, and Q — was magnificent, earning MVP as Team Philly won decisively and snapped the longest losing streak in tournament history. The Goblet of Immortality was finally coming home to Philadelphia. The exact score remains a matter of some dispute ('A lot to a little,' per one Team Philly source).",
+      "notes": "After three consecutive losses — including the 21–11 humiliation in DC — Team Philly arrived at the 7th Edition with something to prove. The format was stripped down to its purest form: two rounds of 18-hole Better Ball, no singles, no alternate shot. Morning at Applebrook, afternoon at Aronimink. The two-day event opened with lunch and the Aronimink One Day Member-Guest Oktoberfest on Wednesday, followed by the after-party at Everly's Barn. Team DC, staying in the Applebrook Club House, had won three straight and entered with a .571 all-time winning percentage. It didn't matter. Ben 'Two Gloves' Quereau — also known as 2G, Queso, and Q — was magnificent, earning MVP as Team Philly won decisively and snapped the losing streak. The Goblet of Immortality was finally coming home to Philadelphia. The exact score remains a matter of some dispute ('A lot to a little,' per one Team Philly source).",
       "weather": "Mid-October in the Philadelphia area. Highs around 65°F with typical fall conditions."
     },
     {
@@ -427,57 +1403,207 @@
       "edition": 8,
       "displayYear": "2024",
       "hostCity": "dc",
-      "courses": ["Farmington Country Club"],
+      "courses": [
+        "Farmington Country Club"
+      ],
       "date": "October 10-11, 2024",
-      "score": {"philly": null, "dc": null},
-      "champion": null,
+      "score": {
+        "philly": null,
+        "dc": null
+      },
+      "champion": "dc",
       "mvp": null,
       "patShanahanAward": null,
       "format": {
         "rounds": [
-          {"name": "Match 1", "type": "Fourball Closeout", "holes": 18, "points": "24-32", "course": "Main Course"},
-          {"name": "Match 2", "type": "3C Challenge Exhibition", "holes": 10, "points": "Exhibition", "course": "East Course"},
-          {"name": "Match 3", "type": "Fourball Closeout", "holes": 18, "points": "24-32", "course": "Main Course"}
+          {
+            "name": "Match 1",
+            "type": "Fourball Closeout",
+            "holes": 18,
+            "points": "24-32",
+            "course": "Main Course"
+          },
+          {
+            "name": "Match 2",
+            "type": "3C Challenge Exhibition",
+            "holes": 10,
+            "points": "Exhibition",
+            "course": "East Course"
+          },
+          {
+            "name": "Match 3",
+            "type": "Fourball Closeout",
+            "holes": 18,
+            "points": "24-32",
+            "course": "Main Course"
+          }
         ],
         "handicapRule": "Fourball Closeout format with max 8 pts per match",
         "entryFee": 250,
-        "prizePool": null
+        "prizePool": 2000
       },
       "teamPhilly": [
-        {"name": "Jeff Shanahan", "role": "Captain", "handicap": 1.7, "lowIndex": 1.4},
-        {"name": "Pat Shanahan", "role": "Alt Captain/CFO", "handicap": -1.6, "lowIndex": -2.2},
-        {"name": "Will Mundy", "role": "COO, Perm Interim", "handicap": 17.1, "lowIndex": 14.7},
-        {"name": "Ben Etherington", "handicap": 6.3, "lowIndex": 5.8},
-        {"name": "Luke Etherington", "handicap": 5.9, "lowIndex": 4.4},
-        {"name": "Mark Kurd", "handicap": 4.4, "lowIndex": 4.1},
-        {"name": "Rob Nathan", "handicap": 9.4},
-        {"name": "Ben Quereau", "handicap": 0.6}
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain",
+          "handicap": 1.7,
+          "lowIndex": 1.4
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Alt Captain/CFO",
+          "handicap": -1.6,
+          "lowIndex": -2.2
+        },
+        {
+          "name": "Will Mundy",
+          "role": "COO, Perm Interim",
+          "handicap": 17.1,
+          "lowIndex": 14.7
+        },
+        {
+          "name": "Ben Etherington",
+          "handicap": 6.3,
+          "lowIndex": 5.8
+        },
+        {
+          "name": "Luke Etherington",
+          "handicap": 5.9,
+          "lowIndex": 4.4
+        },
+        {
+          "name": "Mark Kurd",
+          "handicap": 4.4,
+          "lowIndex": 4.1
+        },
+        {
+          "name": "Rob Nathan",
+          "handicap": 9.4
+        },
+        {
+          "name": "Ben Quereau",
+          "handicap": 0.6
+        }
       ],
       "teamDC": [
-        {"name": "Matt Hopkins", "role": "Captain", "handicap": 11.1, "lowIndex": 10.0},
-        {"name": "Brendan Delany", "role": "Alt Captain", "handicap": 18.8, "lowIndex": 17.5},
-        {"name": "Jon Carr", "role": "Manager, Logistics", "handicap": 4.7, "lowIndex": 2.6},
-        {"name": "Vince Burke", "handicap": 11.1},
-        {"name": "Chris Connolly", "handicap": 0.8, "lowIndex": 0.6},
-        {"name": "Sean Keegan", "handicap": 2.2, "lowIndex": 1.5},
-        {"name": "Roland Miller", "handicap": 5.5, "lowIndex": 3.9},
-        {"name": "Devin Tuohey", "handicap": 10.2, "lowIndex": 9.9}
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain",
+          "handicap": 11.1,
+          "lowIndex": 10
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Alt Captain",
+          "handicap": 18.8,
+          "lowIndex": 17.5
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Manager, Logistics",
+          "handicap": 4.7,
+          "lowIndex": 2.6
+        },
+        {
+          "name": "Vince Burke",
+          "handicap": 11.1
+        },
+        {
+          "name": "Chris Connolly",
+          "handicap": 0.8,
+          "lowIndex": 0.6
+        },
+        {
+          "name": "Sean Keegan",
+          "handicap": 2.2,
+          "lowIndex": 1.5
+        },
+        {
+          "name": "Roland Miller",
+          "handicap": 5.5,
+          "lowIndex": 3.9
+        },
+        {
+          "name": "Devin Tuohey",
+          "handicap": 10.2,
+          "lowIndex": 9.9
+        }
       ],
       "schedule": [
-        {"date": "Oct 10", "time": "9:15AM", "event": "CHO Arrival", "location": "Airport"},
-        {"date": "Oct 10", "time": "10:00AM", "event": "Breakfast/Warm-up", "location": "Farmington CC"},
-        {"date": "Oct 10", "time": "11:30AM", "event": "Official Pictures", "location": "Main Course 1st Tee"},
-        {"date": "Oct 10", "time": "11:40AM", "event": "Match 1 - Fourball (18 holes)", "location": "Farmington Main Course"},
-        {"date": "Oct 10", "time": "4:45PM", "event": "Exhibition - 3 Club Challenge", "location": "Farmington East Course"},
-        {"date": "Oct 10", "time": "6:30PM", "event": "Cocktails & Appetizers", "location": "Blue Ridge Terrace"},
-        {"date": "Oct 10", "time": "8:00PM", "event": "Seated Dinner", "location": "Pine Room"},
-        {"date": "Oct 11", "time": "7:30AM", "event": "Breakfast", "location": "Farmington Grill"},
-        {"date": "Oct 11", "time": "9:20AM", "event": "Match 3 - Fourball (18 holes)", "location": "Farmington Main Course"},
-        {"date": "Oct 11", "time": "1:15PM", "event": "Putting Contest", "location": "Farmington"},
-        {"date": "Oct 11", "time": "1:45PM", "event": "Lunch", "location": "Farmington"},
-        {"date": "Oct 11", "time": "4:00PM", "event": "Depart for CHO", "location": "Airport"}
+        {
+          "date": "Oct 10",
+          "time": "9:15AM",
+          "event": "CHO Arrival",
+          "location": "Airport"
+        },
+        {
+          "date": "Oct 10",
+          "time": "10:00AM",
+          "event": "Breakfast/Warm-up",
+          "location": "Farmington CC"
+        },
+        {
+          "date": "Oct 10",
+          "time": "11:30AM",
+          "event": "Official Pictures",
+          "location": "Main Course 1st Tee"
+        },
+        {
+          "date": "Oct 10",
+          "time": "11:40AM",
+          "event": "Match 1 - Fourball (18 holes)",
+          "location": "Farmington Main Course"
+        },
+        {
+          "date": "Oct 10",
+          "time": "4:45PM",
+          "event": "Exhibition - 3 Club Challenge",
+          "location": "Farmington East Course"
+        },
+        {
+          "date": "Oct 10",
+          "time": "6:30PM",
+          "event": "Cocktails & Appetizers",
+          "location": "Blue Ridge Terrace"
+        },
+        {
+          "date": "Oct 10",
+          "time": "8:00PM",
+          "event": "Seated Dinner",
+          "location": "Pine Room"
+        },
+        {
+          "date": "Oct 11",
+          "time": "7:30AM",
+          "event": "Breakfast",
+          "location": "Farmington Grill"
+        },
+        {
+          "date": "Oct 11",
+          "time": "9:20AM",
+          "event": "Match 3 - Fourball (18 holes)",
+          "location": "Farmington Main Course"
+        },
+        {
+          "date": "Oct 11",
+          "time": "1:15PM",
+          "event": "Putting Contest",
+          "location": "Farmington"
+        },
+        {
+          "date": "Oct 11",
+          "time": "1:45PM",
+          "event": "Lunch",
+          "location": "Farmington"
+        },
+        {
+          "date": "Oct 11",
+          "time": "4:00PM",
+          "event": "Depart for CHO",
+          "location": "Airport"
+        }
       ],
-      "notes": "The 8th Edition broke new ground — literally. For the first time, the FFI left the DC–Philly corridor entirely, venturing south to Farmington Country Club in Charlottesville, Virginia. The two-day format featured Fourball Closeout matches on both Thursday and Friday, with a 3-Club Challenge Exhibition sandwiched in between on Farmington's East Course. There were no caddies (a first), the 10th hole was closed for renovations (forcing creative routing), and the program included a hole-by-hole course guide that read like a travel magazine. Teams flew into Charlottesville Airport on Thursday morning, hit the ground running with breakfast and warm-ups, and were on the first tee by 11:40 AM. The evening featured cocktails on the Blue Ridge Terrace followed by a seated dinner in the Pine Room — a far cry from the bus rides and borrowed couches of earlier editions. Mark Kurd returned to the Team Philly roster, and Ben Quereau arrived with a 0.6 handicap, the lowest in FFI history. Results for this edition are still pending official confirmation.",
+      "notes": "The 8th Edition broke new ground — literally. For the first time, the FFI left the DC–Philly corridor entirely, venturing south to Farmington Country Club in Charlottesville, Virginia. The two-day format featured Fourball Closeout matches on both Thursday and Friday, with a 3-Club Challenge Exhibition sandwiched in between on Farmington's East Course. There were no caddies (a first), the 10th hole was closed for renovations (forcing creative routing), and the program included a hole-by-hole course guide that read like a travel magazine. Team Philly flew into Charlottesville Airport on Thursday morning, hit the ground running with breakfast and warm-ups, and were on the first tee by 11:40 AM. The evening featured cocktails on the Blue Ridge Terrace followed by a seated dinner in the Pine Room — a far cry from the bus rides and borrowed couches of earlier editions. Mark Kurd returned to the Team Philly roster, and Ben Quereau arrived with a 0.6 handicap, his lowest in FFI history. Results for this edition are still pending official confirmation.",
       "weather": "Early October in Charlottesville, VA. Highs around 70°F with pleasant autumn weather."
     },
     {
@@ -485,16 +1611,37 @@
       "edition": 9,
       "displayYear": "2025",
       "hostCity": "philly",
-      "courses": ["Gulph Mills Golf Club", "Aronimink Golf Club"],
+      "courses": [
+        "Gulph Mills Golf Club",
+        "Aronimink Golf Club"
+      ],
       "date": "October 15-16, 2025",
-      "score": {"philly": null, "dc": null},
-      "champion": null,
-      "mvp": null,
+      "score": {
+        "philly": 13,
+        "dc": 15
+      },
+      "champion": "dc",
+      "mvp": {
+        "name": "Vince Burke",
+        "team": "dc"
+      },
       "patShanahanAward": null,
       "format": {
         "rounds": [
-          {"name": "Morning", "type": "Foursomes", "holes": 18, "points": 12, "course": "Gulph Mills Golf Club"},
-          {"name": "Afternoon", "type": "Fourball", "holes": 18, "points": 16, "course": "Aronimink Golf Club"}
+          {
+            "name": "Morning",
+            "type": "Foursomes",
+            "holes": 18,
+            "points": 12,
+            "course": "Gulph Mills Golf Club"
+          },
+          {
+            "name": "Afternoon",
+            "type": "Fourball",
+            "holes": 18,
+            "points": 16,
+            "course": "Aronimink Golf Club"
+          }
         ],
         "totalPoints": 28,
         "handicapRule": "50% combined team course handicap for Foursomes, 90% for Fourball",
@@ -502,45 +1649,358 @@
         "prizePool": 2400
       },
       "teamPhilly": [
-        {"name": "Jeff Shanahan", "role": "Captain", "handicap": 2.1},
-        {"name": "Pat Shanahan", "role": "Vice Captain", "handicap": -0.9},
-        {"name": "Wayne Lesage", "handicap": 0.7},
-        {"name": "Ben Quereau", "handicap": 2.0},
-        {"name": "Luke Etherington", "handicap": 4.4},
-        {"name": "Mark Kurd", "handicap": 6.4},
-        {"name": "Ben Etherington", "handicap": 6.5},
-        {"name": "Rob Nathan", "handicap": 8.9}
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain",
+          "handicap": 2.1
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Vice Captain",
+          "handicap": -0.9
+        },
+        {
+          "name": "Wayne Lesage",
+          "handicap": 0.7
+        },
+        {
+          "name": "Ben Quereau",
+          "handicap": 2
+        },
+        {
+          "name": "Luke Etherington",
+          "handicap": 4.4
+        },
+        {
+          "name": "Mark Kurd",
+          "handicap": 6.4
+        },
+        {
+          "name": "Ben Etherington",
+          "handicap": 6.5
+        },
+        {
+          "name": "Rob Nathan",
+          "handicap": 8.9
+        }
       ],
       "teamDC": [
-        {"name": "Matt Hopkins", "role": "Captain", "handicap": 11.4},
-        {"name": "Brendan Delany", "role": "Vice Captain", "handicap": 19.1},
-        {"name": "Jon Carr", "role": "Secretary", "handicap": 3.7},
-        {"name": "Vince Burke", "handicap": 12.1},
-        {"name": "Chris Connolly", "handicap": 2.4},
-        {"name": "Sean Keegan", "handicap": 2.7},
-        {"name": "Dan Murray", "handicap": 0.7},
-        {"name": "Roland Miller", "handicap": 5.4}
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain",
+          "handicap": 11.4
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Vice Captain",
+          "handicap": 19.1
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Secretary",
+          "handicap": 3.7
+        },
+        {
+          "name": "Vince Burke",
+          "handicap": 12.1
+        },
+        {
+          "name": "Chris Connolly",
+          "handicap": 2.4
+        },
+        {
+          "name": "Sean Keegan",
+          "handicap": 2.7
+        },
+        {
+          "name": "Dan Murray",
+          "handicap": 0.7
+        },
+        {
+          "name": "Roland Miller",
+          "handicap": 5.4
+        }
       ],
       "schedule": [
-        {"date": "Oct 15", "time": "11:30AM", "event": "Lunch", "location": "Applebrook"},
-        {"date": "Oct 15", "time": "12:30PM", "event": "Applebrook Member-Guest (Shotgun)", "location": "Applebrook"},
-        {"date": "Oct 15", "time": "5:30PM", "event": "Dinner/Drinks", "location": "Applebrook Golf Patio"},
-        {"date": "Oct 16", "time": "7:00AM", "event": "Breakfast", "location": "Applebrook"},
-        {"date": "Oct 16", "time": "9:00AM", "event": "Morning - Foursomes (18 holes)", "location": "Gulph Mills Golf Club"},
-        {"date": "Oct 16", "time": "12:45PM", "event": "Lunch", "location": "Aronimink Golf Patio"},
-        {"date": "Oct 16", "time": "1:40PM", "event": "Afternoon - Fourball (18 holes)", "location": "Aronimink Golf Club"},
-        {"date": "Oct 16", "time": "7:00PM", "event": "Dinner", "location": "Aronimink Belmont Room"}
+        {
+          "date": "Oct 15",
+          "time": "11:30AM",
+          "event": "Lunch",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 15",
+          "time": "12:30PM",
+          "event": "Applebrook Member-Guest (Shotgun)",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 15",
+          "time": "5:30PM",
+          "event": "Dinner/Drinks",
+          "location": "Applebrook Golf Patio"
+        },
+        {
+          "date": "Oct 16",
+          "time": "7:00AM",
+          "event": "Breakfast",
+          "location": "Applebrook"
+        },
+        {
+          "date": "Oct 16",
+          "time": "9:00AM",
+          "event": "Morning - Foursomes (18 holes)",
+          "location": "Gulph Mills Golf Club"
+        },
+        {
+          "date": "Oct 16",
+          "time": "12:45PM",
+          "event": "Lunch",
+          "location": "Aronimink Golf Patio"
+        },
+        {
+          "date": "Oct 16",
+          "time": "1:40PM",
+          "event": "Afternoon - Fourball (18 holes)",
+          "location": "Aronimink Golf Club"
+        },
+        {
+          "date": "Oct 16",
+          "time": "7:00PM",
+          "event": "Dinner",
+          "location": "Aronimink Belmont Room"
+        }
       ],
-      "notes": "The 9th Edition returns the FFI to Philadelphia for what promises to be the most ambitious edition yet. For the first time, the tournament features Foursomes (alternate shot off the tee) — a format that demands partnership, trust, and the ability to not visibly grimace when your partner dumps one in the bunker. The morning round takes place at Gulph Mills Golf Club, a new addition to the course rotation, with the afternoon Fourball match at Aronimink Golf Club. The two-day event kicks off Wednesday with the traditional exhibition at Applebrook, including lunch and the Member-Guest. Wayne Lesage makes his FFI debut for Team Philly, while Dan Murray joins Team DC — fresh blood on both sides. The apparel gift this year: Peter Millar vests, because nothing says 'we take this seriously' quite like matching outerwear. Dinner at Aronimink's Belmont Room on Thursday evening will crown the champion of the 9th Edition. The series stands at Philly 3, DC 4 with two results pending.",
-      "weather": "Mid-October in the Philadelphia area. Highs around 68°F with classic fall golf conditions."
+      "notes": "The 9th Edition returned the FFI to Philadelphia for what promised to be the most ambitious edition yet. For the first time, the tournament featured Foursomes (alternate shot off the tee) — a format that demands partnership, trust, and the obligatory \"don't be sorry, I am not playing great either\" when your partner dumps one in the bunker. The morning round took place at Gulph Mills Golf Club, a new addition to the course rotation, with the afternoon Fourball match at Aronimink Golf Club. The two-day event kicked off Wednesday with the traditional exhibition at Applebrook, including lunch and the Member-Guest. Wayne Lesage made his FFI debut for Team Philly, while Dan Murray joined Team DC — fresh blood on both sides. The apparel gift this year: Peter Millar vests, because nothing says 'we take this seriously' quite like matching outerwear. Team DC went up big in the morning Foursomes only to hang on to win 15-13 after a furious Team Philly comeback. Vince Burke earned MVP honors. Dinner at Aronimink's Belmont Room on Thursday evening crowned Team DC as the champion of the 9th Edition.",
+      "weather": "Mid-October in the Philadelphia area. Highs around 68°F with classic fall golf conditions.",
+      "matches": [
+        {
+          "round": 1,
+          "type": "Foursomes",
+          "course": "Gulph Mills Golf Club",
+          "pairings": [
+            {
+              "philly": [
+                "Jeff Shanahan",
+                "Ben Etherington"
+              ],
+              "dc": [
+                "Vince Burke",
+                "Roland Miller"
+              ],
+              "score": {
+                "philly": {
+                  "front": 0,
+                  "back": 0,
+                  "overall": 0,
+                  "total": 0
+                },
+                "dc": {
+                  "front": 1,
+                  "back": 1,
+                  "overall": 1.5,
+                  "total": 3.5
+                }
+              }
+            },
+            {
+              "philly": [
+                "Pat Shanahan",
+                "Rob Nathan"
+              ],
+              "dc": [
+                "Matt Hopkins",
+                "Brendan Delany"
+              ],
+              "score": {
+                "philly": {
+                  "front": 0.5,
+                  "back": 1,
+                  "overall": 1.5,
+                  "total": 3
+                },
+                "dc": {
+                  "front": 0.5,
+                  "back": 0,
+                  "overall": 0,
+                  "total": 0.5
+                }
+              }
+            },
+            {
+              "philly": [
+                "Luke Etherington",
+                "Ben Quereau"
+              ],
+              "dc": [
+                "Chris Connolly",
+                "Dan Murray"
+              ],
+              "score": {
+                "philly": {
+                  "front": 0,
+                  "back": 0.5,
+                  "overall": 0,
+                  "total": 0.5
+                },
+                "dc": {
+                  "front": 1,
+                  "back": 0.5,
+                  "overall": 1.5,
+                  "total": 3
+                }
+              }
+            },
+            {
+              "philly": [
+                "Wayne Lesage",
+                "Mark Kurd"
+              ],
+              "dc": [
+                "Jon Carr",
+                "Sean Keegan"
+              ],
+              "score": {
+                "philly": {
+                  "front": 0,
+                  "back": 1,
+                  "overall": 0,
+                  "total": 1
+                },
+                "dc": {
+                  "front": 1,
+                  "back": 0,
+                  "overall": 1.5,
+                  "total": 2.5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "type": "Fourball",
+          "course": "Aronimink Golf Club",
+          "pairings": [
+            {
+              "philly": [
+                "Jeff Shanahan",
+                "Ben Quereau"
+              ],
+              "dc": [
+                "Matt Hopkins",
+                "Dan Murray"
+              ],
+              "score": {
+                "philly": {
+                  "front": 0,
+                  "back": 1,
+                  "overall": 1.5,
+                  "total": 2.5
+                },
+                "dc": {
+                  "front": 1,
+                  "back": 0,
+                  "overall": 0,
+                  "total": 1
+                }
+              }
+            },
+            {
+              "philly": [
+                "Pat Shanahan",
+                "Ben Etherington"
+              ],
+              "dc": [
+                "Sean Keegan",
+                "Chris Connolly"
+              ],
+              "score": {
+                "philly": {
+                  "front": 1,
+                  "back": 0,
+                  "overall": 1.5,
+                  "total": 2.5
+                },
+                "dc": {
+                  "front": 0,
+                  "back": 1,
+                  "overall": 0,
+                  "total": 1
+                }
+              }
+            },
+            {
+              "philly": [
+                "Mark Kurd",
+                "Luke Etherington"
+              ],
+              "dc": [
+                "Brendan Delany",
+                "Vince Burke"
+              ],
+              "score": {
+                "philly": {
+                  "front": 0,
+                  "back": 1,
+                  "overall": 1.5,
+                  "total": 2.5
+                },
+                "dc": {
+                  "front": 1,
+                  "back": 0,
+                  "overall": 0,
+                  "total": 1
+                }
+              }
+            },
+            {
+              "philly": [
+                "Wayne Lesage",
+                "Rob Nathan"
+              ],
+              "dc": [
+                "Roland Miller",
+                "Jon Carr"
+              ],
+              "score": {
+                "philly": {
+                  "front": 0,
+                  "back": 1,
+                  "overall": 0,
+                  "total": 1
+                },
+                "dc": {
+                  "front": 1,
+                  "back": 0,
+                  "overall": 1.5,
+                  "total": 2.5
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "allPlayers": [
     {
       "name": "Jeff Shanahan",
       "team": "philly",
-      "yearsPlayed": ["S2018","F2018","2019","2020","2021","2022","2023","2024","2025"],
-      "roles": ["Captain"],
+      "yearsPlayed": [
+        "S2018",
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "roles": [
+        "Captain"
+      ],
       "nickname": "J Shan",
       "homeClub": "Applebrook Golf Club",
       "headshot": "/headshots/jeff-shanahan.png",
@@ -549,8 +2009,21 @@
     {
       "name": "Pat Shanahan",
       "team": "philly",
-      "yearsPlayed": ["S2018","F2018","2019","2020","2021","2022","2023","2024","2025"],
-      "roles": ["Vice Captain", "CFO"],
+      "yearsPlayed": [
+        "S2018",
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "roles": [
+        "Vice Captain",
+        "CFO"
+      ],
       "nickname": "P Shan",
       "homeClub": "Applebrook Golf Club",
       "headshot": "/headshots/pat-shanahan.jpg",
@@ -559,8 +2032,20 @@
     {
       "name": "Will Mundy",
       "team": "philly",
-      "yearsPlayed": ["F2018","2019","2020","2021","2022","2023","2024"],
-      "roles": ["Secretary", "COO", "Director of Transportation"],
+      "yearsPlayed": [
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "roles": [
+        "Secretary",
+        "COO",
+        "Director of Transportation"
+      ],
       "nickname": "Case of the Mundys",
       "homeClub": "Aronimink Golf Club",
       "headshot": "/headshots/will-mundy.jpg",
@@ -569,7 +2054,16 @@
     {
       "name": "Ben Etherington",
       "team": "philly",
-      "yearsPlayed": ["F2018","2019","2020","2021","2022","2023","2024","2025"],
+      "yearsPlayed": [
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
       "roles": [],
       "nickname": "Beverly",
       "homeClub": "Applebrook Golf Club",
@@ -579,7 +2073,15 @@
     {
       "name": "Luke Etherington",
       "team": "philly",
-      "yearsPlayed": ["F2018","2019","2021","2022","2023","2024","2025"],
+      "yearsPlayed": [
+        "F2018",
+        "2019",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
       "roles": [],
       "nickname": "L Everly",
       "homeClub": "Applebrook Golf Club",
@@ -589,7 +2091,14 @@
     {
       "name": "Rob Nathan",
       "team": "philly",
-      "yearsPlayed": ["F2018","2020","2021","2023","2024","2025"],
+      "yearsPlayed": [
+        "F2018",
+        "2020",
+        "2021",
+        "2023",
+        "2024",
+        "2025"
+      ],
       "roles": [],
       "nickname": "Mr. Cashmere",
       "homeClub": "Applebrook Golf Club",
@@ -599,17 +2108,28 @@
     {
       "name": "Ben Quereau",
       "team": "philly",
-      "yearsPlayed": ["2019","2020","2023","2024","2025"],
+      "yearsPlayed": [
+        "2019",
+        "2020",
+        "2023",
+        "2024",
+        "2025"
+      ],
       "roles": [],
       "nickname": "Two Gloves",
       "homeClub": "Waynesborough Country Club",
       "headshot": "/headshots/ben-quereau.png",
-      "bio": "2G. Queso. Q. A man of many names and even more gloves. Dramatically added to the 2019 roster when Angelo Grecco was told his services were no longer required — a move described as going scorched earth. Hopkins himself declared that Team Philly must have Benny Two Gloves on the squad to have a fighter's chance at winning the cup. Captured the 7th Edition MVP as a true competitor and man of integrity. Casual dress at the crabfeast — gloves required, for Quereau."
+      "bio": "2G. Queso. Q. A man of many names and even more gloves. Added to the roster ahead of the 3rd Edition, Hopkins himself declared that Team Philly must have Benny Two Gloves on the squad to have a fighter's chance at winning the cup. Captured the 7th Edition MVP as a true competitor and man of integrity. Casual dress at the crabfeast — gloves required, for Quereau."
     },
     {
       "name": "Bear Barton",
       "team": "philly",
-      "yearsPlayed": ["2019","2021","2022","2023"],
+      "yearsPlayed": [
+        "2019",
+        "2021",
+        "2022",
+        "2023"
+      ],
       "roles": [],
       "nickname": "Papa Bear",
       "homeClub": null,
@@ -618,7 +2138,9 @@
     {
       "name": "Murphy Barton",
       "team": "philly",
-      "yearsPlayed": ["2022"],
+      "yearsPlayed": [
+        "2022"
+      ],
       "roles": [],
       "nickname": "Murph",
       "homeClub": null,
@@ -627,17 +2149,25 @@
     {
       "name": "Mark Kurd",
       "team": "philly",
-      "yearsPlayed": ["2022","2023","2024","2025"],
+      "yearsPlayed": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
       "roles": [],
       "nickname": "Dr. Beeper",
       "homeClub": "Aronimink Golf Club",
       "headshot": "/headshots/mark-kurd.jpg",
-      "bio": "Doc McStuffins. Dr. Frasier Crane. The FFI's resident physician carries more nicknames than most players carry clubs. The good Dr. Kurd takes time away from the OR to endure four hours of silence next to the always gracious P Shan. Joined the roster in the 6th Edition and has been a steady presence since — the 2024 program warmly welcomed him back, noting it was the fewest roster changes Team Philly had made in years."
+      "bio": "Doc McStuffins. Dr. Frasier Crane. The FFI's resident physician carries more nicknames than most players carry clubs. The good Dr. Kurd takes time away from the OR to endure four hours of silence next to the always gracious P Shan. Joined the roster in the 6th Edition, missed the 7th, and was warmly welcomed back for the 8th — the 2024 program noting it was the fewest roster changes Team Philly had made in years."
     },
     {
       "name": "Nick Aceto",
       "team": "philly",
-      "yearsPlayed": ["2020","2021"],
+      "yearsPlayed": [
+        "2020",
+        "2021"
+      ],
       "roles": [],
       "nickname": "Nick A",
       "homeClub": null,
@@ -646,16 +2176,21 @@
     {
       "name": "Angelo Grecco",
       "team": "philly",
-      "yearsPlayed": ["F2018","2019"],
+      "yearsPlayed": [
+        "F2018",
+        "2019"
+      ],
       "roles": [],
       "nickname": "The Greek",
       "homeClub": null,
-      "bio": "The original Co-President of the FFI and a founding member once described as a fuzzy Italian feel good guy. Paid his FFI debts 36.2 seconds after the email was sent — a record that will likely never be broken. Dramatically cut from the 2019 roster and replaced by Quereau in what was described as going scorched earth, then reinstated when Keating dropped out due to a nanny crisis."
+      "bio": "The original Co-President of the FFI and a repeat participant in the early years. Once described as a fuzzy Italian feel good guy. Paid his FFI debts 36.2 seconds after the email was sent — a record that will likely never be broken."
     },
     {
       "name": "Kevin Keating",
       "team": "philly",
-      "yearsPlayed": ["F2018"],
+      "yearsPlayed": [
+        "F2018"
+      ],
       "roles": [],
       "nickname": null,
       "homeClub": null,
@@ -664,7 +2199,9 @@
     {
       "name": "Brian Shevland",
       "team": "philly",
-      "yearsPlayed": ["2020"],
+      "yearsPlayed": [
+        "2020"
+      ],
       "roles": [],
       "nickname": null,
       "homeClub": null,
@@ -673,7 +2210,9 @@
     {
       "name": "Wayne Lesage",
       "team": "philly",
-      "yearsPlayed": ["2025"],
+      "yearsPlayed": [
+        "2025"
+      ],
       "roles": [],
       "nickname": null,
       "homeClub": null,
@@ -682,8 +2221,20 @@
     {
       "name": "Matt Hopkins",
       "team": "dc",
-      "yearsPlayed": ["S2018","F2018","2019","2020","2021","2022","2023","2024","2025"],
-      "roles": ["Captain"],
+      "yearsPlayed": [
+        "S2018",
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "roles": [
+        "Captain"
+      ],
       "nickname": "Harambe",
       "homeClub": "Columbia Country Club",
       "headshot": "/headshots/matt-hopkins.jpg",
@@ -692,8 +2243,20 @@
     {
       "name": "Brendan Delany",
       "team": "dc",
-      "yearsPlayed": ["S2018","F2018","2019","2020","2021","2022","2023","2024","2025"],
-      "roles": ["Vice Captain"],
+      "yearsPlayed": [
+        "S2018",
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "roles": [
+        "Vice Captain"
+      ],
       "nickname": "Delaaaahny",
       "homeClub": "Columbia Country Club",
       "headshot": "/headshots/brendan-delany.jpg",
@@ -702,8 +2265,21 @@
     {
       "name": "Jon Carr",
       "team": "dc",
-      "yearsPlayed": ["S2018","F2018","2019","2020","2021","2022","2023","2024","2025"],
-      "roles": ["Secretary", "Director of Player Personnel"],
+      "yearsPlayed": [
+        "S2018",
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "roles": [
+        "Secretary",
+        "Director of Player Personnel"
+      ],
       "nickname": "Sergio Carrcia",
       "homeClub": "Chevy Chase Club",
       "headshot": "/headshots/jon-carr.png",
@@ -712,17 +2288,34 @@
     {
       "name": "Vince Burke",
       "team": "dc",
-      "yearsPlayed": ["F2018","2019","2020","2021","2022","2023","2024","2025"],
+      "yearsPlayed": [
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
       "roles": [],
       "nickname": "Vincenzo",
       "homeClub": "Columbia Country Club",
       "headshot": "/headshots/vince-burke.png",
-      "bio": "VCB4. Vinny. A Vice President at B.F. Saul Company & Affiliates who joined Team DC for the 2nd Edition and hasn't missed one since. Longtime bestie of Delaaaahny and a congenial presence known for respectful eye contact and plenty of storytelling. Known for being chronically late on expense payments — a pattern that the tournament committee has noted with characteristic passive aggression. By a wide margin, the friendliest man in the field."
+      "bio": "VCB4. Vinny. A Vice President at B.F. Saul Company & Affiliates and a member of the inaugural Team DC roster who hasn't missed an edition since. Longtime bestie of Delaaaahny and a congenial presence known for respectful eye contact and plenty of storytelling. Known for being chronically late on expense payments — a pattern that the tournament committee has noted with characteristic passive aggression. By a wide margin, the friendliest man in the field."
     },
     {
       "name": "Chris Connolly",
       "team": "dc",
-      "yearsPlayed": ["F2018","2019","2020","2022","2023","2024","2025"],
+      "yearsPlayed": [
+        "F2018",
+        "2019",
+        "2020",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
       "roles": [],
       "nickname": null,
       "homeClub": "Chevy Chase Club",
@@ -732,7 +2325,16 @@
     {
       "name": "Sean Keegan",
       "team": "dc",
-      "yearsPlayed": ["F2018","2019","2020","2021","2022","2023","2024","2025"],
+      "yearsPlayed": [
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
       "roles": [],
       "nickname": "Nighttime Keegan",
       "homeClub": "Columbia Country Club",
@@ -742,17 +2344,33 @@
     {
       "name": "Devin Tuohey",
       "team": "dc",
-      "yearsPlayed": ["F2018","2019","2020","2021","2022","2023","2024"],
+      "yearsPlayed": [
+        "F2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
       "roles": [],
       "nickname": "DT",
       "homeClub": "Philadelphia Country Club",
       "headshot": "/headshots/devin-tuohey.jpg",
-      "bio": "DC's native son who, despite being a member at Philadelphia Country Club, has remained loyal to Team DC through seven editions. Won the 5th Edition MVP after DC's narrow 15–13 victory at Applebrook — winning on enemy soil. Works at the Concordia Group. A perennial point earner known for his black high tops and AND1 shorts, which the 2021 program declared welcome in DC into perpetuity. If DT needs back, ankle, or emotional support, an alpha male silverback gorilla may not necessarily be the right one to ask."
+      "bio": "DC's native son who, despite being a member at Philadelphia Country Club, has remained loyal to Team DC through eight editions. Won the 5th Edition MVP after DC's narrow 15–13 victory at Applebrook — winning on enemy soil. Works at the Concordia Group. A perennial point earner known for his black high tops and AND1 shorts, which the 2021 program declared welcome in DC into perpetuity. Missed the 9th Edition for important business reasons — an absence felt by the entire DC roster. If DT needs back, ankle, or emotional support, an alpha male silverback gorilla may not necessarily be the right one to ask."
     },
     {
       "name": "Roland Miller",
       "team": "dc",
-      "yearsPlayed": ["F2018","2019","2020","2022","2023","2024","2025"],
+      "yearsPlayed": [
+        "F2018",
+        "2019",
+        "2020",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
       "roles": [],
       "nickname": "The Silverback",
       "homeClub": "Chevy Chase Club",
@@ -762,7 +2380,9 @@
     {
       "name": "Michael Kearns",
       "team": "dc",
-      "yearsPlayed": ["2021"],
+      "yearsPlayed": [
+        "2021"
+      ],
       "roles": [],
       "nickname": null,
       "homeClub": null,
@@ -771,7 +2391,9 @@
     {
       "name": "Ben Fritz",
       "team": "dc",
-      "yearsPlayed": ["2021"],
+      "yearsPlayed": [
+        "2021"
+      ],
       "roles": [],
       "nickname": null,
       "homeClub": null,
@@ -780,7 +2402,9 @@
     {
       "name": "Dan Murray",
       "team": "dc",
-      "yearsPlayed": ["2025"],
+      "yearsPlayed": [
+        "2025"
+      ],
       "roles": [],
       "nickname": null,
       "homeClub": null,
@@ -788,46 +2412,157 @@
     }
   ],
   "photos": [
-    {"src": "/photos/S2018/IMG_0883.jpeg", "year": "S2018"},
-    {"src": "/photos/S2018/IMG_0909.jpeg", "year": "S2018"},
-    {"src": "/photos/F2018/IMG_0069.jpeg", "year": "F2018"},
-    {"src": "/photos/F2018/IMG_0070.jpeg", "year": "F2018"},
-    {"src": "/photos/F2018/IMG_0071.jpeg", "year": "F2018"},
-    {"src": "/photos/F2018/IMG_0072.jpeg", "year": "F2018"},
-    {"src": "/photos/2020/img_2020_01.jpeg", "year": "2020"},
-    {"src": "/photos/2020/img_2020_02.jpeg", "year": "2020"},
-    {"src": "/photos/2020/img_2020_03.jpeg", "year": "2020"},
-    {"src": "/photos/2020/img_2020_04.jpeg", "year": "2020"},
-    {"src": "/photos/2020/IMG_0267.jpeg", "year": "2020"},
-    {"src": "/photos/2020/IMG_4981.jpeg", "year": "2020"},
-    {"src": "/photos/2020/IMG_5607.jpeg", "year": "2020"},
-    {"src": "/photos/2022/img_2022_01.jpeg", "year": "2022"},
-    {"src": "/photos/2022/IMG_2632.jpeg", "year": "2022"},
-    {"src": "/photos/2022/IMG_2665.jpeg", "year": "2022"},
-    {"src": "/photos/2023/IMG_1651.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_1652.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_1653.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_1654.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_1655.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_1656.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_3014.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_3109.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_3159.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_3165.jpeg", "year": "2023"},
-    {"src": "/photos/2023/IMG_3167.jpeg", "year": "2023"},
-    {"src": "/photos/2024/IMG_4927.jpeg", "year": "2024"},
-    {"src": "/photos/2024/IMG_4928.jpeg", "year": "2024"},
-    {"src": "/photos/2025/IMG_0015.jpeg", "year": "2025"},
-    {"src": "/photos/2025/IMG_1121.jpeg", "year": "2025"},
-    {"src": "/photos/2025/IMG_1124.jpeg", "year": "2025"},
-    {"src": "/photos/2025/IMG_1125.jpeg", "year": "2025"},
-    {"src": "/photos/2025/IMG_1131.jpeg", "year": "2025"},
-    {"src": "/photos/2025/IMG_1203.jpeg", "year": "2025"},
-    {"src": "/photos/2025/IMG_3078.jpeg", "year": "2025"}
+    {
+      "src": "/photos/S2018/IMG_0883.jpeg",
+      "year": "S2018"
+    },
+    {
+      "src": "/photos/S2018/IMG_0909.jpeg",
+      "year": "S2018"
+    },
+    {
+      "src": "/photos/F2018/IMG_0069.jpeg",
+      "year": "F2018"
+    },
+    {
+      "src": "/photos/F2018/IMG_0070.jpeg",
+      "year": "F2018"
+    },
+    {
+      "src": "/photos/F2018/IMG_0071.jpeg",
+      "year": "F2018"
+    },
+    {
+      "src": "/photos/F2018/IMG_0072.jpeg",
+      "year": "F2018"
+    },
+    {
+      "src": "/photos/2020/img_2020_01.jpeg",
+      "year": "2020"
+    },
+    {
+      "src": "/photos/2020/img_2020_02.jpeg",
+      "year": "2020"
+    },
+    {
+      "src": "/photos/2020/img_2020_03.jpeg",
+      "year": "2020"
+    },
+    {
+      "src": "/photos/2020/img_2020_04.jpeg",
+      "year": "2020"
+    },
+    {
+      "src": "/photos/2020/IMG_0267.jpeg",
+      "year": "2020"
+    },
+    {
+      "src": "/photos/2020/IMG_4981.jpeg",
+      "year": "2020"
+    },
+    {
+      "src": "/photos/2020/IMG_5607.jpeg",
+      "year": "2020"
+    },
+    {
+      "src": "/photos/2022/img_2022_01.jpeg",
+      "year": "2022"
+    },
+    {
+      "src": "/photos/2022/IMG_2632.jpeg",
+      "year": "2022"
+    },
+    {
+      "src": "/photos/2022/IMG_2665.jpeg",
+      "year": "2022"
+    },
+    {
+      "src": "/photos/2023/IMG_1651.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_1652.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_1653.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_1654.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_1655.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_1656.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_3014.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_3109.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_3159.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_3165.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2023/IMG_3167.jpeg",
+      "year": "2023"
+    },
+    {
+      "src": "/photos/2024/IMG_4927.jpeg",
+      "year": "2024"
+    },
+    {
+      "src": "/photos/2024/IMG_4928.jpeg",
+      "year": "2024"
+    },
+    {
+      "src": "/photos/2025/IMG_0015.jpeg",
+      "year": "2025"
+    },
+    {
+      "src": "/photos/2025/IMG_1121.jpeg",
+      "year": "2025"
+    },
+    {
+      "src": "/photos/2025/IMG_1124.jpeg",
+      "year": "2025"
+    },
+    {
+      "src": "/photos/2025/IMG_1125.jpeg",
+      "year": "2025"
+    },
+    {
+      "src": "/photos/2025/IMG_1131.jpeg",
+      "year": "2025"
+    },
+    {
+      "src": "/photos/2025/IMG_1203.jpeg",
+      "year": "2025"
+    },
+    {
+      "src": "/photos/2025/IMG_3078.jpeg",
+      "year": "2025"
+    }
   ],
   "seriesRecord": {
-    "note": "Based on confirmed results through 2023. 2024 and 2025 results TBD.",
-    "confirmed": {"philly": 3, "dc": 4},
-    "pending": ["2024", "2025"]
+    "note": "All results confirmed through 9 editions.",
+    "confirmed": {
+      "philly": 3,
+      "dc": 6
+    },
+    "pending": []
   }
 }

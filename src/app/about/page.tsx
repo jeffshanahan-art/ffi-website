@@ -27,12 +27,22 @@ export default async function AboutPage() {
         <div className="max-w-3xl mx-auto">
           <SectionHeading title="Origin Story" />
           <p className="mt-4 text-black font-sans leading-relaxed">
-            The Founding Fathers Invitational began in the spring of 2018 as a
-            friendly rivalry between a group of college friends split between
-            Philadelphia and Washington, DC. What started as a casual challenge
-            match at Applebrook Golf Club has grown into a full-fledged annual
-            tournament — complete with programs, trophies, awards, and traditions
-            that would make the Ryder Cup jealous.
+            The Founding Fathers Invitational began in the spring of 2018 when
+            Matt Hopkins and Jeff Shanahan — childhood friends since the 4th
+            grade — and their respective groups of college and local friends,
+            half rooted in the Philadelphia suburbs, half entrenched in
+            Washington, DC, decided their annual golf outings needed stakes,
+            structure, and eventually, a trophy. What followed was an arms race
+            of escalating formality that no one asked for and no one has been
+            able to stop. The inaugural edition — a two-course affair across
+            Applebrook Golf Club and Aronimink Golf Club — ended in a 12–6 Team
+            Philly victory. Team DC demanded a rematch within six months. They
+            got one. Nine editions later, the FFI features professionally bound
+            tournament programs complete with footnotes, corporate press releases
+            announcing roster transactions, a pewter trophy whose authenticity
+            has been tested by at least one MVP, a Director of Player Personnel
+            who doubles as Co-Director of Apparel, and an expense collection
+            process that has been described as both ruthless and inevitable.
           </p>
         </div>
       </section>
@@ -43,11 +53,12 @@ export default async function AboutPage() {
           <SectionHeading title="Format" />
           <p className="mt-4 text-black font-sans leading-relaxed">
             The FFI is a team match-play event between 8-player squads
-            representing Team Philly and Team DC. The format varies each year at
-            the Captain&apos;s discretion, and has included fourball, foursomes,
-            singles, alternate shot, and even a three-club challenge exhibition.
-            The host city alternates annually — Philadelphia hosts odd-numbered
-            editions, DC hosts even-numbered.
+            representing Team Philly and Team DC. The competition is played over
+            36 holes, typically in a single day, with the format varying each
+            year at the Host Captain&apos;s discretion. Past editions have
+            featured fourball, foursomes, singles, and alternate shot. The host
+            city typically arranges a practice round the day before, which has
+            occasionally doubled as a one-day member-guest tournament.
           </p>
         </div>
       </section>
@@ -86,20 +97,24 @@ export default async function AboutPage() {
                 The Tournament Program
               </h3>
               <p className="mt-2 text-slate font-sans leading-relaxed">
-                Each year features a professionally produced tournament program
-                packed with matchup writeups, course guides, satirical
-                commentary, player profiles, and enough footnotes to rival a
-                legal brief.
+                First produced for the 3rd Edition in 2019, the tournament
+                program has become an annual institution. Each edition is packed
+                with matchup writeups, course guides, player profiles,
+                hole-by-hole scouting reports, and commentary that ranges from
+                insightful to cruel. Both teams have taken turns producing the
+                program, and authorship is taken seriously.
               </p>
             </div>
 
             <div>
               <h3 className="font-serif text-xl text-black font-normal">
-                Apparel Gifts
+                Host Gift
               </h3>
               <p className="mt-2 text-slate font-sans leading-relaxed">
-                Players receive custom apparel each year, from Peter Millar
-                vests to team polos.
+                Players receive custom gifts each year that are selected by the
+                host team. Selections have included team polos, quarter-zips
+                (since retired by popular demand), water color course paintings
+                and — as of the 9th Edition — Peter Millar vests.
               </p>
             </div>
           </div>
@@ -116,7 +131,7 @@ export default async function AboutPage() {
                 MVP Award
               </h3>
               <p className="mt-2 text-slate font-sans leading-relaxed">
-                Awarded to the best player on the winning team.
+                Awarded to the outstanding player on the winning team.
               </p>
             </div>
 
@@ -125,9 +140,11 @@ export default async function AboutPage() {
                 Pat Shanahan Award
               </h3>
               <p className="mt-2 text-slate font-sans leading-relaxed">
-                Named after Pat Shanahan, this award honors the best player on
-                the losing team — a recognition that excellence doesn&apos;t
-                always result in victory.
+                Named after Pat Shanahan — Team Philly&apos;s Vice Captain, 1st
+                Edition MVP, and the man who once emergency-purchased BioFreeze
+                at Wegmans after tweaking his neck on a morning run — this award
+                honors the best player on the losing team. A recognition that
+                excellence doesn&apos;t always result in victory.
               </p>
             </div>
           </div>
