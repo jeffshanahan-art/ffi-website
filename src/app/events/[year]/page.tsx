@@ -77,6 +77,38 @@ export default async function EventPage(props: { params: Promise<{ year: string 
 
       <EventHeader tournament={tournament} bannerSrc={bannerPhoto?.src} courseDetails={courseDetails} />
 
+      {/* Edition navigation (top) */}
+      <nav className="px-4 py-3 border-b border-gray">
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
+          {prev ? (
+            <Link
+              href={`/events/${prev.year}`}
+              className="font-serif text-blue hover:opacity-70 transition-opacity text-sm"
+            >
+              &larr; {prev.displayYear}
+            </Link>
+          ) : (
+            <span />
+          )}
+          <Link
+            href="/"
+            className="font-serif text-blue hover:opacity-70 transition-opacity text-sm"
+          >
+            All Editions
+          </Link>
+          {next ? (
+            <Link
+              href={`/events/${next.year}`}
+              className="font-serif text-blue hover:opacity-70 transition-opacity text-sm"
+            >
+              {next.displayYear} &rarr;
+            </Link>
+          ) : (
+            <span />
+          )}
+        </div>
+      </nav>
+
       <EventNotes notes={tournament.notes} />
 
       <EventWeather weather={tournament.weather} />
