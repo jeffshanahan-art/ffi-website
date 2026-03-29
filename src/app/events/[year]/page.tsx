@@ -45,9 +45,9 @@ export default async function EventPage(props: { params: Promise<{ year: string 
   const bannerMap: Record<string, string> = {
     'S2018': 's2018_2',
     'F2018': 'f2018_4',
-    '2019': '2019_1',
+    '2019': '2019_7',
     '2020': '2020_2',
-    '2021': '2021_1',
+    '2021': '2021_12',
     '2022': '2022_3',
     '2023': '2023_9',
     '2024': '2024_3',
