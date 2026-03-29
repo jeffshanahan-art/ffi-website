@@ -1155,7 +1155,10 @@
         "name": "Ben Quereau",
         "team": "philly"
       },
-      "patShanahanAward": "Devin Tuohey",
+      "patShanahanAward": {
+        "name": "Devin Tuohey",
+        "team": "dc"
+      },
       "format": {
         "rounds": [
           {
@@ -1441,8 +1444,14 @@
         "dc": null
       },
       "champion": "dc",
-      "mvp": "Sean Keegan",
-      "patShanahanAward": "Ben Etherington",
+      "mvp": {
+        "name": "Sean Keegan",
+        "team": "dc"
+      },
+      "patShanahanAward": {
+        "name": "Ben Etherington",
+        "team": "philly"
+      },
       "format": {
         "rounds": [
           {
@@ -1654,7 +1663,10 @@
         "name": "Vince Burke",
         "team": "dc"
       },
-      "patShanahanAward": "Rob Nathan",
+      "patShanahanAward": {
+        "name": "Rob Nathan",
+        "team": "philly"
+      },
       "format": {
         "rounds": [
           {
