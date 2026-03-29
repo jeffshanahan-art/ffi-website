@@ -25,7 +25,7 @@ export async function POST(request: Request) {
   try {
     await resend.emails.send({
       from: 'FFI Website <onboarding@resend.dev>',
-      to: 'jeff@cobbscreek.org',
+      to: 'jeff.shanahan@justpark.com',
       replyTo: email,
       subject: `FFI ${label}: ${name}`,
       text: [
