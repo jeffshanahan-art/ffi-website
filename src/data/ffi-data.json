@@ -2155,6 +2155,7 @@
       "roles": [],
       "nickname": "Papa Bear",
       "homeClub": null,
+      "headshot": "/headshots/bear-barton.jpeg",
       "bio": "Berenstain Papa. Featured in what the 2019 program called the primal battle for animal kingdom supremacy — the Bear vs the Silverback — when paired against Roland Miller. A four-time FFI veteran whose steady play and quiet intensity anchored Team Philly's middle order. The 2022 program once asked: is Bear secretly rooting for Team DC, a leadership group clearly more fun to be around? Departed after the 7th Edition, prompting the wistful caption: 'Bear and Murph — we miss you.'"
     },
     {
@@ -2166,6 +2167,7 @@
       "roles": [],
       "nickname": "Murph",
       "homeClub": null,
+      "headshot": "/headshots/murphy-barton.jpg",
       "bio": "Brother of Bear and owner of the paralyzing Blue Steel stare. Competed in the 6th Edition — Team DC's historic 21–11 dismantling, the biggest beatdown in tournament history. The Bros Barton were not skerred. Fondly remembered: 'Bear and Murph — we miss you.'"
     },
     {
@@ -2193,6 +2195,7 @@
       "roles": [],
       "nickname": "Nick A",
       "homeClub": null,
+      "headshot": "/headshots/nick-aceto.webp",
       "bio": "A roster addition during the great reshuffling era who competed in the 4th and 5th Editions. Paired with Jeff Shanahan against Hopkins and Tuohey at the 5th Edition — directly in the crosshairs of Team DC's leadership."
     },
     {
@@ -2206,6 +2209,7 @@
       "roles": [],
       "nickname": "The Greek",
       "homeClub": null,
+      "headshot": "/headshots/angelo-grecco.jpg",
       "bio": "The original Co-President of the FFI and a repeat participant in the early years. Once described as a fuzzy Italian feel good guy. Paid his FFI debts 36.2 seconds after the email was sent — a record that will likely never be broken."
     },
     {
@@ -2218,6 +2222,7 @@
       "roles": [],
       "nickname": null,
       "homeClub": null,
+      "headshot": "/headshots/kevin-keating.jpg",
       "bio": "A major free-agent acquisition whose entire 2nd Edition pairing strategy was built around him — enveloped by Pat in the morning and Grecco in the afternoon. Works at Millcreek Capital. Dropped out of the 3rd Edition due to a nanny crisis and moved out west permanently over concerns about the COVID-19 virus. Was the last Team Philly member to pay his expenses in 2018. Still has not offered Merion access."
     },
     {
@@ -2229,6 +2234,7 @@
       "roles": [],
       "nickname": null,
       "homeClub": null,
+      "headshot": "/headshots/brian-shevland.jpeg",
       "bio": "An acting rookie at the 4th Edition in Washington, DC. Paired with Two Gloves Quereau in the first round at Chevy Chase Club. A one-edition appearance in the annals of FFI history."
     },
     {
@@ -2240,6 +2246,7 @@
       "roles": [],
       "nickname": null,
       "homeClub": null,
+      "headshot": "/headshots/wayne-Lesage.jpg",
       "bio": "The newest addition to Team Philly for the 9th Edition, replacing the retired Will Mundy. A Philly Mainline classic paired with Mark Kurd for foursomes at Gulph Mills and with Rob Nathan for fourball at Aronimink. Fresh blood for Team Philly's quest to reclaim the Goblet."
     },
     {
@@ -2410,6 +2417,7 @@
       "roles": [],
       "nickname": null,
       "homeClub": null,
+      "headshot": "/headshots/michael-kearns.webp",
       "bio": "One of Team DC's roster additions for the 5th Edition at Applebrook. A one-edition appearance in the FFI record book."
     },
     {
@@ -2421,6 +2429,7 @@
       "roles": [],
       "nickname": null,
       "homeClub": null,
+      "headshot": "/headshots/ben-frtiz.jpeg",
       "bio": "One of Team DC's roster additions for the 5th Edition at Applebrook. A one-edition appearance in the FFI record book."
     },
     {
@@ -2432,6 +2441,7 @@
       "roles": [],
       "nickname": null,
       "homeClub": null,
+      "headshot": "/headshots/dan-murray.jpg",
       "bio": "The newest addition to Team DC for the 9th Edition. Paired with Hopkins for fourball at Aronimink and with Connolly for foursomes at Gulph Mills — a debut that places him squarely in the deep end. Fresh blood on the DC side."
     }
   ],
