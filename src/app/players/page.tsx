@@ -64,12 +64,6 @@ function PlayerCard({ player }: { player: Player }) {
                 <span className="text-blue">{player.roles.join(', ')}</span>
               </>
             )}
-            {player.homeClub && (
-              <>
-                <span className="text-gray">&middot;</span>
-                <span>{player.homeClub}</span>
-              </>
-            )}
           </div>
         </div>
       </div>
