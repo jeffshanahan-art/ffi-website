@@ -124,6 +124,23 @@
         {
           "name": "Matt Hopkins",
           "role": "Captain"
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Vice Captain"
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Secretary"
+        },
+        {
+          "name": "Vince Burke"
+        },
+        {
+          "name": "Devin Tuohey"
+        },
+        {
+          "name": "Kevin Keating"
         }
       ],
       "matches": [],
@@ -2223,7 +2240,7 @@
       "nickname": null,
       "homeClub": null,
       "headshot": "/headshots/kevin-keating.jpg",
-      "bio": "A major free-agent acquisition whose entire 2nd Edition pairing strategy was built around him — enveloped by Pat in the morning and Grecco in the afternoon. Works at Millcreek Capital. Dropped out of the 3rd Edition due to a nanny crisis and moved out west permanently over concerns about the COVID-19 virus. Was the last Team Philly member to pay his expenses in 2018. Still has not offered Merion access."
+      "bio": "The FFI's one and only in-tournament defector. Originally on Team DC for the inaugural edition — traded live to Team Philly after the match at Aronimink Golf Club in a deal that remains without precedent. A major acquisition for the 2nd Edition, whose entire pairing strategy was built around him — enveloped by Pat in the morning and Grecco in the afternoon. Works at Millcreek Capital. Dropped out of the 3rd Edition due to a nanny crisis and moved out west permanently over concerns about the COVID-19 virus. Was the last Team Philly member to pay his expenses in 2018. Still has not offered Merion access."
     },
     {
       "name": "Brian Shevland",
@@ -2320,6 +2337,7 @@
       "name": "Vince Burke",
       "team": "dc",
       "yearsPlayed": [
+        "S2018",
         "F2018",
         "2019",
         "2020",
@@ -2376,6 +2394,7 @@
       "name": "Devin Tuohey",
       "team": "dc",
       "yearsPlayed": [
+        "S2018",
         "F2018",
         "2019",
         "2020",
