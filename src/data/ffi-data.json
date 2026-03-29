@@ -1425,9 +1425,8 @@
       ],
       "date": "October 12-13, 2023",
       "score": {
-        "philly": null,
-        "dc": null,
-        "displayScore": "A lot - A Lil"
+        "philly": 16,
+        "dc": 12
       },
       "champion": "philly",
       "mvp": {
@@ -1719,8 +1718,8 @@
       ],
       "date": "October 10-11, 2024",
       "score": {
-        "philly": null,
-        "dc": null
+        "philly": 15,
+        "dc": 17
       },
       "champion": "dc",
       "mvp": {
