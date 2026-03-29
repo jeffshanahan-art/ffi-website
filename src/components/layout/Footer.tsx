@@ -75,10 +75,13 @@ export function Footer() {
 
       {/* Bottom copyright */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pb-16">
-        <div className="border-t border-white/20 pt-6">
+        <div className="border-t border-white/20 pt-6 flex items-center justify-between">
           <p className="text-white/40 text-xs">
             &copy; 2025 Founding Fathers Invitational
           </p>
+          <Link href="/admin" className="text-white/20 text-xs hover:text-white/50 transition-colors">
+            Admin
+          </Link>
         </div>
       </div>
     </footer>
