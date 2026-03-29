@@ -50,7 +50,7 @@ export default async function EventPage(props: { params: Promise<{ year: string 
     '2021': '2021_1',
     '2022': '2022_3',
     '2023': '2023_9',
-    '2024': '2024_1',
+    '2024': '2024_3',
     '2025': '2025_1',
   };
   const preferredId = bannerMap[year];
@@ -59,6 +59,7 @@ export default async function EventPage(props: { params: Promise<{ year: string 
   // Custom object-position for banners where faces get cut off
   const bannerPositionMap: Record<string, string> = {
     'S2018': 'center 30%',
+    '2024': 'center 70%',
   };
   const bannerPosition = bannerPositionMap[year];
 

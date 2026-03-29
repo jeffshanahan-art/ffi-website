@@ -100,6 +100,24 @@
         {
           "name": "Pat Shanahan",
           "role": "Vice Captain"
+        },
+        {
+          "name": "Ben Etherington"
+        },
+        {
+          "name": "Luke Etherington"
+        },
+        {
+          "name": "Will Mundy"
+        },
+        {
+          "name": "Rob Nathan"
+        },
+        {
+          "name": "Angelo Grecco"
+        },
+        {
+          "name": "Kevin Keating"
         }
       ],
       "teamDC": [
@@ -912,7 +930,7 @@
           "location": "Applebrook"
         }
       ],
-      "notes": "The 5th Edition returned to Philadelphia with the series knotted at two apiece. After deliberation with Team DC leadership, all 36 holes were played at Applebrook, and the format featured 18 holes of Better Ball in the morning, 9 holes of Better Ball after lunch, and 9 holes of Alternate Shot to close. The Captain's Dinner was held at Dutton's Barn the night before, where Eagles vs. Buccaneers played on the screens — a fitting backdrop for a room full of men about to go to war. Team DC announced roster shakeups via formal press release: Michael Kearns and Ben Fritz were added, replacing Connolly and Miller, who reportedly sprained their pinkie toes on a fox hunt at Chevy Chase Club. On the course, it was Devin Tuohey who stole the show, earning MVP as Team DC pulled out a 15–13 nail-biter. DC now led the series 3–2, and the Goblet remained in Washington.",
+      "notes": "The 5th Edition returned to Philadelphia with the series knotted at two apiece. After deliberation with Team DC leadership, all 36 holes were played at Applebrook, and the format featured 18 holes of Better Ball in the morning, 9 holes of Better Ball after lunch, and 9 holes of Alternate Shot to close. The Captain's Dinner was held at Dutton's Barn the night before, where Eagles vs. Buccaneers played on the screens — a fitting backdrop for a room full of men about to go to war. Team DC announced roster shakeups via formal press release: Michael Kearns and Ben Fritz were added, replacing Connolly and Miller, who were injured during a fox hunt at Chevy Chase Club. On the course, it was Devin Tuohey who stole the show, earning MVP as Team DC pulled out a 15–13 nail-biter. DC now led the series 3–2, and the Goblet remained in Washington.",
       "weather": "Beautiful mid-October day. High of 73°F, low of 45°F. Warm for the season with ideal golf conditions."
     },
     {
@@ -2033,6 +2051,7 @@
       "name": "Will Mundy",
       "team": "philly",
       "yearsPlayed": [
+        "S2018",
         "F2018",
         "2019",
         "2020",
@@ -2055,6 +2074,7 @@
       "name": "Ben Etherington",
       "team": "philly",
       "yearsPlayed": [
+        "S2018",
         "F2018",
         "2019",
         "2020",
@@ -2074,6 +2094,7 @@
       "name": "Luke Etherington",
       "team": "philly",
       "yearsPlayed": [
+        "S2018",
         "F2018",
         "2019",
         "2021",
@@ -2092,6 +2113,7 @@
       "name": "Rob Nathan",
       "team": "philly",
       "yearsPlayed": [
+        "S2018",
         "F2018",
         "2020",
         "2021",
@@ -2177,6 +2199,7 @@
       "name": "Angelo Grecco",
       "team": "philly",
       "yearsPlayed": [
+        "S2018",
         "F2018",
         "2019"
       ],
@@ -2189,12 +2212,13 @@
       "name": "Kevin Keating",
       "team": "philly",
       "yearsPlayed": [
+        "S2018",
         "F2018"
       ],
       "roles": [],
       "nickname": null,
       "homeClub": null,
-      "bio": "A major free-agent acquisition whose entire 2nd Edition pairing strategy was built around him — enveloped by Pat in the morning and Grecco in the afternoon. Works at Millcreek Capital. Dropped out of the 3rd Edition due to a nanny crisis, opening the door for Grecco's dramatic reinstatement. Was the last Team Philly member to pay his expenses in 2018. Still has not offered Merion access."
+      "bio": "A major free-agent acquisition whose entire 2nd Edition pairing strategy was built around him — enveloped by Pat in the morning and Grecco in the afternoon. Works at Millcreek Capital. Dropped out of the 3rd Edition due to a nanny crisis and moved out west permanently over concerns about the COVID-19 virus. Was the last Team Philly member to pay his expenses in 2018. Still has not offered Merion access."
     },
     {
       "name": "Brian Shevland",
@@ -2375,7 +2399,7 @@
       "nickname": "The Silverback",
       "homeClub": "Chevy Chase Club",
       "headshot": "/headshots/roland-miller.jpg",
-      "bio": "The original Silverback and a man of many club memberships. Won the 2nd Edition MVP after Team DC's 15.5–12.5 comeback victory at Columbia and Chevy Chase. Was once unceremoniously dismissed from Team Philly, making his switch to DC one of the FFI's great redemption arcs. Welcomed back alongside Connolly for the 6th Edition as an old friend. His housekeeper once inspired a Carrski course tip involving the phrase 'no bueno senor Miller.'"
+      "bio": "Silverback is one of the toughest competitors in the rich history of the FFI. He won the 2nd Edition MVP after Team DC's 15.5–12.5 comeback victory at Columbia and Chevy Chase. After missing the 5th Edition in 2021 due to a Fox Hunt injury, he was welcomed back alongside Connolly for the 6th Edition as an old friend. His housekeeper once inspired a Carrski course tip involving the phrase 'no bueno senor Miller.'"
     },
     {
       "name": "Michael Kearns",
