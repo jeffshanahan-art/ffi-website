@@ -59,6 +59,8 @@ export default async function EventPage(props: { params: Promise<{ year: string 
   // Custom object-position for banners where faces get cut off
   const bannerPositionMap: Record<string, string> = {
     'S2018': 'center 30%',
+    '2019': 'center 25%',
+    '2021': 'center 70%',
     '2024': 'center 70%',
   };
   const bannerPosition = bannerPositionMap[year];
