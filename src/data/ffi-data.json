@@ -221,7 +221,32 @@
           "name": "Chris Connolly"
         }
       ],
-      "matches": [],
+      "matches": [
+        {
+          "round": 1,
+          "name": "Foursomes",
+          "type": "Foursomes",
+          "course": "Columbia Country Club",
+          "pairings": [
+            {
+              "philly": ["Rob Nathan", "Luke Etherington"],
+              "dc": ["Chris Connolly", "Vince Burke"]
+            },
+            {
+              "philly": ["Jeff Shanahan", "Ben Etherington"],
+              "dc": ["Matt Hopkins", "Brendan Delany"]
+            },
+            {
+              "philly": ["Pat Shanahan", "Kevin Keating"],
+              "dc": ["Jon Carr", "Roland Miller"]
+            },
+            {
+              "philly": ["Will Mundy", "Angelo Grecco"],
+              "dc": ["Devin Tuohey", "Sean Keegan"]
+            }
+          ]
+        }
+      ],
       "schedule": [],
       "notes": "Just six months after losing the inaugural edition, Team DC demanded a rematch — and got one. Dubbed the DC Challenge Match, the 2nd Edition brought the fight to Washington for the first time, a two-course affair across Columbia Country Club and Chevy Chase Club. Team Philly loaded onto a bus in Wayne, PA at 3:30 PM sharp — $110 a head, no jeans allowed — and rolled south to Chevy Chase Club, where rooms were waiting and strategy sessions commenced over dinner. Captain Shanahan assigned rooms with military precision: the Shanahan brothers in one double, the Etherington brothers in the other, Mundy in a single, and Grecco and Nathan sharing a room with 'an extra bed provided.' Luke Etherington drew cooler duty. On the course, Roland 'The Silverback' Miller led Team DC to a 15.5–12.5 victory, earning MVP honors. The series was tied at one apiece, and suddenly this thing was real.",
       "weather": "Late October in the DC area. Typical fall conditions."
@@ -716,6 +741,96 @@
           "record": "1-2"
         }
       ],
+      "matches": [
+        {
+          "round": 1,
+          "name": "Fourball",
+          "type": "Fourball",
+          "course": "Chevy Chase Club",
+          "pairings": [
+            {
+              "philly": ["Ben Quereau", "Brian Shevland"],
+              "dc": ["Chris Connolly", "Vince Burke"]
+            },
+            {
+              "philly": ["Will Mundy", "Nick Aceto"],
+              "dc": ["Sean Keegan", "Brendan Delany"]
+            },
+            {
+              "philly": ["Pat Shanahan", "Ben Etherington"],
+              "dc": ["Jon Carr", "Devin Tuohey"]
+            },
+            {
+              "philly": ["Jeff Shanahan", "Rob Nathan"],
+              "dc": ["Matt Hopkins", "Roland Miller"]
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "name": "Fourball",
+          "type": "Fourball",
+          "course": "Columbia Country Club",
+          "pairings": [
+            {
+              "philly": ["Nick Aceto", "Rob Nathan"],
+              "dc": ["Jon Carr", "Brendan Delany"]
+            },
+            {
+              "philly": ["Will Mundy", "Ben Quereau"],
+              "dc": ["Devin Tuohey", "Matt Hopkins"]
+            },
+            {
+              "philly": ["Ben Etherington", "Brian Shevland"],
+              "dc": ["Vince Burke", "Roland Miller"]
+            },
+            {
+              "philly": ["Jeff Shanahan", "Pat Shanahan"],
+              "dc": ["Chris Connolly", "Sean Keegan"]
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "name": "Singles",
+          "type": "Singles",
+          "course": "Columbia Country Club",
+          "pairings": [
+            {
+              "philly": ["Nick Aceto"],
+              "dc": ["Brendan Delany"]
+            },
+            {
+              "philly": ["Will Mundy"],
+              "dc": ["Matt Hopkins"]
+            },
+            {
+              "philly": ["Ben Etherington"],
+              "dc": ["Vince Burke"]
+            },
+            {
+              "philly": ["Jeff Shanahan"],
+              "dc": ["Sean Keegan"]
+            },
+            {
+              "philly": ["Rob Nathan"],
+              "dc": ["Jon Carr"]
+            },
+            {
+              "philly": ["Ben Quereau"],
+              "dc": ["Roland Miller"]
+            },
+            {
+              "philly": ["Brian Shevland"],
+              "dc": ["Devin Tuohey"]
+            },
+            {
+              "philly": ["Pat Shanahan"],
+              "dc": ["Chris Connolly"]
+            }
+          ]
+        }
+      ],
       "schedule": [
         {
           "date": "Sep 30",
@@ -895,6 +1010,80 @@
         {
           "name": "Ben Fritz",
           "handicap": 4.7
+        }
+      ],
+      "matches": [
+        {
+          "round": 1,
+          "name": "Better Ball",
+          "type": "Better Ball",
+          "course": "Applebrook Golf Club",
+          "pairings": [
+            {
+              "philly": ["Ben Etherington", "Pat Shanahan"],
+              "dc": ["Jon Carr", "Brendan Delany"]
+            },
+            {
+              "philly": ["Jeff Shanahan", "Nick Aceto"],
+              "dc": ["Matt Hopkins", "Devin Tuohey"]
+            },
+            {
+              "philly": ["Luke Etherington", "Rob Nathan"],
+              "dc": ["Michael Kearns", "Ben Fritz"]
+            },
+            {
+              "philly": ["Bear Barton", "Will Mundy"],
+              "dc": ["Vince Burke", "Sean Keegan"]
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "name": "Better Ball",
+          "type": "Better Ball",
+          "course": "Applebrook Golf Club",
+          "pairings": [
+            {
+              "philly": ["Pat Shanahan", "Jeff Shanahan"],
+              "dc": ["Sean Keegan", "Michael Kearns"]
+            },
+            {
+              "philly": ["Will Mundy", "Rob Nathan"],
+              "dc": ["Jon Carr", "Matt Hopkins"]
+            },
+            {
+              "philly": ["Bear Barton", "Ben Etherington"],
+              "dc": ["Vince Burke", "Brendan Delany"]
+            },
+            {
+              "philly": ["Luke Etherington", "Nick Aceto"],
+              "dc": ["Ben Fritz", "Devin Tuohey"]
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "name": "Alternate Shot",
+          "type": "Alternate Shot",
+          "course": "Applebrook Golf Club",
+          "pairings": [
+            {
+              "philly": ["Pat Shanahan", "Jeff Shanahan"],
+              "dc": ["Sean Keegan", "Michael Kearns"]
+            },
+            {
+              "philly": ["Will Mundy", "Rob Nathan"],
+              "dc": ["Jon Carr", "Matt Hopkins"]
+            },
+            {
+              "philly": ["Bear Barton", "Ben Etherington"],
+              "dc": ["Vince Burke", "Brendan Delany"]
+            },
+            {
+              "philly": ["Luke Etherington", "Nick Aceto"],
+              "dc": ["Ben Fritz", "Devin Tuohey"]
+            }
+          ]
         }
       ],
       "schedule": [
@@ -1080,6 +1269,96 @@
           "name": "Devin Tuohey",
           "handicap": 10.1,
           "lowIndex": 9.5
+        }
+      ],
+      "matches": [
+        {
+          "round": 1,
+          "name": "Fourball",
+          "type": "Fourball",
+          "course": "Columbia Country Club",
+          "pairings": [
+            {
+              "philly": ["Mark Kurd", "Pat Shanahan"],
+              "dc": ["Brendan Delany", "Roland Miller"]
+            },
+            {
+              "philly": ["Ben Etherington", "Murphy Barton"],
+              "dc": ["Jon Carr", "Sean Keegan"]
+            },
+            {
+              "philly": ["Jeff Shanahan", "Luke Etherington"],
+              "dc": ["Matt Hopkins", "Devin Tuohey"]
+            },
+            {
+              "philly": ["Bear Barton", "Will Mundy"],
+              "dc": ["Vince Burke", "Chris Connolly"]
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "name": "Fourball Closeout",
+          "type": "Fourball Closeout",
+          "course": "Chevy Chase Club",
+          "pairings": [
+            {
+              "philly": ["Bear Barton", "Murphy Barton"],
+              "dc": ["Roland Miller", "Devin Tuohey"]
+            },
+            {
+              "philly": ["Ben Etherington", "Luke Etherington"],
+              "dc": ["Vince Burke", "Brendan Delany"]
+            },
+            {
+              "philly": ["Will Mundy", "Mark Kurd"],
+              "dc": ["Jon Carr", "Matt Hopkins"]
+            },
+            {
+              "philly": ["Pat Shanahan", "Jeff Shanahan"],
+              "dc": ["Chris Connolly", "Sean Keegan"]
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "name": "Singles",
+          "type": "Singles",
+          "course": "Chevy Chase Club",
+          "pairings": [
+            {
+              "philly": ["Bear Barton"],
+              "dc": ["Roland Miller"]
+            },
+            {
+              "philly": ["Murphy Barton"],
+              "dc": ["Devin Tuohey"]
+            },
+            {
+              "philly": ["Luke Etherington"],
+              "dc": ["Vince Burke"]
+            },
+            {
+              "philly": ["Ben Etherington"],
+              "dc": ["Brendan Delany"]
+            },
+            {
+              "philly": ["Will Mundy"],
+              "dc": ["Matt Hopkins"]
+            },
+            {
+              "philly": ["Mark Kurd"],
+              "dc": ["Jon Carr"]
+            },
+            {
+              "philly": ["Jeff Shanahan"],
+              "dc": ["Sean Keegan"]
+            },
+            {
+              "philly": ["Pat Shanahan"],
+              "dc": ["Chris Connolly"]
+            }
+          ]
         }
       ],
       "schedule": [
@@ -1565,6 +1844,32 @@
           "name": "Devin Tuohey",
           "handicap": 10.2,
           "lowIndex": 9.9
+        }
+      ],
+      "matches": [
+        {
+          "round": 1,
+          "name": "Fourball Closeout",
+          "type": "Fourball Closeout",
+          "course": "Farmington Country Club",
+          "pairings": [
+            {
+              "philly": ["Jeff Shanahan", "Rob Nathan"],
+              "dc": ["Matt Hopkins", "Devin Tuohey"]
+            },
+            {
+              "philly": ["Ben Quereau", "Ben Etherington"],
+              "dc": ["Vince Burke", "Chris Connolly"]
+            },
+            {
+              "philly": ["Mark Kurd", "Will Mundy"],
+              "dc": ["Brendan Delany", "Sean Keegan"]
+            },
+            {
+              "philly": ["Luke Etherington", "Pat Shanahan"],
+              "dc": ["Jon Carr", "Roland Miller"]
+            }
+          ]
         }
       ],
       "schedule": [
