@@ -9,6 +9,7 @@ export interface StoredPhoto {
 }
 
 const REGISTRY_KEY = 'photos-registry.json';
+const DELETED_IDS_KEY = 'photos-deleted-ids.json';
 const IS_VERCEL = !!process.env.BLOB_READ_WRITE_TOKEN;
 
 // ── Filesystem fallback for local dev ──────────────────────────────
@@ -59,14 +60,54 @@ async function writeRegistryBlob(photos: StoredPhoto[]): Promise<void> {
   });
 }
 
+// ── Deleted IDs tracking (Vercel only) ────────────────────────────
+async function readDeletedIds(): Promise<Set<string>> {
+  try {
+    const { blobs } = await list({ prefix: DELETED_IDS_KEY });
+    if (blobs.length === 0) return new Set();
+    const res = await fetch(blobs[0].url);
+    const ids: string[] = await res.json();
+    return new Set(ids);
+  } catch {
+    return new Set();
+  }
+}
+
+async function writeDeletedIds(ids: Set<string>): Promise<void> {
+  const { blobs } = await list({ prefix: DELETED_IDS_KEY });
+  for (const blob of blobs) {
+    await del(blob.url);
+  }
+  await put(DELETED_IDS_KEY, JSON.stringify([...ids]), {
+    access: 'public',
+    contentType: 'application/json',
+    addRandomSuffix: false,
+  });
+}
+
 // ── Public API (works both locally and on Vercel) ──────────────────
 
 export async function readPhotos(): Promise<StoredPhoto[]> {
   if (IS_VERCEL) {
     const blobPhotos = await readRegistryBlob();
-    if (blobPhotos.length > 0) return blobPhotos;
-    // Seed from bundled data/photos.json on first run
-    const localPhotos = readPhotosLocal();
+    if (blobPhotos.length > 0) {
+      // Merge any new seed photos that aren't in blob yet (and weren't deleted)
+      const deletedIds = await readDeletedIds();
+      const blobIds = new Set(blobPhotos.map((p) => p.id));
+      const localPhotos = readPhotosLocal();
+      const newPhotos = localPhotos.filter(
+        (p) => !blobIds.has(p.id) && !deletedIds.has(p.id)
+      );
+      if (newPhotos.length > 0) {
+        const merged = [...blobPhotos, ...newPhotos];
+        await writeRegistryBlob(merged);
+        return merged;
+      }
+      return blobPhotos;
+    }
+    // First run — seed from bundled data, respecting any prior deletions
+    const deletedIds = await readDeletedIds();
+    const localPhotos = readPhotosLocal().filter((p) => !deletedIds.has(p.id));
     if (localPhotos.length > 0) {
       await writeRegistryBlob(localPhotos);
     }
@@ -92,6 +133,12 @@ export async function removePhoto(id: string): Promise<StoredPhoto | null> {
   if (index === -1) return null;
   const [removed] = photos.splice(index, 1);
   await writePhotos(photos);
+  // Track deletion so re-seeding from repo won't bring it back
+  if (IS_VERCEL) {
+    const deletedIds = await readDeletedIds();
+    deletedIds.add(id);
+    await writeDeletedIds(deletedIds);
+  }
   return removed;
 }
 
