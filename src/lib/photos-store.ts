@@ -100,6 +100,16 @@ export async function readPhotos(): Promise<StoredPhoto[]> {
       // Blob registry is the source of truth.
       // Only merge seed photos that are genuinely NEW (never seen before).
       const knownSeedIds = await readKnownSeedIds();
+
+      // Migration: if known-seed-IDs doesn't exist yet, this is an
+      // existing registry from before this mechanism. Mark all current
+      // seed IDs as known WITHOUT merging anything — the blob already
+      // has the correct state.
+      if (knownSeedIds.size === 0) {
+        await writeKnownSeedIds(currentSeedIds);
+        return blobPhotos;
+      }
+
       const blobIds = new Set(blobPhotos.map((p) => p.id));
       const newSeedPhotos = seedPhotos.filter(
         (p) => !knownSeedIds.has(p.id) && !blobIds.has(p.id)
