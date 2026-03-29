@@ -152,7 +152,7 @@ export default async function AboutPage() {
       </section>
 
       {/* Course Rotation */}
-      <section className="py-12 px-4 border-b border-gray">
+      <section id="course-rotation" className="py-12 px-4 border-b border-gray scroll-mt-[69px]">
         <div className="max-w-3xl mx-auto">
           <SectionHeading title="Course Rotation" />
           <div className="mt-6 overflow-x-auto">
