@@ -9,7 +9,7 @@ export interface StoredPhoto {
 }
 
 const REGISTRY_KEY = 'photos-registry.json';
-const DELETED_IDS_KEY = 'photos-deleted-ids.json';
+const KNOWN_SEED_IDS_KEY = 'photos-known-seed-ids.json';
 const IS_VERCEL = !!process.env.BLOB_READ_WRITE_TOKEN;
 
 // ── Filesystem fallback for local dev ──────────────────────────────
@@ -60,10 +60,13 @@ async function writeRegistryBlob(photos: StoredPhoto[]): Promise<void> {
   });
 }
 
-// ── Deleted IDs tracking (Vercel only) ────────────────────────────
-async function readDeletedIds(): Promise<Set<string>> {
+// ── Known seed IDs tracking (Vercel only) ────────────────────────
+// Tracks which seed photo IDs the blob registry has already seen.
+// Only seed photos with IDs NOT in this set are treated as new additions.
+// This prevents deleted photos from being re-added on redeploy.
+async function readKnownSeedIds(): Promise<Set<string>> {
   try {
-    const { blobs } = await list({ prefix: DELETED_IDS_KEY });
+    const { blobs } = await list({ prefix: KNOWN_SEED_IDS_KEY });
     if (blobs.length === 0) return new Set();
     const res = await fetch(blobs[0].url);
     const ids: string[] = await res.json();
@@ -73,12 +76,12 @@ async function readDeletedIds(): Promise<Set<string>> {
   }
 }
 
-async function writeDeletedIds(ids: Set<string>): Promise<void> {
-  const { blobs } = await list({ prefix: DELETED_IDS_KEY });
+async function writeKnownSeedIds(ids: Set<string>): Promise<void> {
+  const { blobs } = await list({ prefix: KNOWN_SEED_IDS_KEY });
   for (const blob of blobs) {
     await del(blob.url);
   }
-  await put(DELETED_IDS_KEY, JSON.stringify([...ids]), {
+  await put(KNOWN_SEED_IDS_KEY, JSON.stringify([...ids]), {
     access: 'public',
     contentType: 'application/json',
     addRandomSuffix: false,
@@ -90,28 +93,37 @@ async function writeDeletedIds(ids: Set<string>): Promise<void> {
 export async function readPhotos(): Promise<StoredPhoto[]> {
   if (IS_VERCEL) {
     const blobPhotos = await readRegistryBlob();
+    const seedPhotos = readPhotosLocal();
+    const currentSeedIds = new Set(seedPhotos.map((p) => p.id));
+
     if (blobPhotos.length > 0) {
-      // Merge any new seed photos that aren't in blob yet (and weren't deleted)
-      const deletedIds = await readDeletedIds();
+      // Blob registry is the source of truth.
+      // Only merge seed photos that are genuinely NEW (never seen before).
+      const knownSeedIds = await readKnownSeedIds();
       const blobIds = new Set(blobPhotos.map((p) => p.id));
-      const localPhotos = readPhotosLocal();
-      const newPhotos = localPhotos.filter(
-        (p) => !blobIds.has(p.id) && !deletedIds.has(p.id)
+      const newSeedPhotos = seedPhotos.filter(
+        (p) => !knownSeedIds.has(p.id) && !blobIds.has(p.id)
       );
-      if (newPhotos.length > 0) {
-        const merged = [...blobPhotos, ...newPhotos];
+
+      // Update known seed IDs if the seed file changed
+      const seedChanged = currentSeedIds.size !== knownSeedIds.size ||
+        [...currentSeedIds].some((id) => !knownSeedIds.has(id));
+      if (seedChanged) {
+        await writeKnownSeedIds(currentSeedIds);
+      }
+
+      if (newSeedPhotos.length > 0) {
+        const merged = [...blobPhotos, ...newSeedPhotos];
         await writeRegistryBlob(merged);
         return merged;
       }
       return blobPhotos;
     }
-    // First run — seed from bundled data, respecting any prior deletions
-    const deletedIds = await readDeletedIds();
-    const localPhotos = readPhotosLocal().filter((p) => !deletedIds.has(p.id));
-    if (localPhotos.length > 0) {
-      await writeRegistryBlob(localPhotos);
-    }
-    return localPhotos;
+
+    // First run — seed everything and mark all seed IDs as known
+    await writeRegistryBlob(seedPhotos);
+    await writeKnownSeedIds(currentSeedIds);
+    return seedPhotos;
   }
   return readPhotosLocal();
 }
@@ -133,12 +145,6 @@ export async function removePhoto(id: string): Promise<StoredPhoto | null> {
   if (index === -1) return null;
   const [removed] = photos.splice(index, 1);
   await writePhotos(photos);
-  // Track deletion so re-seeding from repo won't bring it back
-  if (IS_VERCEL) {
-    const deletedIds = await readDeletedIds();
-    deletedIds.add(id);
-    await writeDeletedIds(deletedIds);
-  }
   return removed;
 }
 
