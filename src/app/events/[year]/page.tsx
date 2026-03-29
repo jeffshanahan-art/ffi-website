@@ -45,14 +45,37 @@ export default async function EventPage(props: { params: Promise<{ year: string 
   const bannerMap: Record<string, string> = {
     'S2018': 's2018_2',
     'F2018': 'f2018_4',
+    '2019': '2019_1',
     '2020': '2020_2',
+    '2021': '2021_1',
     '2022': '2022_3',
-    '2023': '2023_10',
+    '2023': '2023_9',
     '2024': '2024_1',
     '2025': '2025_1',
   };
   const preferredId = bannerMap[year];
   const bannerPhoto = photos.find((p) => p.id === preferredId) || photos[0] || null;
+
+  // Custom object-position for banners where faces get cut off
+  const bannerPositionMap: Record<string, string> = {
+    'S2018': 'center 30%',
+  };
+  const bannerPosition = bannerPositionMap[year];
+
+  // Program / welcome letter for this edition
+  const programMap: Record<string, { label: string; href: string }[]> = {
+    '2025': [{ label: 'Welcome Letter', href: '/programs/welcome-letter-2025.pdf' }],
+    '2024': [{ label: 'Tournament Program', href: '/programs/program-2024.pdf' }],
+    '2023': [{ label: 'Welcome Letter', href: '/programs/welcome-letter-2023.pdf' }],
+    '2022': [{ label: 'Tournament Program', href: '/programs/program-2022.pdf' }],
+    '2021': [
+      { label: 'Welcome Letter', href: '/programs/welcome-letter-2021.pdf' },
+      { label: 'Press Release', href: '/programs/FFI%20Team%20DC%20PR%20(10122021)_vFINAL.pdf' },
+    ],
+    '2020': [{ label: 'Welcome Letter', href: '/programs/welcome-letter-2020.pdf' }],
+    '2019': [{ label: 'Welcome Letter', href: '/programs/welcome-letter-2019.pdf' }],
+  };
+  const programDocs = programMap[year] || [];
 
   // Get course details with location info
   const allCourses = await getCourses();
@@ -75,7 +98,7 @@ export default async function EventPage(props: { params: Promise<{ year: string 
         </div>
       </div>
 
-      <EventHeader tournament={tournament} bannerSrc={bannerPhoto?.src} courseDetails={courseDetails} />
+      <EventHeader tournament={tournament} bannerSrc={bannerPhoto?.src} bannerPosition={bannerPosition} courseDetails={courseDetails} programDocs={programDocs} />
 
       {/* Edition navigation (top) */}
       <nav className="px-4 py-3 border-b border-gray">

@@ -34,6 +34,7 @@ export default async function Home() {
         <SectionHeading title="Explore" subtitle="Dive Deeper" />
       </div>
       <QuickLinks />
+
     </>
   );
 }

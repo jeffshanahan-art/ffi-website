@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen">
-      <div className="max-w-3xl mx-auto px-4 pt-12 pb-16">
+      <div className="max-w-3xl mx-auto px-4 pt-6 pb-16">
         <SectionHeading
           title="Contact"
           subtitle="Questions, suggestions, or just want to talk golf? We'd love to hear from you."
