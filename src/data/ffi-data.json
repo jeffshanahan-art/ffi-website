@@ -1317,7 +1317,7 @@
             {
               "philly": ["Ben Etherington", "Murphy Barton"],
               "dc": ["Sean Keegan", "Jon Carr"],
-              "score": { "philly": { "total": 1.5 }, "dc": { "total": 1.5 } }
+              "score": { "philly": { "total": 0 }, "dc": { "total": 3 } }
             },
             {
               "philly": ["Jeff Shanahan", "Luke Etherington"],
