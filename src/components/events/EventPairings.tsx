@@ -34,6 +34,10 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
           const roundDC = match.pairings?.reduce((sum: number, p: any) => sum + (p.score?.dc?.total ?? 0), 0) ?? 0;
           const showRoundScore = hasScores && roundPhilly + roundDC > 0;
 
+          const roundHasFBO = match.pairings?.some((p: any) =>
+            p.score && p.score.philly?.front != null
+          );
+
           return (
             <div key={i} className="mb-10">
               <div className="flex items-baseline justify-between border-b border-gray pb-2 mb-1">
@@ -52,7 +56,7 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
               {hasScores && (
                 <div className="hidden sm:grid grid-cols-[1fr_auto_1fr] items-center gap-x-3 pb-2 mb-1 text-xs text-slate uppercase tracking-wide">
                   <div className="text-right">Team Philly</div>
-                  <div className="w-[100px] text-center">F / B / O</div>
+                  <div className="w-[100px] text-center">{roundHasFBO ? 'F / B / O' : 'Score'}</div>
                   <div>Team DC</div>
                 </div>
               )}
@@ -82,7 +86,7 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                         </span>
                       </div>
                     </div>
-                    {score && (
+                    {score && roundHasFBO && (
                       <div className="hidden sm:flex justify-center mt-1 text-xs text-slate">
                         <span>
                           {fmt(score.philly.front)}/{fmt(score.philly.back)}/{fmt(score.philly.overall)}
