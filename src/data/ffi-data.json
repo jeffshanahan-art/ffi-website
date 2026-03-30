@@ -190,9 +190,6 @@
                         },
                         {
                               "name": "Kevin Keating"
-                        },
-                        {
-                              "name": "Bear Barton"
                         }
                   ],
                   "teamDC": [
@@ -3413,7 +3410,6 @@
                   "name": "Bear Barton",
                   "team": "philly",
                   "yearsPlayed": [
-                        "F2018",
                         "2019",
                         "2021",
                         "2022",
