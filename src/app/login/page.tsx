@@ -50,7 +50,7 @@ export default async function LoginPage() {
             </p>
             <div className="mt-8 w-full overflow-hidden rounded-lg">
               <Image
-                src="/images/hero-2025.jpeg"
+                src="/images/hero-sunset.jpeg"
                 alt="The Founding Fathers Invitational"
                 width={1366}
                 height={1024}
@@ -94,11 +94,9 @@ export default async function LoginPage() {
         {/* Login Form */}
         <section className="py-12 px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="border-b border-[#e0e0e0] pb-3 mb-8">
-              <h2 className="font-serif text-2xl text-blue font-normal text-center">
-                Member Login
+            <h2 className="font-serif text-2xl text-blue font-normal text-center mb-8">
+              Member Login
             </h2>
-            </div>
             <div className="max-w-sm mx-auto">
               <LoginForm />
             </div>
