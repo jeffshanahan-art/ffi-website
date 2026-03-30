@@ -124,6 +124,7 @@ export async function getTournamentByYear(
     rounds,
     schedule: 'schedule' in event ? (event as any).schedule : undefined,
     matches: 'matches' in event ? (event as any).matches : undefined,
+    partialResults: (event as any).partialResults === true ? true : undefined,
   };
 }
 

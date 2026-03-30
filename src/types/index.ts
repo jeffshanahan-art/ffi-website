@@ -76,6 +76,7 @@ export interface TournamentDetail extends Tournament {
   rounds?: Round[];
   schedule?: ScheduleItem[];
   matches?: any[];  // Raw match data from JSON
+  partialResults?: boolean;
 }
 
 export interface SeriesRecord {
