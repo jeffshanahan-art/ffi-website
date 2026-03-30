@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { getCourses } from '@/lib/data';
 
@@ -13,8 +14,23 @@ export default async function AboutPage() {
 
   return (
     <div className="min-h-screen">
+      {/* Hero Image */}
+      <div className="max-w-5xl mx-auto pt-8 px-4">
+        <div className="w-full overflow-hidden rounded-lg">
+          <Image
+            src="/images/hero-2019.jpeg"
+            alt="Captains holding the Founding Fathers Invitational trophy — 2019"
+            width={768}
+            height={560}
+            className="w-full h-auto object-cover"
+            priority
+            unoptimized
+          />
+        </div>
+      </div>
+
       {/* Page Header */}
-      <section className="pt-16 pb-10 px-4">
+      <section className="pt-10 pb-10 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="font-serif text-5xl md:text-6xl text-blue font-normal">
             About the FFI
