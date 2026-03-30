@@ -28,7 +28,20 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
   return (
     <section className="py-10 px-4">
       <div className="max-w-5xl mx-auto">
-        <h2 className="font-serif text-2xl text-blue font-normal border-b border-gray pb-3 mb-8">Match Pairings</h2>
+        <div className="flex items-baseline justify-between border-b border-gray pb-3 mb-8">
+          <h2 className="font-serif text-2xl text-blue font-normal">Match Pairings</h2>
+          {hasScores && (() => {
+            const totalPhilly = matches.reduce((sum: number, m: any) =>
+              sum + (m.pairings?.reduce((s: number, p: any) => s + (p.score?.philly?.total ?? 0), 0) ?? 0), 0);
+            const totalDC = matches.reduce((sum: number, m: any) =>
+              sum + (m.pairings?.reduce((s: number, p: any) => s + (p.score?.dc?.total ?? 0), 0) ?? 0), 0);
+            return totalPhilly + totalDC > 0 ? (
+              <span className="text-sm font-semibold text-black">
+                Philly {fmt(totalPhilly)} – {fmt(totalDC)} DC
+              </span>
+            ) : null;
+          })()}
+        </div>
         {matches.map((match: any, i: number) => {
           const roundPhilly = match.pairings?.reduce((sum: number, p: any) => sum + (p.score?.philly?.total ?? 0), 0) ?? 0;
           const roundDC = match.pairings?.reduce((sum: number, p: any) => sum + (p.score?.dc?.total ?? 0), 0) ?? 0;
