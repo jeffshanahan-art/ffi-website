@@ -9,7 +9,12 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
   const isLoginPage = pathname === '/login';
 
   if (isLoginPage) {
-    return <>{children}</>;
+    return (
+      <>
+        <Header disableLinks />
+        {children}
+      </>
+    );
   }
 
   return (
