@@ -14,8 +14,8 @@ export function Hero() {
 
         <div className="mt-8 w-full overflow-hidden rounded-lg">
           <Image
-            src="/images/hero-2025.jpeg"
-            alt="The Founding Fathers Invitational group photo at Applebrook Golf Club"
+            src="/images/hero-2019.jpeg"
+            alt="Captains holding the Founding Fathers Invitational trophy — 2019"
             width={1366}
             height={1024}
             className="w-full h-auto object-cover"
