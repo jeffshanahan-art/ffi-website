@@ -3079,8 +3079,8 @@
                 "dc": {
                   "front": 1,
                   "back": 1,
-                  "overall": 1.5,
-                  "total": 3.5
+                  "overall": 1,
+                  "total": 3
                 }
               }
             },
@@ -3097,8 +3097,8 @@
                 "philly": {
                   "front": 0.5,
                   "back": 1,
-                  "overall": 1.5,
-                  "total": 3
+                  "overall": 1,
+                  "total": 2.5
                 },
                 "dc": {
                   "front": 0.5,
@@ -3127,8 +3127,8 @@
                 "dc": {
                   "front": 1,
                   "back": 0.5,
-                  "overall": 1.5,
-                  "total": 3
+                  "overall": 1,
+                  "total": 2.5
                 }
               }
             },
@@ -3151,8 +3151,8 @@
                 "dc": {
                   "front": 1,
                   "back": 0,
-                  "overall": 1.5,
-                  "total": 2.5
+                  "overall": 1,
+                  "total": 2
                 }
               }
             }
@@ -3176,8 +3176,8 @@
                 "philly": {
                   "front": 0,
                   "back": 1,
-                  "overall": 1.5,
-                  "total": 2.5
+                  "overall": 2,
+                  "total": 3
                 },
                 "dc": {
                   "front": 1,
@@ -3200,8 +3200,8 @@
                 "philly": {
                   "front": 1,
                   "back": 0,
-                  "overall": 1.5,
-                  "total": 2.5
+                  "overall": 2,
+                  "total": 3
                 },
                 "dc": {
                   "front": 0,
@@ -3224,8 +3224,8 @@
                 "philly": {
                   "front": 0,
                   "back": 1,
-                  "overall": 1.5,
-                  "total": 2.5
+                  "overall": 2,
+                  "total": 3
                 },
                 "dc": {
                   "front": 1,
@@ -3254,8 +3254,8 @@
                 "dc": {
                   "front": 1,
                   "back": 0,
-                  "overall": 1.5,
-                  "total": 2.5
+                  "overall": 2,
+                  "total": 3
                 }
               }
             }
@@ -3266,7 +3266,7 @@
     {
       "year": "2026",
       "edition": 10,
-      "displayYear": "2029",
+      "displayYear": "2026",
       "hostCity": "dc",
       "courses": [
         "TBD"
