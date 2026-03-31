@@ -33,7 +33,7 @@ export function EventHeader({
         : t.hostCity;
 
   const details: { label: string; value: string }[] = [];
-  if (t.dateStart) details.push({ label: 'Date', value: t.dateStart });
+  if (t.dateDisplay) details.push({ label: 'Date', value: t.dateDisplay });
   if (t.mvpName) details.push({ label: 'MVP', value: t.mvpName });
   if (t.patShanahanAwardName)
     details.push({ label: 'Pat Shanahan Award', value: t.patShanahanAwardName });

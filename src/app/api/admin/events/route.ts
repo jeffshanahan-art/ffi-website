@@ -82,7 +82,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   const data = getFfiData();
-  return NextResponse.json({ events: data.events });
+  const allPlayers = (data as any).allPlayers?.map((p: any) => ({ name: p.name, team: p.team })) ?? [];
+  return NextResponse.json({ events: data.events, allPlayers });
 }
 
 export async function POST(request: NextRequest) {

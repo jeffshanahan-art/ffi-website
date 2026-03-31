@@ -50,7 +50,7 @@ export default async function LoginPage() {
             </p>
             <div className="mt-8 w-full overflow-hidden rounded-lg">
               <Image
-                src="/images/hero-sunset.jpeg"
+                src="/images/hero-silhouette1.jpeg"
                 alt="The Founding Fathers Invitational"
                 width={1366}
                 height={1024}

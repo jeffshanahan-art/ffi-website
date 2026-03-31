@@ -25,9 +25,9 @@ export function LoginForm() {
 
       if (data.success) {
         if (data.role === 'admin') {
-          router.push('/admin');
+          window.location.href = '/admin';
         } else {
-          router.push('/');
+          window.location.href = '/';
         }
       } else {
         setError('Invalid password');

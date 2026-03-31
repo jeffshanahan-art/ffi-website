@@ -41,29 +41,20 @@ export default async function EventPage(props: { params: Promise<{ year: string 
 
   // Pick banner photo for this edition
   const photos = await getPhotosByYear(year);
-  // Preferred banners per edition (hand-picked)
-  const bannerMap: Record<string, string> = {
-    'S2018': 's2018_2',
-    'F2018': 'f2018_4',
-    '2019': '2019_7',
-    '2020': '2020_2',
-    '2021': '2021_12',
-    '2022': '2022_3',
-    '2023': '2023_9',
-    '2024': '2024_3',
-    '2025': '2025_1',
+
+  // Use admin-configured banner, fall back to legacy hardcoded map, then first photo
+  const legacyBannerMap: Record<string, string> = {
+    'S2018': 's2018_2', 'F2018': 'f2018_4', '2019': '2019_7', '2020': '2020_2',
+    '2021': '2021_12', '2022': '2022_3', '2023': '2023_9', '2024': '2024_3', '2025': '2025_1',
   };
-  const preferredId = bannerMap[year];
+  const preferredId = tournament.bannerPhotoId || legacyBannerMap[year];
   const bannerPhoto = photos.find((p) => p.id === preferredId) || photos[0] || null;
 
-  // Custom object-position for banners where faces get cut off
-  const bannerPositionMap: Record<string, string> = {
-    'S2018': 'center 30%',
-    '2019': 'center 25%',
-    '2021': 'center 70%',
-    '2024': 'center 70%',
+  // Use admin-configured position, fall back to legacy map
+  const legacyPositionMap: Record<string, string> = {
+    'S2018': 'center 30%', '2019': 'center 25%', '2021': 'center 70%', '2024': 'center 70%',
   };
-  const bannerPosition = bannerPositionMap[year];
+  const bannerPosition = tournament.bannerPosition || legacyPositionMap[year];
 
   // Program / welcome letter for this edition
   const programMap: Record<string, { label: string; href: string }[]> = {
@@ -142,6 +133,19 @@ export default async function EventPage(props: { params: Promise<{ year: string 
       <EventRosters teamPhilly={tournament.teamPhilly} teamDC={tournament.teamDC} />
 
       <EventPairings tournament={tournament} />
+
+      {tournament.dates && tournament.dates.length > 0 && tournament.matches && tournament.matches.length > 0 && (
+        <section className="px-4 pb-6">
+          <div className="max-w-5xl mx-auto">
+            <Link
+              href={`/events/${year}/scoring`}
+              className="inline-flex items-center gap-2 bg-blue text-white font-serif text-sm px-6 py-3 hover:opacity-90 transition-opacity"
+            >
+              Live Scoring &rarr;
+            </Link>
+          </div>
+        </section>
+      )}
 
       <EventSchedule schedule={tournament.schedule} />
 

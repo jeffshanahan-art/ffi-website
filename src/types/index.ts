@@ -4,8 +4,8 @@ export interface Tournament {
   displayYear: string;
   hostCity: 'philly' | 'dc';
   courses: string[];
-  dateStart?: string;
-  dateEnd?: string;
+  dates?: string[];       // ISO dates e.g. ["2026-10-15", "2026-10-16"]
+  dateDisplay?: string;   // Human-readable e.g. "October 15–16, 2026"
   scorePhilly: number | null;
   scoreDC: number | null;
   champion: 'philly' | 'dc' | null;
@@ -45,10 +45,28 @@ export interface RosterEntry {
   lowIndex?: number;
 }
 
+export interface PairingScore {
+  front?: number;
+  back?: number;
+  overall?: number;
+  total: number;
+}
+
 export interface MatchPairing {
   philly: string[];
   dc: string[];
   teeTime?: string;
+  score?: {
+    philly: PairingScore;
+    dc: PairingScore;
+  };
+}
+
+export interface PointValues {
+  front?: number;    // max pts for front 9 (18-hole only)
+  back?: number;     // max pts for back 9 (18-hole only)
+  overall?: number;  // max pts for overall (18-hole only)
+  total?: number;    // max pts total (9-hole only)
 }
 
 export interface Round {
@@ -59,6 +77,8 @@ export interface Round {
   points: string | number;
   course?: string;
   isExhibition?: boolean;
+  playersPerSide?: 1 | 2;
+  pointValues?: PointValues;
   pairings?: MatchPairing[];
 }
 
@@ -76,6 +96,8 @@ export interface TournamentDetail extends Tournament {
   rounds?: Round[];
   schedule?: ScheduleItem[];
   matches?: any[];  // Raw match data from JSON
+  bannerPhotoId?: string;
+  bannerPosition?: string;
   partialResults?: boolean;
 }
 

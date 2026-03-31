@@ -47,8 +47,8 @@ function mapEventToTournament(event: (typeof staticData.events)[number]): Tourna
     displayYear: event.displayYear,
     hostCity: event.hostCity as 'philly' | 'dc',
     courses: event.courses,
-    dateStart: 'date' in event ? (event as any).date : undefined,
-    dateEnd: undefined,
+    dates: 'dates' in event ? (event as any).dates : undefined,
+    dateDisplay: 'date' in event ? (event as any).date : undefined,
     scorePhilly: event.score.philly,
     scoreDC: event.score.dc,
     champion: event.champion as 'philly' | 'dc' | null,
@@ -124,6 +124,8 @@ export async function getTournamentByYear(
     rounds,
     schedule: 'schedule' in event ? (event as any).schedule : undefined,
     matches: 'matches' in event ? (event as any).matches : undefined,
+    bannerPhotoId: (event as any).bannerPhotoId ?? undefined,
+    bannerPosition: (event as any).bannerPosition ?? undefined,
     partialResults: (event as any).partialResults === true ? true : undefined,
   };
 }
