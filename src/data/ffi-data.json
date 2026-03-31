@@ -3057,8 +3057,16 @@
       "matches": [
         {
           "round": 1,
+          "name": "Foursomes",
           "type": "Foursomes",
           "course": "Gulph Mills Golf Club",
+          "holes": 18,
+          "playersPerSide": 2,
+          "pointValues": {
+            "front": 0,
+            "back": 0,
+            "overall": 1
+          },
           "pairings": [
             {
               "philly": [
@@ -3160,8 +3168,16 @@
         },
         {
           "round": 2,
+          "name": "Fourball",
           "type": "Fourball",
           "course": "Aronimink Golf Club",
+          "holes": 18,
+          "playersPerSide": 2,
+          "pointValues": {
+            "front": 0,
+            "back": 0,
+            "overall": 0
+          },
           "pairings": [
             {
               "philly": [
