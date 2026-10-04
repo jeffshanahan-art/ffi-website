@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { TournamentDetail, Course } from '@/types';
 import { toEdition } from '@/lib/utils';
+import { LiveScore } from './LiveScore';
 
 const courseLogoMap: Record<string, string> = {
   'Applebrook Golf Club': '/images/courses/applebrook.png',
@@ -25,6 +26,7 @@ export function EventHeader({
   programDocs?: { label: string; href: string }[];
 }) {
   const t = tournament;
+  const isLive = !t.champion && !!t.dates?.length && !!t.matches?.length;
   const cityLabel =
     t.hostCity === 'philly'
       ? 'Philadelphia'
@@ -83,7 +85,9 @@ export function EventHeader({
               </>
             )}
 
-            {t.scorePhilly !== null && t.scoreDC !== null ? (
+            {isLive ? (
+              <LiveScore year={t.year} className={bannerSrc ? '' : 'mt-8'} />
+            ) : t.scorePhilly !== null && t.scoreDC !== null ? (
               <div className={bannerSrc ? '' : 'mt-8'}>
                 <p className="font-serif text-2xl text-black">
                   {t.hostCity === 'philly' ? t.scorePhilly : t.scoreDC} &mdash;{' '}

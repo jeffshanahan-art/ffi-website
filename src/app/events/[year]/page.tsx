@@ -134,7 +134,7 @@ export default async function EventPage(props: { params: Promise<{ year: string 
 
       <EventPairings tournament={tournament} />
 
-      {tournament.dates && tournament.dates.length > 0 && tournament.matches && tournament.matches.length > 0 && (
+      {tournament.champion && tournament.dates && tournament.dates.length > 0 && tournament.matches && tournament.matches.length > 0 && (
         <section className="px-4 pb-6">
           <div className="max-w-5xl mx-auto">
             <Link
