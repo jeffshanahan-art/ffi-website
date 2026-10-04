@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { WinPct, type WinProbabilityData } from './WinPct';
-import { formatReveal } from '@/lib/reveal';
 
 type Result = 'philly' | 'dc' | 'halved' | '';
 
@@ -297,8 +296,8 @@ export function MatchScoring({ year }: { year: string }) {
 
       {locked && revealAt && (
         <div className="text-center border border-gray rounded-lg py-3 px-4">
-          <p className="text-sm font-medium text-black">Pairings will be unveiled</p>
-          <p className="text-sm text-slate">{formatReveal(revealAt)}</p>
+          <p className="text-sm font-medium text-black">Pairings revealed at 9pm on Wednesday</p>
+            <p className="text-sm text-slate">Wednesday is not a scoring day&hellip;just a practice round</p>
         </div>
       )}
 

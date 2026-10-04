@@ -1,5 +1,4 @@
 import type { TournamentDetail } from '@/types';
-import { formatReveal } from '@/lib/reveal';
 
 function fmt(n: number): string {
   if (n === 0) return '0';
@@ -47,8 +46,8 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
         </div>
         {locked && tournament.pairingsRevealAt && (
           <div className="mb-6 text-center border border-gray rounded-lg py-3 px-4">
-            <p className="text-sm font-medium text-black">Pairings will be unveiled</p>
-            <p className="text-sm text-slate">{formatReveal(tournament.pairingsRevealAt)}</p>
+            <p className="text-sm font-medium text-black">Pairings revealed at 9pm on Wednesday</p>
+            <p className="text-sm text-slate">Wednesday is not a scoring day&hellip;just a practice round</p>
           </div>
         )}
         {matches.map((match: any, i: number) => {

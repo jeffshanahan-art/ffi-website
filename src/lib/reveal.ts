@@ -16,14 +16,3 @@ export function redactMatches(matches: any[] | undefined): any[] | undefined {
   });
 }
 
-export function formatReveal(iso: string): string {
-  return new Date(iso).toLocaleString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    timeZone: 'America/New_York',
-    timeZoneName: 'short',
-  });
-}
