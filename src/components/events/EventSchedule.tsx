@@ -31,6 +31,7 @@ export function EventSchedule({ schedule }: { schedule?: ScheduleItem[] }) {
                 <div>
                   <p className="text-black text-sm">{item.event}</p>
                   {item.location && <p className="text-slate text-sm mt-0.5">{item.location}</p>}
+                  {item.notes && <p className="text-slate text-xs italic mt-1">{item.notes}</p>}
                 </div>
                 <span className="text-slate text-sm shrink-0 ml-4">{item.time}</span>
               </div>
