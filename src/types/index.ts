@@ -56,6 +56,7 @@ export interface MatchPairing {
   philly: string[];
   dc: string[];
   teeTime?: string;
+  featured?: boolean;
   score?: {
     philly: PairingScore;
     dc: PairingScore;

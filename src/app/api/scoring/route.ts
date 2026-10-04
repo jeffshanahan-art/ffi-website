@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import staticData from '@/data/ffi-data.json';
 
 function isAuthenticated(request: NextRequest): boolean {
-  const cookie = request.cookies.get('ffi_user');
+  const cookie = request.cookies.get('ffi_admin');
   return cookie?.value === 'authenticated';
 }
 
@@ -93,10 +93,6 @@ function computeScore(
 
 // GET: return match data and whether scoring is active
 export async function GET(request: NextRequest) {
-  if (!isAuthenticated(request)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
-
   const year = request.nextUrl.searchParams.get('year');
   if (!year) {
     return NextResponse.json({ error: 'year param required' }, { status: 400 });

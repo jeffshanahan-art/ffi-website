@@ -3285,24 +3285,213 @@
       "displayYear": "2026",
       "hostCity": "dc",
       "courses": [
-        "TBD"
+        "Columbia Country Club",
+        "Chevy Chase Club"
       ],
       "score": {
         "philly": null,
         "dc": null
       },
       "champion": null,
-      "notes": "Details coming soon...",
+      "notes": "The 10th edition returns to Washington. Practice rounds are Wednesday, October 7, with the event on Thursday, October 8: morning foursomes at Columbia and afternoon fourball at Chevy Chase.",
       "weather": "",
-      "teamPhilly": [],
-      "teamDC": [],
+      "teamPhilly": [
+        {
+          "name": "Jeff Shanahan",
+          "role": "Captain"
+        },
+        {
+          "name": "Pat Shanahan",
+          "role": "Vice Captain"
+        },
+        {
+          "name": "Wayne Lesage"
+        },
+        {
+          "name": "Ben Quereau"
+        },
+        {
+          "name": "Luke Etherington"
+        },
+        {
+          "name": "Ben Etherington"
+        },
+        {
+          "name": "Bear Barton"
+        },
+        {
+          "name": "Rob Nathan"
+        }
+      ],
+      "teamDC": [
+        {
+          "name": "Matt Hopkins",
+          "role": "Captain"
+        },
+        {
+          "name": "Brendan Delany",
+          "role": "Vice Captain"
+        },
+        {
+          "name": "Jon Carr",
+          "role": "Secretary"
+        },
+        {
+          "name": "Vince Burke"
+        },
+        {
+          "name": "Chris Connolly"
+        },
+        {
+          "name": "Sean Keegan"
+        },
+        {
+          "name": "Roland Miller"
+        },
+        {
+          "name": "Devin Tuohey"
+        }
+      ],
       "dates": [
         "2026-10-07",
         "2026-10-08"
       ],
       "date": "October 7–8, 2026",
       "mvp": null,
-      "patShanahanAward": null
+      "patShanahanAward": null,
+      "format": {
+        "rounds": [
+          {
+            "name": "Morning",
+            "type": "Foursomes",
+            "holes": 18,
+            "points": 12,
+            "course": "Columbia Country Club"
+          },
+          {
+            "name": "Afternoon",
+            "type": "Fourball",
+            "holes": 18,
+            "points": 16,
+            "course": "Chevy Chase Club"
+          }
+        ],
+        "totalPoints": 28
+      },
+      "matches": [
+        {
+          "round": 1,
+          "name": "Foursomes",
+          "type": "Foursomes",
+          "course": "Columbia Country Club",
+          "holes": 18,
+          "playersPerSide": 2,
+          "pointValues": {
+            "front": 1,
+            "back": 1,
+            "overall": 1
+          },
+          "pairings": [
+            {
+              "philly": [
+                "Pat Shanahan",
+                "Luke Etherington"
+              ],
+              "dc": [
+                "Matt Hopkins",
+                "Brendan Delany"
+              ]
+            },
+            {
+              "philly": [
+                "Jeff Shanahan",
+                "Wayne Lesage"
+              ],
+              "dc": [
+                "Jon Carr",
+                "Sean Keegan"
+              ],
+              "featured": true
+            },
+            {
+              "philly": [
+                "Ben Etherington",
+                "Ben Quereau"
+              ],
+              "dc": [
+                "Vince Burke",
+                "Roland Miller"
+              ]
+            },
+            {
+              "philly": [
+                "Bear Barton",
+                "Rob Nathan"
+              ],
+              "dc": [
+                "Chris Connolly",
+                "Devin Tuohey"
+              ]
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "name": "Fourball",
+          "type": "Fourball",
+          "course": "Chevy Chase Club",
+          "holes": 18,
+          "playersPerSide": 2,
+          "pointValues": {
+            "front": 1,
+            "back": 1,
+            "overall": 2
+          },
+          "pairings": [
+            {
+              "philly": [
+                "Pat Shanahan",
+                "Jeff Shanahan"
+              ],
+              "dc": [
+                "Vince Burke",
+                "Brendan Delany"
+              ]
+            },
+            {
+              "philly": [
+                "Wayne Lesage",
+                "Bear Barton"
+              ],
+              "dc": [
+                "Roland Miller",
+                "Jon Carr"
+              ]
+            },
+            {
+              "philly": [
+                "Luke Etherington",
+                "Ben Quereau"
+              ],
+              "dc": [
+                "Matt Hopkins",
+                "Devin Tuohey"
+              ],
+              "featured": true
+            },
+            {
+              "philly": [
+                "Rob Nathan",
+                "Ben Etherington"
+              ],
+              "dc": [
+                "Sean Keegan",
+                "Chris Connolly"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "allPlayers": [

@@ -11,16 +11,6 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
-  const isLoginPage = pathname === '/login';
-
-  if (isLoginPage) {
-    return (
-      <>
-        <Header disableLinks />
-        {children}
-      </>
-    );
-  }
 
   return (
     <>

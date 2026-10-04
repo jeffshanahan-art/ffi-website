@@ -100,6 +100,11 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                         </span>
                       </div>
                     </div>
+                    {pairing.featured && (
+                      <div className="text-center mt-1 text-[10px] uppercase tracking-wide text-blue font-semibold">
+                        Featured Pairing
+                      </div>
+                    )}
                     {score && roundHasFBO && (
                       <div className="hidden sm:flex justify-center mt-1 text-xs text-slate">
                         <span>
