@@ -96,6 +96,32 @@ function ResultRadio({
   );
 }
 
+function ReadOnlyResult({ pairing, is18 }: { pairing: any; is18: boolean }) {
+  const score = pairing.score;
+  if (!score) {
+    return <p className="text-center text-xs text-slate italic">Not started</p>;
+  }
+  const label = (phillyVal: number | undefined, dcVal: number | undefined) => {
+    const p = phillyVal ?? 0;
+    const d = dcVal ?? 0;
+    if (p === d) return p === 0 ? '—' : 'Halved';
+    return p > d ? 'Philly' : 'DC';
+  };
+  return (
+    <div className="text-center">
+      <p className="text-sm font-semibold text-black">
+        {fmt(score.philly?.total ?? 0)} – {fmt(score.dc?.total ?? 0)}
+      </p>
+      {is18 && score.philly?.front != null && (
+        <p className="text-xs text-slate mt-1">
+          Front: {label(score.philly.front, score.dc?.front)} · Back: {label(score.philly.back, score.dc?.back)} · Overall:{' '}
+          {label(score.philly.overall, score.dc?.overall)}
+        </p>
+      )}
+    </div>
+  );
+}
+
 export function MatchScoring({ year }: { year: string }) {
   const [matches, setMatches] = useState<any[]>([]);
   const [eventScore, setEventScore] = useState<{ philly: number | null; dc: number | null }>({
@@ -105,6 +131,7 @@ export function MatchScoring({ year }: { year: string }) {
   const [active, setActive] = useState(false);
   const [dates, setDates] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [results, setResults] = useState<Map<string, PairingResults>>(new Map());
   const [submitting, setSubmitting] = useState<string | null>(null);
   const [messages, setMessages] = useState<Map<string, { ok: boolean; text: string }>>(new Map());
@@ -134,6 +161,20 @@ export function MatchScoring({ year }: { year: string }) {
   useEffect(() => {
     load();
   }, [load]);
+
+  useEffect(() => {
+    fetch('/api/auth')
+      .then((r) => r.json())
+      .then((d) => setIsAdmin(!!d.isAdmin))
+      .catch(() => {});
+  }, []);
+
+  // Viewers get fresh scores without refreshing; admins are mid-entry, so don't clobber their selections.
+  useEffect(() => {
+    if (isAdmin) return;
+    const t = setInterval(load, 30000);
+    return () => clearInterval(t);
+  }, [isAdmin, load]);
 
   const submit = async (roundIndex: number, pairingIndex: number) => {
     const key = `${roundIndex}-${pairingIndex}`;
@@ -196,28 +237,6 @@ export function MatchScoring({ year }: { year: string }) {
     );
   }
 
-  if (!active) {
-    const dateStrings = dates.map((d) =>
-      new Date(d + 'T12:00:00').toLocaleDateString('en-US', {
-        weekday: 'long',
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-      })
-    );
-    return (
-      <div className="text-center text-slate py-12">
-        <p className="text-lg">Scoring is not active yet.</p>
-        <p className="text-sm mt-2">
-          Scoring opens on{' '}
-          <span className="font-medium text-black">
-            {dateStrings.join(' and ')}
-          </span>
-        </p>
-      </div>
-    );
-  }
-
   if (!matches.length) {
     return (
       <div className="text-center text-slate py-12">
@@ -228,19 +247,40 @@ export function MatchScoring({ year }: { year: string }) {
 
   return (
     <div className="space-y-8">
+      {!active && (
+        <div className="text-center text-slate border border-gray rounded-lg py-4 px-4">
+          <p className="font-medium text-black">Scoring is not active yet</p>
+          <p className="text-sm mt-1">
+            Live scoring opens on{' '}
+            <span className="font-medium text-black">
+              {dates
+                .map((d) =>
+                  new Date(d + 'T12:00:00').toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    month: 'long',
+                    day: 'numeric',
+                  })
+                )
+                .join(' and ')}
+            </span>
+            . Here are the matchups.
+          </p>
+        </div>
+      )}
+
       {/* Running total */}
       <div className="flex items-center justify-center gap-8 py-4 bg-gray/20 rounded-lg">
         <div className="text-right">
           <p className="text-slate text-xs uppercase">Philly</p>
           <p className="font-serif text-3xl text-blue">
-            {eventScore.philly != null ? fmt(eventScore.philly) : '—'}
+            {eventScore.philly != null ? fmt(eventScore.philly) : '0'}
           </p>
         </div>
         <div className="text-slate font-serif text-2xl">—</div>
         <div className="text-left">
           <p className="text-slate text-xs uppercase">DC</p>
           <p className="font-serif text-3xl text-blue">
-            {eventScore.dc != null ? fmt(eventScore.dc) : '—'}
+            {eventScore.dc != null ? fmt(eventScore.dc) : '0'}
           </p>
         </div>
       </div>
@@ -267,17 +307,27 @@ export function MatchScoring({ year }: { year: string }) {
                 return (
                   <div key={pi} className="border border-gray rounded-lg p-4">
                     {/* Players */}
+                    {pairing.featured && (
+                      <p className="text-center text-[10px] uppercase tracking-wide text-blue font-semibold mb-2">
+                        Featured Pairing
+                      </p>
+                    )}
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-sm font-medium text-black">
                         {pairing.philly?.join(' & ')}
                       </span>
                       <span className="text-xs text-slate px-2">vs</span>
-                      <span className="text-sm font-medium text-black">
+                      <span className="text-sm font-medium text-black text-right">
                         {pairing.dc?.join(' & ')}
                       </span>
                     </div>
 
-                    {/* Score entry */}
+                    {!isAdmin && (
+                      <ReadOnlyResult pairing={pairing} is18={is18} />
+                    )}
+
+                    {/* Score entry (admin only) */}
+                    {isAdmin && (
                     <div className="space-y-2">
                       {is18 ? (
                         <>
@@ -287,7 +337,7 @@ export function MatchScoring({ year }: { year: string }) {
                             onChange={(v) =>
                               setResults((prev) => new Map(prev).set(key, { ...r, front: v }))
                             }
-                            disabled={isBusy}
+                            disabled={isBusy || !active}
                           />
                           <ResultRadio
                             label={`Back (${fmt(match.pointValues?.back || 0)} pt)`}
@@ -295,7 +345,7 @@ export function MatchScoring({ year }: { year: string }) {
                             onChange={(v) =>
                               setResults((prev) => new Map(prev).set(key, { ...r, back: v }))
                             }
-                            disabled={isBusy}
+                            disabled={isBusy || !active}
                           />
                           <ResultRadio
                             label={`Overall (${fmt(match.pointValues?.overall || 0)} pt)`}
@@ -303,7 +353,7 @@ export function MatchScoring({ year }: { year: string }) {
                             onChange={(v) =>
                               setResults((prev) => new Map(prev).set(key, { ...r, overall: v }))
                             }
-                            disabled={isBusy}
+                            disabled={isBusy || !active}
                           />
                         </>
                       ) : (
@@ -313,16 +363,18 @@ export function MatchScoring({ year }: { year: string }) {
                           onChange={(v) =>
                             setResults((prev) => new Map(prev).set(key, { ...r, total: v }))
                           }
-                          disabled={isBusy}
+                          disabled={isBusy || !active}
                         />
                       )}
                     </div>
+                    )}
 
                     {/* Submit */}
+                    {isAdmin && (
                     <div className="mt-3 flex items-center gap-3">
                       <button
                         type="button"
-                        disabled={isBusy}
+                        disabled={isBusy || !active}
                         onClick={() => submit(ri, pi)}
                         className="bg-blue text-white px-4 py-1.5 text-xs hover:opacity-90 transition-opacity disabled:opacity-50"
                       >
@@ -334,6 +386,7 @@ export function MatchScoring({ year }: { year: string }) {
                         </span>
                       )}
                     </div>
+                    )}
                   </div>
                 );
               })}
