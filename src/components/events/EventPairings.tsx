@@ -47,7 +47,6 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
         {locked && tournament.pairingsRevealAt && (
           <div className="mb-6 text-center border border-gray rounded-lg py-3 px-4">
             <p className="text-sm font-medium text-black">Pairings revealed at 9pm on Wednesday</p>
-            <p className="text-sm text-slate">Wednesday is not a scoring day&hellip;just a practice round</p>
           </div>
         )}
         {matches.map((match: any, i: number) => {
