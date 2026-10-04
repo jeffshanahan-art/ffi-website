@@ -99,6 +99,7 @@ export interface TournamentDetail extends Tournament {
   matches?: any[];  // Raw match data from JSON
   bannerPhotoId?: string;
   bannerPosition?: string;
+  bannerImage?: string;
   partialResults?: boolean;
 }
 

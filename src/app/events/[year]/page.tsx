@@ -92,7 +92,7 @@ export default async function EventPage(props: { params: Promise<{ year: string 
         </div>
       </div>
 
-      <EventHeader tournament={tournament} bannerSrc={bannerPhoto?.src} bannerPosition={bannerPosition} courseDetails={courseDetails} programDocs={programDocs} />
+      <EventHeader tournament={tournament} bannerSrc={bannerPhoto?.src ?? tournament.bannerImage} bannerPosition={bannerPosition} courseDetails={courseDetails} programDocs={programDocs} />
 
       {/* Edition navigation (top) */}
       <nav className="px-4 py-3 border-b border-gray">

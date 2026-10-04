@@ -3491,7 +3491,9 @@
             }
           ]
         }
-      ]
+      ],
+      "bannerImage": "/images/hero-sunset.jpeg",
+      "bannerPosition": "center 45%"
     }
   ],
   "allPlayers": [

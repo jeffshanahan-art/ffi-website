@@ -126,6 +126,7 @@ export async function getTournamentByYear(
     matches: 'matches' in event ? (event as any).matches : undefined,
     bannerPhotoId: (event as any).bannerPhotoId ?? undefined,
     bannerPosition: (event as any).bannerPosition ?? undefined,
+    bannerImage: (event as any).bannerImage ?? undefined,
     partialResults: (event as any).partialResults === true ? true : undefined,
   };
 }
