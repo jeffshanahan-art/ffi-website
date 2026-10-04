@@ -72,9 +72,11 @@ export function WinPct({ data, className = '' }: { data: WinProbabilityData; cla
         </span>
       </div>
 
-      <p className="mt-2 text-center text-slate text-base sm:text-lg">
-        Win% presented by <span className="font-bold text-blue">JustPark</span>
-      </p>
+      <div className="mt-3 flex items-center justify-center gap-2 text-slate text-base sm:text-lg">
+        <span>Win% presented by</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/justpark-logo.png" alt="JustPark" className="h-5 sm:h-6 w-auto" />
+      </div>
       <p className="text-center text-[11px] text-slate/80 mt-1">
         {data.live ? 'Live from match results. ' : 'Pre-event odds. '}
         Based on past results; {host} hosts, and hosts have won {data.hostRecord.wins} of {data.hostRecord.editions} editions.
