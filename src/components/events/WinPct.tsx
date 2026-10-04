@@ -24,7 +24,6 @@ function Badge({ label, className }: { label: string; className: string }) {
 export function WinPct({ data, className = '' }: { data: WinProbabilityData; className?: string }) {
   const philly = Math.round(data.philly * 100);
   const dc = 100 - philly;
-  const host = data.hostCity === 'dc' ? 'DC' : 'Philly';
 
   return (
     <div className={`bg-white border border-gray rounded-2xl shadow-sm px-4 sm:px-6 pt-5 pb-4 ${className}`}>
@@ -77,10 +76,6 @@ export function WinPct({ data, className = '' }: { data: WinProbabilityData; cla
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/justpark-logo.png" alt="JustPark" className="h-5 sm:h-6 w-auto" />
       </div>
-      <p className="text-center text-[11px] text-slate/80 mt-1">
-        {data.live ? 'Live from match results. ' : 'Pre-event odds. '}
-        Based on past results; {host} hosts, and hosts have won {data.hostRecord.wins} of {data.hostRecord.editions} editions.
-      </p>
     </div>
   );
 }
