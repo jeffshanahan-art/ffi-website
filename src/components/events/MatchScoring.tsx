@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { WinPct, type WinProbabilityData } from './WinPct';
+import { formatReveal } from '@/lib/reveal';
 
 type Result = 'philly' | 'dc' | 'halved' | '';
 
@@ -132,6 +134,9 @@ export function MatchScoring({ year }: { year: string }) {
   const [dates, setDates] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [win, setWin] = useState<WinProbabilityData | null>(null);
+  const [locked, setLocked] = useState(false);
+  const [revealAt, setRevealAt] = useState<string | null>(null);
   const [results, setResults] = useState<Map<string, PairingResults>>(new Map());
   const [submitting, setSubmitting] = useState<string | null>(null);
   const [messages, setMessages] = useState<Map<string, { ok: boolean; text: string }>>(new Map());
@@ -144,6 +149,9 @@ export function MatchScoring({ year }: { year: string }) {
     setEventScore(data.score || { philly: null, dc: null });
     setActive(data.active);
     setDates(data.dates || []);
+    setWin(data.winProbability ?? null);
+    setLocked(!!data.pairingsLocked);
+    setRevealAt(data.pairingsRevealAt ?? null);
 
     // Initialize results from existing scores
     const initial = new Map<string, PairingResults>();
@@ -285,6 +293,15 @@ export function MatchScoring({ year }: { year: string }) {
         </div>
       </div>
 
+      {win && <WinPct data={win} />}
+
+      {locked && revealAt && (
+        <div className="text-center border border-gray rounded-lg py-3 px-4">
+          <p className="text-sm font-medium text-black">Pairings will be unveiled</p>
+          <p className="text-sm text-slate">{formatReveal(revealAt)}</p>
+        </div>
+      )}
+
       {/* Match rounds */}
       {matches.map((match: any, ri: number) => {
         const is18 = match.holes === 18;
@@ -305,7 +322,7 @@ export function MatchScoring({ year }: { year: string }) {
                 const isBusy = submitting === key;
 
                 return (
-                  <div key={pi} className="border border-gray rounded-lg p-4">
+                  <div key={pi} className={`border border-gray rounded-lg p-4 ${locked ? 'blur-sm select-none pointer-events-none' : ''}`} aria-hidden={locked}>
                     {/* Players */}
                     {pairing.featured && (
                       <p className="text-center text-[10px] uppercase tracking-wide text-blue font-semibold mb-2">

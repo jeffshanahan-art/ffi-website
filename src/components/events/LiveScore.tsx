@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { WinPct, type WinProbabilityData } from './WinPct';
 
 function fmt(n: number): string {
   const whole = Math.floor(n);
@@ -11,6 +12,7 @@ function fmt(n: number): string {
 export function LiveScore({ year, className = '' }: { year: string; className?: string }) {
   const [score, setScore] = useState<{ philly: number | null; dc: number | null } | null>(null);
   const [active, setActive] = useState(false);
+  const [win, setWin] = useState<WinProbabilityData | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -21,6 +23,7 @@ export function LiveScore({ year, className = '' }: { year: string; className?: 
           if (cancelled || !d) return;
           setScore(d.score);
           setActive(!!d.active);
+          setWin(d.winProbability ?? null);
         })
         .catch(() => {});
     load();
@@ -55,6 +58,7 @@ export function LiveScore({ year, className = '' }: { year: string; className?: 
       >
         Live Scoring &rarr;
       </Link>
+      {win && <WinPct data={win} className="mt-6 max-w-md" />}
     </div>
   );
 }

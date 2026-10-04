@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import staticData from '@/data/ffi-data.json';
+import { computeWinProbability } from '@/lib/winprob';
+import { pairingsLocked, redactMatches } from '@/lib/reveal';
 
 function isAuthenticated(request: NextRequest): boolean {
   const cookie = request.cookies.get('ffi_admin');
@@ -118,11 +120,16 @@ export async function GET(request: NextRequest) {
   const dates: string[] = event.dates || [];
   const active = dates.includes(today);
 
+  const locked = pairingsLocked(event) && !isAuthenticated(request);
+
   return NextResponse.json({
     active,
     dates,
-    matches: event.matches || [],
+    matches: (locked ? redactMatches(event.matches) : event.matches) || [],
+    pairingsLocked: locked,
+    pairingsRevealAt: event.pairingsRevealAt ?? null,
     score: event.score || { philly: null, dc: null },
+    winProbability: computeWinProbability(data.events as any[], event),
   });
 }
 

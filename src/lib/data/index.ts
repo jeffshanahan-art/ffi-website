@@ -1,4 +1,5 @@
 import staticData from '@/data/ffi-data.json';
+import { pairingsLocked, redactMatches } from '@/lib/reveal';
 import type {
   Tournament,
   TournamentDetail,
@@ -75,13 +76,15 @@ export async function getTournaments(): Promise<Tournament[]> {
 }
 
 export async function getTournamentByYear(
-  year: string
+  year: string,
+  opts: { revealAll?: boolean } = {}
 ): Promise<TournamentDetail | null> {
   const ffiData = getFfiData();
   const event = ffiData.events.find((e) => e.year === year);
   if (!event) return null;
 
   const base = mapEventToTournament(event);
+  const locked = !opts.revealAll && pairingsLocked(event as any);
   const format = 'format' in event ? (event as any).format : undefined;
 
   // Map roster entries - handle both string[] and object[] formats
@@ -123,7 +126,9 @@ export async function getTournamentByYear(
     teamDC,
     rounds,
     schedule: 'schedule' in event ? (event as any).schedule : undefined,
-    matches: 'matches' in event ? (event as any).matches : undefined,
+    matches: locked ? redactMatches((event as any).matches) : 'matches' in event ? (event as any).matches : undefined,
+    pairingsRevealAt: (event as any).pairingsRevealAt ?? undefined,
+    pairingsLocked: locked ? true : undefined,
     bannerPhotoId: (event as any).bannerPhotoId ?? undefined,
     bannerPosition: (event as any).bannerPosition ?? undefined,
     bannerImage: (event as any).bannerImage ?? undefined,

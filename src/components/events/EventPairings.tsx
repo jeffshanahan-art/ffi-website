@@ -1,4 +1,5 @@
 import type { TournamentDetail } from '@/types';
+import { formatReveal } from '@/lib/reveal';
 
 function fmt(n: number): string {
   if (n === 0) return '0';
@@ -25,6 +26,7 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
 
   const hasScores = matches.some((m: any) => m.pairings?.some((p: any) => p.score));
   const partialResults = (tournament as any).partialResults;
+  const locked = !!tournament.pairingsLocked;
 
   return (
     <section className="py-10 px-4">
@@ -43,6 +45,12 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
             ) : null;
           })()}
         </div>
+        {locked && tournament.pairingsRevealAt && (
+          <div className="mb-6 text-center border border-gray rounded-lg py-3 px-4">
+            <p className="text-sm font-medium text-black">Pairings will be unveiled</p>
+            <p className="text-sm text-slate">{formatReveal(tournament.pairingsRevealAt)}</p>
+          </div>
+        )}
         {matches.map((match: any, i: number) => {
           const roundPhilly = match.pairings?.reduce((sum: number, p: any) => sum + (p.score?.philly?.total ?? 0), 0) ?? 0;
           const roundDC = match.pairings?.reduce((sum: number, p: any) => sum + (p.score?.dc?.total ?? 0), 0) ?? 0;
@@ -78,7 +86,7 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
               {match.pairings?.map((pairing: any, j: number) => {
                 const score = pairing.score;
                 return (
-                  <div key={j} className="py-3 border-b border-gray">
+                  <div key={j} className={`py-3 border-b border-gray ${locked ? 'blur-sm select-none pointer-events-none' : ''}`} aria-hidden={locked}>
                     <div className="flex items-center">
                       <div className="flex-1 text-right">
                         <span className="text-black text-sm">
