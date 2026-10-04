@@ -37,11 +37,12 @@ interface EventLike {
   edition?: number;
   displayYear?: string;
   date?: string | null;
+  photoWindow?: { start: string; end: string };
 }
 
 export function getEditionWindows(events: EventLike[]): EditionWindow[] {
   return events.map((e) => {
-    const range = parseDateRange(e.date);
+    const range = e.photoWindow ?? parseDateRange(e.date);
     return {
       value: e.year,
       label: e.edition ? `${toEdition(e.edition)} — ${e.displayYear}` : String(e.displayYear ?? e.year),

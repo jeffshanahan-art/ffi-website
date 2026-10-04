@@ -140,7 +140,11 @@
       "matches": [],
       "schedule": [],
       "notes": "The one that started it all. In the spring of 2018, Captain Jeff Shanahan and Team Philly hosted Captain Matt Hopkins and Team DC for the inaugural Founding Fathers Invitational — a two-course affair across Applebrook Golf Club and Aronimink Golf Club. There was no trophy yet, no program, no welcome letter. Just two six-man squads, 18 points on the line, and a vague sense that this might become a thing. It became a thing. Team Philly rolled to a 12–6 victory, and Pat Shanahan took home the first-ever MVP award. The rivalry was born. The formalities would follow.",
-      "weather": "Spring conditions in the Philadelphia area."
+      "weather": "Spring conditions in the Philadelphia area.",
+      "photoWindow": {
+        "start": "2018-04-01",
+        "end": "2018-05-31"
+      }
     },
     {
       "year": "F2018",
@@ -517,7 +521,11 @@
       ],
       "schedule": [],
       "notes": "Just six months after losing the inaugural edition, Team DC demanded a rematch — and got one. Dubbed the DC Challenge Match, the 2nd Edition brought the fight to Washington for the first time, a two-course affair across Columbia Country Club and Chevy Chase Club. Team Philly loaded onto a bus in Wayne, PA at 3:30 PM sharp — $110 a head, no jeans allowed — and rolled south to Chevy Chase Club, where rooms were waiting and strategy sessions commenced over dinner. Captain Shanahan assigned rooms with military precision: the Shanahan brothers in one double, the Etherington brothers in the other, Mundy in a single, and Grecco and Nathan sharing a room with 'an extra bed provided.' Luke Etherington drew cooler duty. On the course, Roland 'The Silverback' Miller led Team DC to a 15.5–8.5 victory, earning MVP honors. The series was tied at one apiece, and suddenly this thing was real.",
-      "weather": "Late October in the DC area. Typical fall conditions."
+      "weather": "Late October in the DC area. Typical fall conditions.",
+      "photoWindow": {
+        "start": "2018-09-01",
+        "end": "2018-10-31"
+      }
     },
     {
       "year": "2019",
