@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Inter, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import { LayoutShell } from "@/components/layout/LayoutShell";
 
@@ -15,6 +15,13 @@ const inter = Inter({
   display: "swap",
 });
 
+const condensed = Barlow_Condensed({
+  variable: "--font-condensed",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Founding Fathers Invitational | Est. 2018",
   description: "The definitive record of the Founding Fathers Invitational golf tournament. Team Philly vs Team DC since 2018.",
@@ -26,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} ${condensed.variable}`}>
       <body className="min-h-screen flex flex-col bg-white text-navy font-sans antialiased">
         <LayoutShell>{children}</LayoutShell>
       </body>

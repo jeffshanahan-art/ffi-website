@@ -5,6 +5,8 @@ export interface WinProbability {
   dc: number;
   preEvent: { philly: number; dc: number };
   live: boolean;
+  score: { philly: number; dc: number };
+  projected: { philly: number; dc: number };
   hostCity: string;
   hostRecord: { wins: number; editions: number };
   seriesRecord: { philly: number; dc: number };
@@ -116,10 +118,12 @@ export function computeWinProbability(events: any[], event: any): WinProbability
   }
 
   let philly = prePhilly;
-  if (anyScored && allUnits.length) {
-    const q = calibrate(allUnits, prePhilly);
-    philly = finishProbability(phillyNow, dcNow, remainingUnits, q);
+  let q = 0.5;
+  if (allUnits.length) {
+    q = calibrate(allUnits, prePhilly);
+    if (anyScored) philly = finishProbability(phillyNow, dcNow, remainingUnits, q);
   }
+  const remainingPts = remainingUnits.reduce((a, b) => a + b, 0);
 
   const past = completed(history);
   const hostWins = past.filter((e) => (e.hostCity === 'philly' ? e.score.philly > e.score.dc : e.score.dc > e.score.philly)).length;
@@ -130,6 +134,8 @@ export function computeWinProbability(events: any[], event: any): WinProbability
     dc: 1 - philly,
     preEvent: { philly: prePhilly, dc: preDC },
     live: anyScored,
+    score: { philly: phillyNow, dc: dcNow },
+    projected: { philly: phillyNow + q * remainingPts, dc: dcNow + (1 - q) * remainingPts },
     hostCity: event.hostCity,
     hostRecord: { wins: hostWins, editions: past.length },
     seriesRecord: { philly: wins('philly'), dc: wins('dc') },
