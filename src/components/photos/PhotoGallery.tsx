@@ -15,11 +15,9 @@ interface YearOption {
 function GalleryInner({
   initialPhotos,
   yearOptions,
-  allYearOptions,
 }: {
   initialPhotos: Photo[];
   yearOptions: YearOption[];
-  allYearOptions: YearOption[];
 }) {
   const [photos, setPhotos] = useState(initialPhotos);
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
@@ -59,7 +57,7 @@ function GalleryInner({
     <>
       <AdminBar />
 
-      <PhotoUpload yearOptions={allYearOptions} onUploaded={refreshPhotos} />
+      <PhotoUpload onUploaded={refreshPhotos} />
 
       {/* Year filter tabs */}
       <div className="flex flex-wrap gap-2 mb-8">
@@ -100,19 +98,13 @@ function GalleryInner({
 export function PhotoGallery({
   photos,
   yearOptions,
-  allYearOptions,
 }: {
   photos: Photo[];
   yearOptions: YearOption[];
-  allYearOptions?: YearOption[];
 }) {
   return (
     <AdminProvider>
-      <GalleryInner
-        initialPhotos={photos}
-        yearOptions={yearOptions}
-        allYearOptions={allYearOptions || yearOptions}
-      />
+      <GalleryInner initialPhotos={photos} yearOptions={yearOptions} />
     </AdminProvider>
   );
 }

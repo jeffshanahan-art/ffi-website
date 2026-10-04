@@ -8,9 +8,9 @@ import {
   generateId,
 } from '@/lib/photos-store';
 
-const VALID_YEARS = [
-  'S2018', 'F2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025',
-];
+import staticData from '@/data/ffi-data.json';
+
+const VALID_YEARS = (staticData.events as { year: string }[]).map((e) => e.year);
 
 export async function GET() {
   const photos = await readPhotos();
@@ -18,11 +18,15 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  if (request.cookies.get('ffi_admin')?.value !== 'authenticated') {
+    return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
+  }
   try {
     const formData = await request.formData();
     const file = formData.get('file') as File | null;
     const year = formData.get('year') as string | null;
     const caption = formData.get('caption') as string | null;
+    const takenAt = formData.get('takenAt') as string | null;
 
     if (!file) {
       return NextResponse.json({ error: 'No file provided' }, { status: 400 });
@@ -50,6 +54,7 @@ export async function POST(request: NextRequest) {
       src,
       year,
       caption: caption || undefined,
+      takenAt: takenAt || undefined,
       uploadedAt: new Date().toISOString(),
     };
     await addPhoto(photo);

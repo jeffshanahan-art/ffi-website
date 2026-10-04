@@ -40,7 +40,6 @@ export default async function PhotosPage() {
         <PhotoGallery
           photos={photos}
           yearOptions={yearOptions}
-          allYearOptions={allYearOptions}
         />
       </div>
     </main>

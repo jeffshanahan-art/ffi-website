@@ -5,6 +5,7 @@ export interface StoredPhoto {
   src: string;
   year: string;
   caption?: string;
+  takenAt?: string;
   uploadedAt?: string;
 }
 

@@ -37,12 +37,10 @@ function Inner({
     }
   }, []);
 
-  const yearOptions = [{ value: year, label: displayYear }];
-
   return (
     <>
       <AdminBar />
-      <PhotoUpload yearOptions={yearOptions} onUploaded={refreshPhotos} />
+      <PhotoUpload onUploaded={refreshPhotos} />
       {photos.length === 0 ? (
         <p className="text-slate text-sm">No photos yet for this edition.</p>
       ) : (
