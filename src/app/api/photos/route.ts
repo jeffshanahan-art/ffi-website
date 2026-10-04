@@ -18,9 +18,6 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  if (request.cookies.get('ffi_admin')?.value !== 'authenticated') {
-    return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
-  }
   try {
     const formData = await request.formData();
     const file = formData.get('file') as File | null;

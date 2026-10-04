@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useAdmin } from './AdminContext';
 
 interface Edition {
   value: string;
@@ -62,7 +61,6 @@ async function prepareForUpload(file: File): Promise<File> {
 }
 
 export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
-  const { isAdmin, checking } = useAdmin();
   const [editions, setEditions] = useState<Edition[]>([]);
   const [items, setItems] = useState<Item[]>([]);
   const [reading, setReading] = useState(false);
@@ -155,13 +153,6 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
     );
     if (success) onUploaded();
   };
-
-  if (checking) return null;
-  if (!isAdmin) {
-    return (
-      <p className="mb-6 text-sm text-slate">Log in as admin to upload photos.</p>
-    );
-  }
 
   const uploading = progress !== null;
 
