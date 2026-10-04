@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { PairingWinPct } from './PairingWinPct';
 import { WinPct, type WinProbabilityData } from './WinPct';
 
 type Result = 'philly' | 'dc' | 'halved' | '';
@@ -335,6 +336,10 @@ export function MatchScoring({ year }: { year: string }) {
                       <span className="text-sm font-medium text-black text-right">
                         {pairing.dc?.join(' & ')}
                       </span>
+                    </div>
+
+                    <div className="-mt-2 mb-4">
+                      <PairingWinPct winPct={pairing.winPct} scored={!!pairing.score} />
                     </div>
 
                     {!isAdmin && (

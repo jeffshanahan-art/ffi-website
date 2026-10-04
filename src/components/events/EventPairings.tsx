@@ -1,4 +1,5 @@
 import type { TournamentDetail } from '@/types';
+import { PairingWinPct } from './PairingWinPct';
 
 function fmt(n: number): string {
   if (n === 0) return '0';
@@ -106,6 +107,7 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                         </span>
                       </div>
                     </div>
+                    <PairingWinPct winPct={pairing.winPct} scored={!!score} />
                     {pairing.featured && (
                       <div className="text-center mt-1 text-[10px] uppercase tracking-wide text-blue font-semibold">
                         Featured Pairing

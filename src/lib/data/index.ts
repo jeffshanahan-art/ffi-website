@@ -1,5 +1,6 @@
 import staticData from '@/data/ffi-data.json';
 import { pairingsLocked, redactMatches } from '@/lib/reveal';
+import { computeWinProbability, withPairingWinPct } from '@/lib/winprob';
 import type {
   Tournament,
   TournamentDetail,
@@ -126,7 +127,13 @@ export async function getTournamentByYear(
     teamDC,
     rounds,
     schedule: 'schedule' in event ? (event as any).schedule : undefined,
-    matches: locked ? redactMatches((event as any).matches) : 'matches' in event ? (event as any).matches : undefined,
+    matches: locked
+      ? redactMatches((event as any).matches)
+      : 'matches' in event
+        ? (event as any).champion
+          ? (event as any).matches
+          : withPairingWinPct((event as any).matches, computeWinProbability(ffiData.events as any[], event).pairings)
+        : undefined,
     pairingsRevealAt: (event as any).pairingsRevealAt ?? undefined,
     pairingsLocked: locked ? true : undefined,
     bannerPhotoId: (event as any).bannerPhotoId ?? undefined,

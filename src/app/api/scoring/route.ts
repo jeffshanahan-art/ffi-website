@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import staticData from '@/data/ffi-data.json';
-import { computeWinProbability } from '@/lib/winprob';
+import { computeWinProbability, withPairingWinPct } from '@/lib/winprob';
 import { pairingsLocked, redactMatches } from '@/lib/reveal';
 
 function isAuthenticated(request: NextRequest): boolean {
@@ -121,15 +121,17 @@ export async function GET(request: NextRequest) {
   const active = dates.includes(today);
 
   const locked = pairingsLocked(event) && !isAuthenticated(request);
+  const shown = locked ? { ...event, matches: redactMatches(event.matches) } : event;
+  const { pairings, ...winProbability } = computeWinProbability(data.events as any[], shown);
 
   return NextResponse.json({
     active,
     dates,
-    matches: (locked ? redactMatches(event.matches) : event.matches) || [],
+    matches: (locked ? shown.matches : withPairingWinPct(event.matches, pairings)) || [],
     pairingsLocked: locked,
     pairingsRevealAt: event.pairingsRevealAt ?? null,
     score: event.score || { philly: null, dc: null },
-    winProbability: computeWinProbability(data.events as any[], event),
+    winProbability,
   });
 }
 
