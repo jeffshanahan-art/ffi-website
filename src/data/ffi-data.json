@@ -3511,15 +3511,24 @@
         },
         {
           "date": "Wed, Oct 7",
-          "time": "1:00PM",
-          "event": "Practice round: Pat, Jeff, Rob (Team DC players TBD)",
-          "location": "Chevy Chase Club"
+          "time": "1:24PM",
+          "event": "Practice round tee time",
+          "location": "Chevy Chase Club",
+          "notes": "Pat Shanahan, Jeff Shanahan and Rob Nathan play with Team DC players (groups TBD)."
         },
         {
           "date": "Wed, Oct 7",
-          "time": "1:00PM",
-          "event": "Practice round: Ben Q, Ben E, Luke",
-          "location": "Congressional Country Club"
+          "time": "1:36PM",
+          "event": "Practice round tee time",
+          "location": "Chevy Chase Club",
+          "notes": "Pat Shanahan, Jeff Shanahan and Rob Nathan play with Team DC players (groups TBD)."
+        },
+        {
+          "date": "Wed, Oct 7",
+          "time": "1:50PM",
+          "event": "Practice round: Ben Quereau, Ben Etherington, Luke Etherington, Sean Keegan",
+          "location": "Congressional Country Club",
+          "notes": "About a 30 minute drive from Chevy Chase Club."
         },
         {
           "date": "Wed, Oct 7",
