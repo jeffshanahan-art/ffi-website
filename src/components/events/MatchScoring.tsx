@@ -293,7 +293,7 @@ export function MatchScoring({ year }: { year: string }) {
         </div>
       </div>
 
-      {win && <WinPct data={win} />}
+      {win && <WinPct data={win} className="mx-auto" />}
 
       {locked && revealAt && (
         <div className="text-center border border-gray rounded-lg py-3 px-4">
