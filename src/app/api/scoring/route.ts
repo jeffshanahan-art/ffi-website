@@ -120,7 +120,7 @@ export async function GET(request: NextRequest) {
   const dates: string[] = event.dates || [];
   const active = dates.includes(today);
 
-  const locked = pairingsLocked(event) && !isAuthenticated(request);
+  const locked = pairingsLocked(event);
   const shown = locked ? { ...event, matches: redactMatches(event.matches) } : event;
   const { pairings, ...winProbability } = computeWinProbability(data.events as any[], shown);
 

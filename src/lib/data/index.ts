@@ -77,15 +77,14 @@ export async function getTournaments(): Promise<Tournament[]> {
 }
 
 export async function getTournamentByYear(
-  year: string,
-  opts: { revealAll?: boolean } = {}
+  year: string
 ): Promise<TournamentDetail | null> {
   const ffiData = getFfiData();
   const event = ffiData.events.find((e) => e.year === year);
   if (!event) return null;
 
   const base = mapEventToTournament(event);
-  const locked = !opts.revealAll && pairingsLocked(event as any);
+  const locked = pairingsLocked(event as any);
   const format = 'format' in event ? (event as any).format : undefined;
 
   // Map roster entries - handle both string[] and object[] formats

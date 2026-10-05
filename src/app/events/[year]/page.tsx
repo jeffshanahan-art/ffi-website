@@ -2,7 +2,6 @@ export const dynamic = 'force-dynamic';
 
 import { getTournamentByYear, getTournaments, getCourses, getPhotosByYear } from '@/lib/data';
 import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { EventHeader } from '@/components/events/EventHeader';
@@ -31,8 +30,7 @@ export async function generateMetadata(props: { params: Promise<{ year: string }
 
 export default async function EventPage(props: { params: Promise<{ year: string }> }) {
   const { year } = await props.params;
-  const isAdmin = (await cookies()).get('ffi_admin')?.value === 'authenticated';
-  const tournament = await getTournamentByYear(year, { revealAll: isAdmin });
+  const tournament = await getTournamentByYear(year);
   if (!tournament) notFound();
 
   // Get all tournaments to determine prev/next
