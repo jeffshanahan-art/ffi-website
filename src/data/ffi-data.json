@@ -3504,9 +3504,10 @@
       "schedule": [
         {
           "date": "Wed, Oct 7",
-          "time": "8:00AM",
+          "time": "8:30AM",
           "event": "Team Philly departs for DC",
-          "location": "Philadelphia"
+          "location": "317 South Fairfield Rd, Devon, PA (Pat Shanahan's house)",
+          "notes": "Park on the right side of the driveway if needed. Ubering is welcome too."
         },
         {
           "date": "Wed, Oct 7",
