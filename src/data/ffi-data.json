@@ -3461,9 +3461,10 @@
                 "Jeff Shanahan"
               ],
               "dc": [
-                "Vince Burke",
-                "Brendan Delany"
-              ]
+                "Matt Hopkins",
+                "Devin Tuohey"
+              ],
+              "featured": true
             },
             {
               "philly": [
@@ -3471,8 +3472,8 @@
                 "Bear Barton"
               ],
               "dc": [
-                "Roland Miller",
-                "Jon Carr"
+                "Sean Keegan",
+                "Roland Miller"
               ]
             },
             {
@@ -3481,10 +3482,9 @@
                 "Ben Quereau"
               ],
               "dc": [
-                "Matt Hopkins",
-                "Devin Tuohey"
-              ],
-              "featured": true
+                "Jon Carr",
+                "Brendan Delany"
+              ]
             },
             {
               "philly": [
@@ -3492,7 +3492,7 @@
                 "Ben Etherington"
               ],
               "dc": [
-                "Sean Keegan",
+                "Vince Burke",
                 "Chris Connolly"
               ]
             }
