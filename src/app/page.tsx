@@ -12,11 +12,15 @@ export default async function Home() {
     getSeriesRecord(),
   ]);
 
+  const current = [...tournaments].reverse().find((t) => !t.champion) ?? null;
+
   return (
     <>
-      <Hero />
+      <Hero current={current} />
 
-      <SeriesRecordDisplay record={seriesRecord} />
+      <div id="series" className="scroll-mt-20">
+        <SeriesRecordDisplay record={seriesRecord} />
+      </div>
 
       <GoldDivider />
 
