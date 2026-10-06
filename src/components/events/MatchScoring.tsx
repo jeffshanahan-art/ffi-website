@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { PairingWinPct } from './PairingWinPct';
+import { TeamPairs } from './TeamPairs';
 import { WinPct, type WinProbabilityData } from './WinPct';
 
 type Result = 'philly' | 'dc' | 'halved' | '';
@@ -312,6 +313,7 @@ export function MatchScoring({ year }: { year: string }) {
               </h3>
               {match.course && <p className="text-slate text-sm">{match.course}</p>}
             </div>
+            {locked && match.teamPairs && <TeamPairs teamPairs={match.teamPairs} />}
 
             <div className="space-y-4">
               {match.pairings?.map((pairing: any, pi: number) => {

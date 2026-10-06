@@ -121,7 +121,7 @@ export async function GET(request: NextRequest) {
   const active = dates.includes(today);
 
   const locked = pairingsLocked(event);
-  const shown = locked ? { ...event, matches: redactMatches(event.matches) } : event;
+  const shown = locked ? { ...event, matches: redactMatches(event.matches, { showTeamPairs: event.programReleased === true }) } : event;
   const { pairings, ...winProbability } = computeWinProbability(data.events as any[], shown);
 
   return NextResponse.json({

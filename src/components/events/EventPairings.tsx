@@ -1,5 +1,6 @@
 import type { TournamentDetail } from '@/types';
 import { PairingWinPct } from './PairingWinPct';
+import { TeamPairs } from './TeamPairs';
 
 function fmt(n: number): string {
   if (n === 0) return '0';
@@ -73,6 +74,8 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
               </div>
               {match.course && <p className="text-slate text-sm mb-4">{match.course}</p>}
               {!match.course && <div className="mb-4" />}
+
+              {locked && match.teamPairs && <TeamPairs teamPairs={match.teamPairs} />}
 
               {hasScores && (
                 <div className="hidden sm:grid grid-cols-[1fr_auto_1fr] items-center gap-x-3 pb-2 mb-1 text-xs text-slate uppercase tracking-wide">

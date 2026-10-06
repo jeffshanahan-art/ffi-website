@@ -127,7 +127,7 @@ export async function getTournamentByYear(
     rounds,
     schedule: 'schedule' in event ? (event as any).schedule : undefined,
     matches: locked
-      ? redactMatches((event as any).matches)
+      ? redactMatches((event as any).matches, { showTeamPairs: (event as any).programReleased === true })
       : 'matches' in event
         ? (event as any).champion
           ? (event as any).matches
