@@ -1,7 +1,6 @@
 import type { TournamentDetail } from '@/types';
 import { PairingWinPct } from './PairingWinPct';
 import { TeamPairs } from './TeamPairs';
-import { fmtRec } from '@/lib/records';
 
 function fmt(n: number): string {
   if (n === 0) return '0';
@@ -95,9 +94,6 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                         <span className="text-black text-sm">
                           {pairing.philly.join(' & ')}
                         </span>
-                        {pairing.pairRecords?.philly && (
-                          <span className="block text-[11px] text-slate">All-time pairing record: {fmtRec(pairing.pairRecords.philly)}</span>
-                        )}
                       </div>
                       {score ? (
                         <div className="w-[100px] text-center shrink-0 mx-3">
@@ -112,9 +108,6 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                         <span className="text-black text-sm">
                           {pairing.dc.join(' & ')}
                         </span>
-                        {pairing.pairRecords?.dc && (
-                          <span className="block text-[11px] text-slate">All-time pairing record: {fmtRec(pairing.pairRecords.dc)}</span>
-                        )}
                       </div>
                     </div>
                     <PairingWinPct winPct={pairing.winPct} scored={!!score} placeholder={locked} />

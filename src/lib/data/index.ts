@@ -1,7 +1,7 @@
 import staticData from '@/data/ffi-data.json';
 import { pairingsLocked, redactMatches } from '@/lib/reveal';
 import { computeWinProbability, withPairingWinPct } from '@/lib/winprob';
-import { pairRecordBefore, playerRecords, withPairRecords } from '@/lib/records';
+import { missingYears, playerRecords } from '@/lib/records';
 import type {
   Tournament,
   TournamentDetail,
@@ -130,17 +130,11 @@ export async function getTournamentByYear(
     rounds,
     schedule: 'schedule' in event ? (event as any).schedule : undefined,
     matches: locked
-      ? redactMatches((event as any).matches, {
-          showTeamPairs: programReleased,
-          recordFor: (names) => pairRecordBefore(ffiData.events as any[], event.year, names),
-        })
+      ? redactMatches((event as any).matches, { showTeamPairs: programReleased })
       : 'matches' in event
         ? (event as any).champion
           ? (event as any).matches
-          : withPairingWinPct(
-            withPairRecords(ffiData.events as any[], event.year, (event as any).matches),
-            computeWinProbability(ffiData.events as any[], event).pairings
-          )
+          : withPairingWinPct((event as any).matches, computeWinProbability(ffiData.events as any[], event).pairings)
         : undefined,
     pairingsRevealAt: (event as any).pairingsRevealAt ?? undefined,
     pairingsLocked: locked ? true : undefined,
@@ -173,8 +167,10 @@ export async function getPlayers(): Promise<Player[]> {
     }
   }
   const records = playerRecords(ffiData.events as any[]);
+  const missing = missingYears(ffiData.events as any[]);
   return ffiData.allPlayers.map((p: any) => ({
     record: records.get(p.name),
+    missingYears: missing.get(p.name),
     handicaps: handicapsByName.get(p.name),
     name: p.name,
     team: p.team as 'philly' | 'dc',

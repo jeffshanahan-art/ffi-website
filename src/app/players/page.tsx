@@ -106,10 +106,17 @@ function PlayerCard({ player }: { player: Player }) {
       )}
 
       {player.record && (
-        <p className="mt-3 text-sm text-slate">
-          <span className="text-xs uppercase tracking-wide">All time record:</span>{' '}
-          <span className="font-medium text-black">{player.record.w}-{player.record.l}-{player.record.h}</span>
-        </p>
+        <div className="mt-3">
+          <p className="text-sm text-slate">
+            <span className="text-xs uppercase tracking-wide">All time record:</span>{' '}
+            <span className="font-medium text-black">{player.record.w}-{player.record.l}-{player.record.h}*</span>
+          </p>
+          {player.missingYears && player.missingYears.length > 0 && (
+            <p className="text-[11px] text-slate/80">
+              * Missing years: {player.missingYears.map(formatYear).join(', ')}
+            </p>
+          )}
+        </div>
       )}
 
       {/* Handicap trend */}

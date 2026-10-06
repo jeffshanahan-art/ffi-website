@@ -4,8 +4,6 @@ export interface Rec {
   h: number;
 }
 
-export const fmtRec = (r: Rec) => `${r.w}-${r.l}-${r.h}`;
-
 type Side = 'philly' | 'dc';
 
 // Result for one side of a scored pairing, judged on total points won.
@@ -16,8 +14,6 @@ function resultFor(pairing: any, side: Side): 'w' | 'l' | 'h' | null {
   if (ph === dc) return 'h';
   return (side === 'philly') === ph > dc ? 'w' : 'l';
 }
-
-const keyOf = (names: string[]) => [...names].sort().join('|');
 
 function eachScoredPairing(events: any[], fn: (pairing: any, side: Side) => void) {
   for (const e of events) {
@@ -48,31 +44,29 @@ export function playerRecords(events: any[]): Map<string, Rec> {
   return out;
 }
 
-// Record of a two-player team across editions before the given one; null if they haven't played together.
-export function pairRecordBefore(events: any[], year: string, names: string[]): Rec | null {
-  if (names.length !== 2) return null;
-  const idx = events.findIndex((e) => e.year === year);
-  const prior = idx === -1 ? events : events.slice(0, idx);
-  const key = keyOf(names);
-  let rec: Rec | undefined;
-  eachScoredPairing(prior, (p, side) => {
-    if (p[side]?.length !== 2 || keyOf(p[side]) !== key) return;
-    const r = resultFor(p, side);
-    if (r) rec = tally(rec, r);
-  });
-  return rec ?? null;
-}
-
-export function withPairRecords(events: any[], year: string, matches: any[] | undefined): any[] | undefined {
-  if (!matches) return matches;
-  return matches.map((m) => ({
-    ...m,
-    pairings: (m.pairings || []).map((p: any) => ({
-      ...p,
-      pairRecords: {
-        philly: pairRecordBefore(events, year, p.philly || []),
-        dc: pairRecordBefore(events, year, p.dc || []),
-      },
-    })),
-  }));
+// Years a player was on a roster for a completed edition but has no (or only some) recorded match results.
+export function missingYears(events: any[]): Map<string, string[]> {
+  const out = new Map<string, string[]>();
+  for (const e of events) {
+    if (!e.champion) continue;
+    const stats = new Map<string, { scored: number; unscored: number }>();
+    for (const m of e.matches || []) {
+      for (const p of m.pairings || []) {
+        for (const side of ['philly', 'dc'] as Side[]) {
+          for (const name of p[side] || []) {
+            const s = stats.get(name) ?? { scored: 0, unscored: 0 };
+            if (p.score) s.scored++;
+            else s.unscored++;
+            stats.set(name, s);
+          }
+        }
+      }
+    }
+    for (const entry of [...(e.teamPhilly || []), ...(e.teamDC || [])]) {
+      const name = typeof entry === 'string' ? entry : entry.name;
+      const s = stats.get(name);
+      if (!s || s.scored === 0 || s.unscored > 0) out.set(name, [...(out.get(name) ?? []), e.year]);
+    }
+  }
+  return out;
 }

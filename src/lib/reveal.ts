@@ -8,13 +8,10 @@ export function pairingsLocked(event: { pairingsRevealAt?: string }, now = Date.
 // so the order can't reveal who plays whom.
 export function redactMatches(
   matches: any[] | undefined,
-  opts: { showTeamPairs?: boolean; recordFor?: (names: string[]) => unknown } = {}
+  opts: { showTeamPairs?: boolean } = {}
 ): any[] | undefined {
   if (!matches) return matches;
-  const sorted = (pairs: string[][]) =>
-    pairs
-      .map((p) => ({ names: [...p], record: opts.recordFor ? opts.recordFor(p) : null }))
-      .sort((a, b) => a.names.join(' ').localeCompare(b.names.join(' ')));
+  const sorted = (pairs: string[][]) => pairs.map((p) => [...p]).sort((a, b) => a.join(' ').localeCompare(b.join(' ')));
   return matches.map((m) => {
     const size = m.playersPerSide === 1 ? 1 : 2;
     const hidden = Array.from({ length: size }, () => 'Player Name');
