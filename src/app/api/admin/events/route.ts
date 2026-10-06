@@ -49,7 +49,12 @@ async function saveData(data: any): Promise<void> {
     }
   );
 
-  if (!getRes.ok) throw new Error('Failed to fetch current file from GitHub');
+  if (!getRes.ok) {
+    if (getRes.status === 401 || getRes.status === 403) {
+      throw new Error('GitHub rejected the saved access token (it is probably expired). Create a new token and update GITHUB_TOKEN in Vercel, then redeploy.');
+    }
+    throw new Error(`Failed to fetch current file from GitHub (HTTP ${getRes.status})`);
+  }
   const fileInfo = await getRes.json();
 
   const encoded = Buffer.from(content).toString('base64');

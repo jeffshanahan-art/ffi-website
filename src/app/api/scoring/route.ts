@@ -65,7 +65,7 @@ async function saveData(data: any, sha: string | undefined, message: string): Pr
 
   const token = process.env.GITHUB_TOKEN;
   if (!token) throw new Error('GITHUB_TOKEN environment variable is not set');
-  if (!sha) throw new Error('Could not read the current scores from GitHub');
+  if (!sha) throw new Error('Could not read the current scores from GitHub. The GITHUB_TOKEN in Vercel is probably expired; create a new one and redeploy.');
 
   const putRes = await fetch(GH_URL, {
     method: 'PUT',
