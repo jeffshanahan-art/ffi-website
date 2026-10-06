@@ -653,8 +653,16 @@
       "matches": [
         {
           "round": 1,
+          "name": "Team Better Ball",
           "type": "Team Better Ball",
           "course": "Applebrook Golf Club",
+          "holes": 18,
+          "playersPerSide": 2,
+          "pointValues": {
+            "front": 0,
+            "back": 0,
+            "overall": 0
+          },
           "pairings": [
             {
               "philly": [
@@ -665,7 +673,6 @@
                 "Jon Carr",
                 "Sean Keegan"
               ],
-              "teeTime": "7:50AM",
               "score": {
                 "philly": {
                   "total": 2.5
@@ -684,7 +691,6 @@
                 "Brendan Delany",
                 "Chris Connolly"
               ],
-              "teeTime": "8:00AM",
               "score": {
                 "philly": {
                   "total": 3
@@ -703,7 +709,6 @@
                 "Devin Tuohey",
                 "Matt Hopkins"
               ],
-              "teeTime": "8:10AM",
               "score": {
                 "philly": {
                   "total": 1.5
@@ -722,7 +727,6 @@
                 "Vince Burke",
                 "Roland Miller"
               ],
-              "teeTime": "8:20AM",
               "score": {
                 "philly": {
                   "total": 0
@@ -736,8 +740,16 @@
         },
         {
           "round": 2,
+          "name": "9-hole Singles",
           "type": "Singles",
           "course": "Applebrook Golf Club",
+          "holes": 18,
+          "playersPerSide": 2,
+          "pointValues": {
+            "front": 0,
+            "back": 0,
+            "overall": 0
+          },
           "pairings": [
             {
               "philly": [
@@ -746,7 +758,6 @@
               "dc": [
                 "Matt Hopkins"
               ],
-              "teeTime": "1:30PM",
               "score": {
                 "philly": {
                   "total": 0
@@ -763,7 +774,6 @@
               "dc": [
                 "Jon Carr"
               ],
-              "teeTime": "1:30PM",
               "score": {
                 "philly": {
                   "total": 0.5
@@ -780,7 +790,6 @@
               "dc": [
                 "Devin Tuohey"
               ],
-              "teeTime": "1:40PM",
               "score": {
                 "philly": {
                   "total": 0.5
@@ -797,7 +806,6 @@
               "dc": [
                 "Roland Miller"
               ],
-              "teeTime": "1:40PM",
               "score": {
                 "philly": {
                   "total": 0
@@ -814,7 +822,6 @@
               "dc": [
                 "Vince Burke"
               ],
-              "teeTime": "1:50PM",
               "score": {
                 "philly": {
                   "total": 0.5
@@ -831,7 +838,6 @@
               "dc": [
                 "Brendan Delany"
               ],
-              "teeTime": "1:50PM",
               "score": {
                 "philly": {
                   "total": 1
@@ -848,7 +854,6 @@
               "dc": [
                 "Sean Keegan"
               ],
-              "teeTime": "2:00PM",
               "score": {
                 "philly": {
                   "total": 1
@@ -865,7 +870,6 @@
               "dc": [
                 "Chris Connolly"
               ],
-              "teeTime": "2:00PM",
               "score": {
                 "philly": {
                   "total": 1
@@ -879,8 +883,16 @@
         },
         {
           "round": 3,
+          "name": "9-hole Alternate Shot",
           "type": "Team Alternate Shot",
           "course": "Applebrook Golf Club",
+          "holes": 18,
+          "playersPerSide": 2,
+          "pointValues": {
+            "front": 0,
+            "back": 0,
+            "overall": 0
+          },
           "pairings": [
             {
               "philly": [
@@ -3328,7 +3340,7 @@
         {
           "name": "Luke Etherington",
           "handicap": 5.6,
-          "lowIndex": 3.0
+          "lowIndex": 3
         },
         {
           "name": "Ben Etherington",
@@ -3362,7 +3374,7 @@
         {
           "name": "Jon Carr",
           "role": "Manager, Fabrics",
-          "handicap": 4.0,
+          "handicap": 4,
           "lowIndex": 3.3
         },
         {
