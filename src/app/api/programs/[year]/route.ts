@@ -1,24 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-import staticData from '@/data/ffi-data.json';
+import { contentTypeFor, getProgram, readLocalProgram } from '@/lib/program-store';
+
+export const dynamic = 'force-dynamic';
 
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ year: string }> }) {
   const { year } = await params;
-  if (!/^\d{4}$/.test(year)) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  const program = await getProgram(year);
+  if (!program) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
-  const event = (staticData.events as { year: string; programReleased?: boolean }[]).find((e) => e.year === year);
-  if (!event || !event.programReleased) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  if (program.url) return NextResponse.redirect(program.url, 302);
 
-  try {
-    const file = fs.readFileSync(path.join(process.cwd(), 'private', 'programs', `program-${year}.pdf`));
-    return new NextResponse(new Uint8Array(file), {
-      headers: {
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': `inline; filename="FFI-${year}-Program.pdf"`,
-      },
-    });
-  } catch {
-    return NextResponse.json({ error: 'Not found' }, { status: 404 });
-  }
+  const file = readLocalProgram(year, program.ext);
+  if (!file) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  return new NextResponse(new Uint8Array(file), {
+    headers: {
+      'Content-Type': contentTypeFor(program.ext),
+      'Content-Disposition': `${program.ext === 'pdf' ? 'inline' : 'attachment'}; filename="FFI-${year}-Program.${program.ext}"`,
+    },
+  });
 }

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import staticData from '@/data/ffi-data.json';
 import { computeWinProbability, withPairingWinPct } from '@/lib/winprob';
 import { pairingsLocked, redactMatches } from '@/lib/reveal';
+import { getProgram } from '@/lib/program-store';
 
 function isAuthenticated(request: NextRequest): boolean {
   const cookie = request.cookies.get('ffi_admin');
@@ -120,8 +121,8 @@ export async function GET(request: NextRequest) {
   const dates: string[] = event.dates || [];
   const active = dates.includes(today);
 
-  const locked = pairingsLocked(event);
-  const shown = locked ? { ...event, matches: redactMatches(event.matches, { showTeamPairs: event.programReleased === true }) } : event;
+  const locked = pairingsLocked(event) && !isAuthenticated(request);
+  const shown = locked ? { ...event, matches: redactMatches(event.matches, { showTeamPairs: !!(await getProgram(year)) }) } : event;
   const { pairings, ...winProbability } = computeWinProbability(data.events as any[], shown);
 
   return NextResponse.json({

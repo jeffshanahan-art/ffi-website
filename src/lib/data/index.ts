@@ -77,14 +77,16 @@ export async function getTournaments(): Promise<Tournament[]> {
 }
 
 export async function getTournamentByYear(
-  year: string
+  year: string,
+  opts: { revealAll?: boolean } = {}
 ): Promise<TournamentDetail | null> {
   const ffiData = getFfiData();
   const event = ffiData.events.find((e) => e.year === year);
   if (!event) return null;
 
   const base = mapEventToTournament(event);
-  const locked = pairingsLocked(event as any);
+  const programReleased = !!(await (await import('@/lib/program-store')).getProgram(year));
+  const locked = !opts.revealAll && pairingsLocked(event as any);
   const format = 'format' in event ? (event as any).format : undefined;
 
   // Map roster entries - handle both string[] and object[] formats
@@ -127,7 +129,7 @@ export async function getTournamentByYear(
     rounds,
     schedule: 'schedule' in event ? (event as any).schedule : undefined,
     matches: locked
-      ? redactMatches((event as any).matches, { showTeamPairs: (event as any).programReleased === true })
+      ? redactMatches((event as any).matches, { showTeamPairs: programReleased })
       : 'matches' in event
         ? (event as any).champion
           ? (event as any).matches
@@ -135,7 +137,7 @@ export async function getTournamentByYear(
         : undefined,
     pairingsRevealAt: (event as any).pairingsRevealAt ?? undefined,
     pairingsLocked: locked ? true : undefined,
-    programReleased: (event as any).programReleased === true ? true : undefined,
+    programReleased: programReleased ? true : undefined,
     bannerPhotoId: (event as any).bannerPhotoId ?? undefined,
     bannerPosition: (event as any).bannerPosition ?? undefined,
     bannerImage: (event as any).bannerImage ?? undefined,

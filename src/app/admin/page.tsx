@@ -1,5 +1,6 @@
 'use client';
 
+import { ProgramUploader } from '@/components/admin/ProgramUploader';
 import { useState, useEffect, useCallback } from 'react';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -942,6 +943,10 @@ export default function AdminPage() {
           Sign out
         </button>
       </div>
+
+      {events.length > 0 && (
+        <ProgramUploader years={events.map((ev) => ({ value: ev.year, label: String(ev.displayYear) }))} />
+      )}
 
       {/* Event selector */}
       <div className="mt-8">

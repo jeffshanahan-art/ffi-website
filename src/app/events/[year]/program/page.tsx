@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 export default async function ProgramPage({ params }: { params: Promise<{ year: string }> }) {
   const { year } = await params;
   const tournament = await getTournamentByYear(year);
-  if (!tournament || year !== '2026') notFound();
+  if (!tournament || (year !== '2026' && !tournament.programReleased)) notFound();
 
   if (tournament.programReleased) redirect(`/api/programs/${year}`);
 
