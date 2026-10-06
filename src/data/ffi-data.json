@@ -656,13 +656,6 @@
           "name": "Team Better Ball",
           "type": "Team Better Ball",
           "course": "Applebrook Golf Club",
-          "holes": 18,
-          "playersPerSide": 2,
-          "pointValues": {
-            "front": 0,
-            "back": 0,
-            "overall": 0
-          },
           "pairings": [
             {
               "philly": [
@@ -680,7 +673,8 @@
                 "dc": {
                   "total": 0.5
                 }
-              }
+              },
+              "teeTime": "7:50AM"
             },
             {
               "philly": [
@@ -698,7 +692,8 @@
                 "dc": {
                   "total": 0
                 }
-              }
+              },
+              "teeTime": "8:00AM"
             },
             {
               "philly": [
@@ -716,7 +711,8 @@
                 "dc": {
                   "total": 1.5
                 }
-              }
+              },
+              "teeTime": "8:10AM"
             },
             {
               "philly": [
@@ -734,7 +730,8 @@
                 "dc": {
                   "total": 3
                 }
-              }
+              },
+              "teeTime": "8:20AM"
             }
           ]
         },
@@ -743,13 +740,6 @@
           "name": "9-hole Singles",
           "type": "Singles",
           "course": "Applebrook Golf Club",
-          "holes": 18,
-          "playersPerSide": 2,
-          "pointValues": {
-            "front": 0,
-            "back": 0,
-            "overall": 0
-          },
           "pairings": [
             {
               "philly": [
@@ -765,7 +755,8 @@
                 "dc": {
                   "total": 1
                 }
-              }
+              },
+              "teeTime": "1:30PM"
             },
             {
               "philly": [
@@ -781,7 +772,8 @@
                 "dc": {
                   "total": 0.5
                 }
-              }
+              },
+              "teeTime": "1:30PM"
             },
             {
               "philly": [
@@ -797,7 +789,8 @@
                 "dc": {
                   "total": 0.5
                 }
-              }
+              },
+              "teeTime": "1:40PM"
             },
             {
               "philly": [
@@ -813,7 +806,8 @@
                 "dc": {
                   "total": 1
                 }
-              }
+              },
+              "teeTime": "1:40PM"
             },
             {
               "philly": [
@@ -829,7 +823,8 @@
                 "dc": {
                   "total": 0.5
                 }
-              }
+              },
+              "teeTime": "1:50PM"
             },
             {
               "philly": [
@@ -845,7 +840,8 @@
                 "dc": {
                   "total": 0
                 }
-              }
+              },
+              "teeTime": "1:50PM"
             },
             {
               "philly": [
@@ -861,7 +857,8 @@
                 "dc": {
                   "total": 0
                 }
-              }
+              },
+              "teeTime": "2:00PM"
             },
             {
               "philly": [
@@ -877,7 +874,8 @@
                 "dc": {
                   "total": 0
                 }
-              }
+              },
+              "teeTime": "2:00PM"
             }
           ]
         },
@@ -886,13 +884,6 @@
           "name": "9-hole Alternate Shot",
           "type": "Team Alternate Shot",
           "course": "Applebrook Golf Club",
-          "holes": 18,
-          "playersPerSide": 2,
-          "pointValues": {
-            "front": 0,
-            "back": 0,
-            "overall": 0
-          },
           "pairings": [
             {
               "philly": [

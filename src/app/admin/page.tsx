@@ -225,23 +225,30 @@ function formToEvent(f: EventFormState, existing?: any): any {
       // Preserve existing scores from the original event data
       const existingMatch = existing?.matches?.[i];
 
+      // Only write holes / players / point values when the data had them or the form differs from the
+      // defaults, so older editions aren't given values nobody entered.
+      const hadPoints = existingMatch?.pointValues != null;
+      const pointsEntered = Object.values(pointValues).some((v) => v > 0);
+      const { pairings: _existingPairings, ...existingRest } = existingMatch ?? {};
+      void _existingPairings;
       return {
+        ...existingRest,
         round: i + 1,
         name: m.name.trim() || m.type.trim(),
         type: m.type.trim(),
         course: m.course.trim() || undefined,
-        holes: parseInt(m.holes),
-        playersPerSide: parseInt(m.playersPerSide),
-        pointValues,
+        ...(existingMatch?.holes != null || m.holes !== '18' ? { holes: parseInt(m.holes) } : {}),
+        ...(existingMatch?.playersPerSide != null || m.playersPerSide !== '2'
+          ? { playersPerSide: parseInt(m.playersPerSide) }
+          : {}),
+        ...(hadPoints || pointsEntered ? { pointValues } : {}),
         pairings: m.pairings
           .filter((p) => p.philly.some(Boolean) || p.dc.some(Boolean))
           .map((p, j) => ({
+            // Keep everything else recorded on the pairing (scores, tee times, notes)
+            ...(existingMatch?.pairings?.[j] ?? {}),
             philly: p.philly.filter(Boolean),
             dc: p.dc.filter(Boolean),
-            // Preserve existing score if present
-            ...(existingMatch?.pairings?.[j]?.score
-              ? { score: existingMatch.pairings[j].score }
-              : {}),
           })),
       };
     });
