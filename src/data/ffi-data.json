@@ -3418,7 +3418,8 @@
           }
         ],
         "totalPoints": 36,
-        "handicapRule": "Foursomes: combined alternate-shot handicaps. Fourball: 90% handicaps. Fourball also has a one-point closeout match on each nine, not tracked in live scoring."
+        "handicapRule": "Foursomes: combined alternate-shot handicaps. Fourball: 90% handicaps. Fourball also has a one-point closeout match on each nine, not tracked in live scoring.",
+        "entryFee": 300
       },
       "matches": [
         {
@@ -3542,7 +3543,7 @@
           "time": "8:30AM",
           "event": "Team Philly departs for DC",
           "location": "317 South Fairfield Rd, Devon, PA (Pat Shanahan's house)",
-          "notes": "Park on the right side of the driveway if needed. Ubering is welcome too."
+          "notes": "Park on the right side of the driveway if needed. Ubering is welcome too. Bring enough cash for caddies (probably $800) plus the $300 entry fee. Ben Quereau is bringing a cooler full of beers and water for the ride down and back."
         },
         {
           "date": "Wed, Oct 7",
@@ -3591,7 +3592,7 @@
           "date": "Wed, Oct 7",
           "time": "6:45PM",
           "event": "Chevy players depart for Rolando's House of Meat (and Cheese)",
-          "location": ""
+          "location": "Rolando's House of Meat (Roland Miller's house), 105 Primrose St, Chevy Chase, MD 20815"
         },
         {
           "date": "Wed, Oct 7",
@@ -3603,14 +3604,14 @@
           "date": "Wed, Oct 7",
           "time": "7:00PM",
           "event": "Sunset cocktails",
-          "location": "Rolando's House of Meat (Roland Miller's house), 105 Primrose St, Chevy Chase, MD 20815",
+          "location": "Rolando's House of Meat (Roland Miller's house)",
           "notes": "Wayne Lesage arrives on a flight at 8:13PM and will meet the group at Roland's. Bear Barton will not arrive until dinner."
         },
         {
           "date": "Wed, Oct 7",
           "time": "8:00PM",
           "event": "Welcome Dinner and Matchup Draft",
-          "location": "Rolando's House of Meat (Roland Miller's house), 105 Primrose St, Chevy Chase, MD 20815"
+          "location": "Rolando's House of Meat (Roland Miller's house)"
         },
         {
           "date": "Wed, Oct 7",
@@ -3623,7 +3624,7 @@
           "time": "7:15AM",
           "event": "Depart Chevy Chase Club for Columbia",
           "location": "Chevy Chase Club",
-          "notes": "All bags must be out of rooms and brought to the car or left in the locker room."
+          "notes": "All bags must be out of rooms and brought to the car or left in the locker room. Bring cash for caddies."
         },
         {
           "date": "Thu, Oct 8",
@@ -3696,7 +3697,7 @@
           "time": "7:30PM",
           "event": "Champions Dinner and Awards",
           "location": "Chevy Chase Club, Clubroom (2nd floor)",
-          "notes": "Jackets are requested."
+          "notes": "Bring a jacket for dinner."
         },
         {
           "date": "Thu, Oct 8",
