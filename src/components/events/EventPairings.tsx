@@ -117,7 +117,7 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                         )}
                       </div>
                     </div>
-                    <PairingWinPct winPct={pairing.winPct} scored={!!score} />
+                    <PairingWinPct winPct={pairing.winPct} scored={!!score} placeholder={locked} />
                     {pairing.featured && (
                       <div className="text-center mt-1 text-[10px] uppercase tracking-wide text-blue font-semibold">
                         Featured Pairing

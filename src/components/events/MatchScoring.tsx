@@ -352,7 +352,7 @@ export function MatchScoring({ year }: { year: string }) {
                     </div>
 
                     <div className="-mt-2 mb-4">
-                      <PairingWinPct winPct={pairing.winPct} scored={!!pairing.score} />
+                      <PairingWinPct winPct={pairing.winPct} scored={!!pairing.score} placeholder={locked} />
                     </div>
 
                     {!isAdmin && (

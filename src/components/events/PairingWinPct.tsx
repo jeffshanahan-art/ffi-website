@@ -1,5 +1,13 @@
-export function PairingWinPct({ winPct, scored }: { winPct?: { philly: number; dc: number }; scored: boolean }) {
-  if (scored) return null;
+export function PairingWinPct({
+  winPct,
+  scored,
+  placeholder = false,
+}: {
+  winPct?: { philly: number; dc: number };
+  scored: boolean;
+  placeholder?: boolean;
+}) {
+  if (scored || (!winPct && !placeholder)) return null;
   const philly = winPct ? Math.round(winPct.philly * 100) : 50;
   const dc = 100 - philly;
   return (
