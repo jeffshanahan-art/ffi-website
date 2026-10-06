@@ -156,7 +156,7 @@
         "Chevy Chase Club"
       ],
       "score": {
-        "philly": 8.5,
+        "philly": 12.5,
         "dc": 15.5
       },
       "champion": "dc",
@@ -520,12 +520,13 @@
         }
       ],
       "schedule": [],
-      "notes": "Just six months after losing the inaugural edition, Team DC demanded a rematch — and got one. Dubbed the DC Challenge Match, the 2nd Edition brought the fight to Washington for the first time, a two-course affair across Columbia Country Club and Chevy Chase Club. Team Philly loaded onto a bus in Wayne, PA at 3:30 PM sharp — $110 a head, no jeans allowed — and rolled south to Chevy Chase Club, where rooms were waiting and strategy sessions commenced over dinner. Captain Shanahan assigned rooms with military precision: the Shanahan brothers in one double, the Etherington brothers in the other, Mundy in a single, and Grecco and Nathan sharing a room with 'an extra bed provided.' Luke Etherington drew cooler duty. On the course, Roland 'The Silverback' Miller led Team DC to a 15.5–8.5 victory, earning MVP honors. The series was tied at one apiece, and suddenly this thing was real.",
+      "notes": "Just six months after losing the inaugural edition, Team DC demanded a rematch — and got one. Dubbed the DC Challenge Match, the 2nd Edition brought the fight to Washington for the first time, a two-course affair across Columbia Country Club and Chevy Chase Club. Team Philly loaded onto a bus in Wayne, PA at 3:30 PM sharp — $110 a head, no jeans allowed — and rolled south to Chevy Chase Club, where rooms were waiting and strategy sessions commenced over dinner. Captain Shanahan assigned rooms with military precision: the Shanahan brothers in one double, the Etherington brothers in the other, Mundy in a single, and Grecco and Nathan sharing a room with 'an extra bed provided.' Luke Etherington drew cooler duty. On the course, Roland 'The Silverback' Miller led Team DC to a 15.5–12.5 victory, earning MVP honors. The series was tied at one apiece, and suddenly this thing was real.",
       "weather": "Late October in the DC area. Typical fall conditions.",
       "photoWindow": {
         "start": "2018-09-01",
         "end": "2018-10-31"
-      }
+      },
+      "partialResults": true
     },
     {
       "year": "2019",
