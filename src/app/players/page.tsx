@@ -19,6 +19,36 @@ function formatYear(year: string): string {
   return `'${year.slice(-2)}`;
 }
 
+function formatHandicap(v: number): string {
+  return v < 0 ? `+${Math.abs(v).toFixed(1)}` : v.toFixed(1);
+}
+
+function HandicapTrend({ handicaps }: { handicaps: { year: string; value: number }[] }) {
+  const first = handicaps[0];
+  const last = handicaps[handicaps.length - 1];
+  const change = Math.round((last.value - first.value) * 10) / 10;
+  return (
+    <div className="mt-4">
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span className="text-xs uppercase tracking-wide text-slate">Handicap</span>
+        {handicaps.length > 1 && (
+          <span className={`text-xs font-medium ${change < 0 ? 'text-green-700' : change > 0 ? 'text-red-700' : 'text-slate'}`}>
+            {change === 0 ? 'No change' : `${change < 0 ? '\u2193' : '\u2191'} ${Math.abs(change).toFixed(1)} since ${formatYear(first.year)}`}
+          </span>
+        )}
+      </div>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1.5">
+        {handicaps.map((h) => (
+          <span key={h.year} className="text-sm text-slate">
+            <span className="text-xs text-slate/70">{formatYear(h.year)}</span>{' '}
+            <span className="font-medium text-black">{formatHandicap(h.value)}</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function PlayerCard({ player }: { player: Player }) {
   const appearances = player.yearsPlayed.length;
 
@@ -74,6 +104,9 @@ function PlayerCard({ player }: { player: Player }) {
           {player.bio}
         </p>
       )}
+
+      {/* Handicap trend */}
+      {player.handicaps && player.handicaps.length > 0 && <HandicapTrend handicaps={player.handicaps} />}
 
       {/* Year badges */}
       <div className="flex flex-wrap gap-1.5 mt-3">

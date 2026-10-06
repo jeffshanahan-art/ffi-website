@@ -154,7 +154,17 @@ export async function getSeriesRecord(): Promise<SeriesRecord> {
 
 export async function getPlayers(): Promise<Player[]> {
   const ffiData = getFfiData();
+  const handicapsByName = new Map<string, { year: string; value: number }[]>();
+  for (const event of ffiData.events as any[]) {
+    for (const entry of [...(event.teamPhilly || []), ...(event.teamDC || [])]) {
+      if (typeof entry === 'string' || typeof entry.handicap !== 'number') continue;
+      const list = handicapsByName.get(entry.name) ?? [];
+      list.push({ year: event.year, value: entry.handicap });
+      handicapsByName.set(entry.name, list);
+    }
+  }
   return ffiData.allPlayers.map((p: any) => ({
+    handicaps: handicapsByName.get(p.name),
     name: p.name,
     team: p.team as 'philly' | 'dc',
     nickname: p.nickname ?? undefined,

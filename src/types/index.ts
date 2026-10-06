@@ -36,6 +36,7 @@ export interface Player {
   bio?: string;
   yearsPlayed: string[];
   roles: string[];
+  handicaps?: { year: string; value: number }[];
 }
 
 export interface RosterEntry {
