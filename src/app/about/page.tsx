@@ -103,7 +103,7 @@ export default async function AboutPage() {
               </h3>
               <p className="mt-2 text-slate font-sans leading-relaxed">
                 The night before competition, both teams gather for dinner,
-                drinks, and the unveiling of pairings. Past venues have included
+                drinks, and the unveiling of matchups. Past venues have included
                 Dutton&apos;s Barn, Casa De Hopkins, and the Everly&apos;s Barn.
               </p>
             </div>

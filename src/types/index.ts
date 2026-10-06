@@ -102,6 +102,7 @@ export interface TournamentDetail extends Tournament {
   bannerImage?: string;
   pairingsRevealAt?: string;
   pairingsLocked?: boolean;
+  programReleased?: boolean;
   partialResults?: boolean;
 }
 

@@ -135,6 +135,7 @@ export async function getTournamentByYear(
         : undefined,
     pairingsRevealAt: (event as any).pairingsRevealAt ?? undefined,
     pairingsLocked: locked ? true : undefined,
+    programReleased: (event as any).programReleased === true ? true : undefined,
     bannerPhotoId: (event as any).bannerPhotoId ?? undefined,
     bannerPosition: (event as any).bannerPosition ?? undefined,
     bannerImage: (event as any).bannerImage ?? undefined,

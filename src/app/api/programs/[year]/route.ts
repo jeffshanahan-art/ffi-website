@@ -7,8 +7,8 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
-  const event = (staticData.events as { year: string }[]).find((e) => e.year === year);
-  if (!event) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  const event = (staticData.events as { year: string; programReleased?: boolean }[]).find((e) => e.year === year);
+  if (!event || !event.programReleased) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
   try {
     const file = fs.readFileSync(path.join(process.cwd(), 'private', 'programs', `program-${year}.pdf`));
