@@ -6,9 +6,15 @@ export function pairingsLocked(event: { pairingsRevealAt?: string }, now = Date.
 // Strip names, scores and featured flags so nothing sensitive reaches the client before the reveal.
 // With showTeamPairs, each team's partner pairs are included, sorted independently per team
 // so the order can't reveal who plays whom.
-export function redactMatches(matches: any[] | undefined, opts: { showTeamPairs?: boolean } = {}): any[] | undefined {
+export function redactMatches(
+  matches: any[] | undefined,
+  opts: { showTeamPairs?: boolean; recordFor?: (names: string[]) => unknown } = {}
+): any[] | undefined {
   if (!matches) return matches;
-  const sorted = (pairs: string[][]) => pairs.map((p) => [...p]).sort((a, b) => a.join(' ').localeCompare(b.join(' ')));
+  const sorted = (pairs: string[][]) =>
+    pairs
+      .map((p) => ({ names: [...p], record: opts.recordFor ? opts.recordFor(p) : null }))
+      .sort((a, b) => a.names.join(' ').localeCompare(b.names.join(' ')));
   return matches.map((m) => {
     const size = m.playersPerSide === 1 ? 1 : 2;
     const hidden = Array.from({ length: size }, () => 'Player Name');

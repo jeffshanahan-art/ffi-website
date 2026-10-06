@@ -105,6 +105,13 @@ function PlayerCard({ player }: { player: Player }) {
         </p>
       )}
 
+      {player.record && (
+        <p className="mt-3 text-sm text-slate">
+          <span className="text-xs uppercase tracking-wide">All time record:</span>{' '}
+          <span className="font-medium text-black">{player.record.w}-{player.record.l}-{player.record.h}</span>
+        </p>
+      )}
+
       {/* Handicap trend */}
       {player.handicaps && player.handicaps.length > 0 && <HandicapTrend handicaps={player.handicaps} />}
 

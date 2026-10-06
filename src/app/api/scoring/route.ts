@@ -3,6 +3,7 @@ import staticData from '@/data/ffi-data.json';
 import { computeWinProbability, withPairingWinPct } from '@/lib/winprob';
 import { pairingsLocked, redactMatches } from '@/lib/reveal';
 import { getProgram } from '@/lib/program-store';
+import { pairRecordBefore, withPairRecords } from '@/lib/records';
 
 function isAuthenticated(request: NextRequest): boolean {
   const cookie = request.cookies.get('ffi_admin');
@@ -122,13 +123,16 @@ export async function GET(request: NextRequest) {
   const active = dates.includes(today);
 
   const locked = pairingsLocked(event) && !isAuthenticated(request);
-  const shown = locked ? { ...event, matches: redactMatches(event.matches, { showTeamPairs: !!(await getProgram(year)) }) } : event;
+  const shown = locked ? { ...event, matches: redactMatches(event.matches, {
+          showTeamPairs: !!(await getProgram(year)),
+          recordFor: (names) => pairRecordBefore(data.events as any[], year, names),
+        }) } : event;
   const { pairings, ...winProbability } = computeWinProbability(data.events as any[], shown);
 
   return NextResponse.json({
     active,
     dates,
-    matches: (locked ? shown.matches : withPairingWinPct(event.matches, pairings)) || [],
+    matches: (locked ? shown.matches : withPairingWinPct(withPairRecords(data.events as any[], year, event.matches), pairings)) || [],
     pairingsLocked: locked,
     pairingsRevealAt: event.pairingsRevealAt ?? null,
     score: event.score || { philly: null, dc: null },

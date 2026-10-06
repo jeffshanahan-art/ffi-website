@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { PairingWinPct } from './PairingWinPct';
 import { TeamPairs } from './TeamPairs';
+import { fmtRec } from '@/lib/records';
 import { WinPct, type WinProbabilityData } from './WinPct';
 
 type Result = 'philly' | 'dc' | 'halved' | '';
@@ -331,13 +332,23 @@ export function MatchScoring({ year }: { year: string }) {
                       </p>
                     )}
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm font-medium text-black">
-                        {pairing.philly?.join(' & ')}
-                      </span>
+                      <div>
+                        <span className="text-sm font-medium text-black">
+                          {pairing.philly?.join(' & ')}
+                        </span>
+                        {pairing.pairRecords?.philly && (
+                          <span className="block text-[11px] text-slate">All-time pairing record: {fmtRec(pairing.pairRecords.philly)}</span>
+                        )}
+                      </div>
                       <span className="text-xs text-slate px-2">vs</span>
-                      <span className="text-sm font-medium text-black text-right">
-                        {pairing.dc?.join(' & ')}
-                      </span>
+                      <div className="text-right">
+                        <span className="text-sm font-medium text-black">
+                          {pairing.dc?.join(' & ')}
+                        </span>
+                        {pairing.pairRecords?.dc && (
+                          <span className="block text-[11px] text-slate">All-time pairing record: {fmtRec(pairing.pairRecords.dc)}</span>
+                        )}
+                      </div>
                     </div>
 
                     <div className="-mt-2 mb-4">
