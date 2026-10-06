@@ -71,7 +71,7 @@ export default async function EventPage(props: { params: Promise<{ year: string 
   };
   const programDocs = [
     ...(programMap[year] || []),
-    ...(year === '2026' && tournament.programReleased ? [{ label: 'Tournament Program', href: '/api/programs/2026' }] : []),
+    ...(year === '2026' ? [{ label: 'Tournament Program', href: '/events/2026/program' }] : []),
   ];
 
   // Get course details with location info
