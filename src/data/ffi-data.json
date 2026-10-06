@@ -3301,63 +3301,94 @@
         "dc": null
       },
       "champion": null,
-      "notes": "The 10th edition returns to Washington. Practice rounds are Wednesday, October 7, with the event on Thursday, October 8: morning foursomes at Columbia and afternoon fourball at Chevy Chase.",
+      "notes": "The 10th Edition returns to Washington, with Team DC playing host. Foursomes tee off Thursday morning at Columbia Country Club, and the fourball matches follow in the afternoon at Chevy Chase Club, with Wednesday practice rounds at Chevy Chase and Congressional. Despite its best efforts, Team Philly has made a roster adjustment for the ninth consecutive tournament: the Good Doctor Kurd is out, and Bear Barton is back. Bear, you have been missed. Inspired by the recently completed Presidents Cup, the matchups will be drafted at Wednesday's Welcome Dinner at Rolando's House of Meat (and Cheese). The captains have already chosen their pairings: Team Philly with a highly advanced and proprietary algorithm that balances winning and not-losing, and Team DC with the appropriate diversity of thought and jovial spirit.",
       "weather": "",
       "teamPhilly": [
         {
           "name": "Jeff Shanahan",
-          "role": "Captain"
+          "role": "Captain",
+          "handicap": 3.7
         },
         {
           "name": "Pat Shanahan",
-          "role": "Vice Captain"
+          "role": "Alt Captain/CFO",
+          "handicap": -0.6,
+          "lowIndex": -1.8
         },
         {
-          "name": "Wayne Lesage"
+          "name": "Wayne Lesage",
+          "handicap": 1.5,
+          "lowIndex": 0.4
         },
         {
-          "name": "Ben Quereau"
+          "name": "Ben Quereau",
+          "handicap": 2.4,
+          "lowIndex": 1.5
         },
         {
-          "name": "Luke Etherington"
+          "name": "Luke Etherington",
+          "handicap": 5.6,
+          "lowIndex": 3.0
         },
         {
-          "name": "Ben Etherington"
+          "name": "Ben Etherington",
+          "handicap": 5.1,
+          "lowIndex": 4.6
         },
         {
-          "name": "Bear Barton"
+          "name": "Bear Barton",
+          "handicap": 4.5,
+          "lowIndex": 3.4
         },
         {
-          "name": "Rob Nathan"
+          "name": "Rob Nathan",
+          "handicap": 8.6,
+          "lowIndex": 7.6
         }
       ],
       "teamDC": [
         {
           "name": "Matt Hopkins",
-          "role": "Captain"
+          "role": "Captain",
+          "handicap": 10.5,
+          "lowIndex": 10.1
         },
         {
           "name": "Brendan Delany",
-          "role": "Vice Captain"
+          "role": "Assistant to the Captain",
+          "handicap": 18.2,
+          "lowIndex": 17.9
         },
         {
           "name": "Jon Carr",
-          "role": "Secretary"
+          "role": "Manager, Fabrics",
+          "handicap": 4.0,
+          "lowIndex": 3.3
         },
         {
-          "name": "Vince Burke"
+          "name": "Vince Burke",
+          "handicap": 10.8,
+          "lowIndex": 10.4
         },
         {
-          "name": "Chris Connolly"
+          "name": "Chris Connolly",
+          "handicap": 3.7,
+          "lowIndex": 2.2
         },
         {
-          "name": "Sean Keegan"
+          "name": "Sean Keegan",
+          "handicap": 2.6,
+          "lowIndex": 1.5
         },
         {
-          "name": "Roland Miller"
+          "name": "Roland Miller",
+          "handicap": 4.6,
+          "lowIndex": 4.4
         },
         {
-          "name": "Devin Tuohey"
+          "name": "Devin Tuohey",
+          "handicap": 10.7,
+          "lowIndex": 10.3
         }
       ],
       "dates": [
@@ -3379,11 +3410,12 @@
             "name": "Afternoon",
             "type": "Fourball",
             "holes": 18,
-            "points": 16,
+            "points": 24,
             "course": "Chevy Chase Club"
           }
         ],
-        "totalPoints": 28
+        "totalPoints": 36,
+        "handicapRule": "Foursomes: combined alternate-shot handicaps. Fourball: 90% handicaps. Fourball also has a one-point closeout match on each nine, not tracked in live scoring."
       },
       "matches": [
         {
@@ -3450,8 +3482,8 @@
           "holes": 18,
           "playersPerSide": 2,
           "pointValues": {
-            "front": 1,
-            "back": 1,
+            "front": 2,
+            "back": 2,
             "overall": 2
           },
           "pairings": [
@@ -3511,17 +3543,33 @@
         },
         {
           "date": "Wed, Oct 7",
+          "time": "11:30AM",
+          "event": "Arrival and room check-in (if available)",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Wed, Oct 7",
+          "time": "11:45AM",
+          "event": "Lunch (a la carte)",
+          "location": "Chevy Chase Club, Winter Center patio"
+        },
+        {
+          "date": "Wed, Oct 7",
+          "time": "12:45PM",
+          "event": "Congressional players depart; Chevy players warm up and cocktails",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Wed, Oct 7",
           "time": "1:24PM",
-          "event": "Practice round tee time",
-          "location": "Chevy Chase Club",
-          "notes": "Pat Shanahan, Jeff Shanahan and Rob Nathan play with Team DC players (groups TBD)."
+          "event": "Practice round: Roland Miller, Devin Tuohey, Vince Burke, Pat Shanahan",
+          "location": "Chevy Chase Club"
         },
         {
           "date": "Wed, Oct 7",
           "time": "1:36PM",
-          "event": "Practice round tee time",
-          "location": "Chevy Chase Club",
-          "notes": "Pat Shanahan, Jeff Shanahan and Rob Nathan play with Team DC players (groups TBD)."
+          "event": "Practice round: Jon Carr, Rob Nathan, Matt Hopkins, Jeff Shanahan",
+          "location": "Chevy Chase Club"
         },
         {
           "date": "Wed, Oct 7",
@@ -3532,10 +3580,34 @@
         },
         {
           "date": "Wed, Oct 7",
+          "time": "5:30PM",
+          "event": "Post-golf hang (showers, check-in, cocktails)",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Wed, Oct 7",
+          "time": "6:45PM",
+          "event": "Chevy players depart for Rolando's House of Meat (and Cheese)",
+          "location": ""
+        },
+        {
+          "date": "Wed, Oct 7",
           "time": "7:00PM",
-          "event": "Captains Dinner",
-          "location": "Roland Miller's house",
+          "event": "Congressional players return to Chevy for showers and turnaround",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Wed, Oct 7",
+          "time": "7:00PM",
+          "event": "Sunset cocktails",
+          "location": "Rolando's House of Meat (Roland Miller's house)",
           "notes": "Wayne Lesage arrives on a flight at 8:13PM and will meet the group at Roland's. Bear Barton will not arrive until dinner."
+        },
+        {
+          "date": "Wed, Oct 7",
+          "time": "8:00PM",
+          "event": "Welcome Dinner and Matchup Draft",
+          "location": "Rolando's House of Meat (Roland Miller's house)"
         },
         {
           "date": "Wed, Oct 7",
@@ -3545,20 +3617,88 @@
         },
         {
           "date": "Thu, Oct 8",
-          "time": "TBD",
-          "event": "Morning — Foursomes (18 holes)",
+          "time": "7:15AM",
+          "event": "Depart Chevy Chase Club for Columbia",
+          "location": "Chevy Chase Club",
+          "notes": "All bags must be out of rooms and brought to the car or left in the locker room."
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "8:00AM",
+          "event": "Foursomes tee time (18 holes)",
           "location": "Columbia Country Club"
         },
         {
           "date": "Thu, Oct 8",
-          "time": "TBD",
-          "event": "Afternoon — Fourball (18 holes)",
+          "time": "8:10AM",
+          "event": "Foursomes tee time (18 holes)",
+          "location": "Columbia Country Club"
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "8:20AM",
+          "event": "Foursomes tee time (18 holes)",
+          "location": "Columbia Country Club"
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "8:30AM",
+          "event": "Foursomes tee time (18 holes)",
+          "location": "Columbia Country Club"
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "12:30PM",
+          "event": "Lunch",
+          "location": "Chevy Chase Club, Tap Room patio"
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "1:36PM",
+          "event": "Fourball tee time (18 holes)",
           "location": "Chevy Chase Club"
         },
         {
           "date": "Thu, Oct 8",
-          "time": "Immediately following play",
-          "event": "Awards and Dinner",
+          "time": "1:48PM",
+          "event": "Fourball tee time (18 holes)",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "2:00PM",
+          "event": "Fourball tee time (18 holes)",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "2:12PM",
+          "event": "Fourball tee time (18 holes)",
+          "location": "Chevy Chase Club"
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "6:00PM",
+          "event": "Post-round showers and cocktails",
+          "location": "Chevy Chase Club, upstairs locker room"
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "6:30PM",
+          "event": "Cocktails and Raw Bar",
+          "location": "Chevy Chase Club, Clubroom Balcony (2nd floor)"
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "7:30PM",
+          "event": "Champions Dinner and Awards",
+          "location": "Chevy Chase Club, Clubroom (2nd floor)",
+          "notes": "Jackets are requested."
+        },
+        {
+          "date": "Thu, Oct 8",
+          "time": "9:30PM",
+          "event": "Depart for Philadelphia",
           "location": ""
         }
       ],
@@ -3584,7 +3724,7 @@
         "Captain"
       ],
       "nickname": "J Shan",
-      "homeClub": "Applebrook",
+      "homeClub": "Aronimink",
       "headshot": "/headshots/jeff-shanahan.png",
       "bio": "The founding captain of Team Philly and the driving force behind the FFI. Runs the tightest ship in amateur golf — no spot is safe, no debt goes unpaid, and no roster decision is made without his blessing. The self-anointed Head Urban Cowboy leads the Cobbs Creek Foundation off the course and leads with an iron fist wrapped in a Peter Millar quarter-zip on it. Has been known to make shocking roster announcements that leave his own teammates questioning their job security."
     },
@@ -3607,7 +3747,7 @@
         "CFO"
       ],
       "nickname": "P Shan",
-      "homeClub": "Applebrook",
+      "homeClub": "Aronimink",
       "headshot": "/headshots/pat-shanahan.jpg",
       "bio": "The other half of the Shanahan dynasty and Team Philly's Vice Captain from day one. The namesake of the Pat Shanahan Award — given to the best player on the losing team — and the 1st Edition MVP. Handles logistics, welcome letters, and expense collection with quiet authority. The always gracious P Shan once tweaked his neck on a morning run before the 2nd Edition and had to emergency-purchase BioFreeze at Wegmans. Together with Jeff, the brothers Shanahan make every roster and strategy decision between them."
     },
@@ -3650,7 +3790,7 @@
       ],
       "roles": [],
       "nickname": "Beverly",
-      "homeClub": "Applebrook",
+      "homeClub": "Gulph Mills",
       "headshot": "/headshots/ben-etherington.jpg",
       "bio": "One half of the Everly Brothers and a founding member of Team Philly. Known as Beverly, B Everly, or Phil Everly depending on the program edition. Won MVP at the 3rd Edition after Team Philly's dominant 17.5–10.5 victory at Applebrook. Works at Nathan Trotter & Co. alongside his brother Luke. Famously photographed testing the pewter content of The Goblet of Immortality. His banter-free rounds alongside Pat Shanahan have become the stuff of legend."
     },
@@ -3669,7 +3809,7 @@
       ],
       "roles": [],
       "nickname": "L Everly",
-      "homeClub": "Applebrook",
+      "homeClub": "Gulph Mills",
       "headshot": "/headshots/luke-etherington.jpg",
       "bio": "The other Everly Brother and a steadfast member of Team Philly since the 2nd Edition. Also employed at Nathan Trotter & Co., making the Etherington–Nathan Trotter pipeline one of the FFI's most reliable feeder systems. Known for checking the volatile tin market mid-round and for ordering twin lobster tails at the 6th Edition dinner — prompting Jon Carr to respond simply: 'Unbelievable.' Does Hoka make golf shoes? Luke would like to know."
     },
@@ -3718,9 +3858,9 @@
       ],
       "roles": [],
       "nickname": "Papa Bear",
-      "homeClub": null,
+      "homeClub": "Philadelphia Country Club",
       "headshot": "/headshots/bear-barton.jpeg",
-      "bio": "Berenstain Papa. Featured in what the 2019 program called the primal battle for animal kingdom supremacy — the Bear vs the Silverback — when paired against Roland Miller. A four-time FFI veteran whose steady play and quiet intensity anchored Team Philly's middle order. The 2022 program once asked: is Bear secretly rooting for Team DC, a leadership group clearly more fun to be around? Departed after the 7th Edition, prompting the wistful caption: 'Bear and Murph — we miss you.' He has always said he'll be back. We can't wait for that to happen."
+      "bio": "Berenstain Papa. Featured in what the 2019 program called the primal battle for animal kingdom supremacy — the Bear vs the Silverback — when paired against Roland Miller. A four-time FFI veteran whose steady play and quiet intensity anchored Team Philly's middle order. The 2022 program once asked: is Bear secretly rooting for Team DC, a leadership group clearly more fun to be around? Departed after the 7th Edition, prompting the wistful caption: 'Bear and Murph — we miss you.' He always said he'd be back, and for the 10th Edition in 2026, he is. As Team DC's welcome letter put it: \"Bear, you have been missed.\""
     },
     {
       "name": "Murphy Barton",
@@ -3747,7 +3887,7 @@
       "nickname": "Dr. Beeper",
       "homeClub": "Aronimink",
       "headshot": "/headshots/mark-kurd.jpg",
-      "bio": "Doc McStuffins. Dr. Frasier Crane. The FFI's resident physician carries more nicknames than most players carry clubs. The good Dr. Kurd takes time away from the OR to endure four hours of silence next to the always gracious P Shan. Joined the roster in the 6th Edition, missed the 7th, and was warmly welcomed back for the 8th — the 2024 program noting it was the fewest roster changes Team Philly had made in years."
+      "bio": "Doc McStuffins. Dr. Frasier Crane. The FFI's resident physician carries more nicknames than most players carry clubs. The good Dr. Kurd takes time away from the OR to endure four hours of silence next to the always gracious P Shan. Joined the roster in the 6th Edition, missed the 7th, and was warmly welcomed back for the 8th — the 2024 program noting it was the fewest roster changes Team Philly had made in years. Not on the roster for the 10th Edition; Team DC's welcome letter noted, \"we will miss the Good Doctor Kurd.\""
     },
     {
       "name": "Nick Aceto",
@@ -3808,7 +3948,7 @@
       ],
       "roles": [],
       "nickname": null,
-      "homeClub": null,
+      "homeClub": "Aronimink",
       "headshot": "/headshots/wayne-Lesage.jpg",
       "bio": "The newest addition to Team Philly for the 9th Edition, replacing the retired Will Mundy. A Philly Mainline classic paired with Mark Kurd for foursomes at Gulph Mills and with Rob Nathan for fourball at Aronimink. Fresh blood for Team Philly's quest to reclaim the Goblet."
     },

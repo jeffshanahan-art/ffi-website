@@ -69,7 +69,10 @@ export default async function EventPage(props: { params: Promise<{ year: string 
     '2020': [{ label: 'Welcome Letter', href: '/programs/welcome-letter-2020.pdf' }],
     '2019': [{ label: 'Welcome Letter', href: '/programs/welcome-letter-2019.pdf' }],
   };
-  const programDocs = programMap[year] || [];
+  const programDocs = [
+    ...(programMap[year] || []),
+    ...(year === '2026' && !tournament.pairingsLocked ? [{ label: 'Tournament Program', href: '/api/programs/2026' }] : []),
+  ];
 
   // Get course details with location info
   const allCourses = await getCourses();
