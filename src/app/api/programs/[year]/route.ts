@@ -2,16 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import staticData from '@/data/ffi-data.json';
-import { pairingsLocked } from '@/lib/reveal';
 
-// Programs that list pairings stay private until the edition's reveal time.
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ year: string }> }) {
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
-  const event = (staticData.events as { year: string; pairingsRevealAt?: string }[]).find((e) => e.year === year);
+  const event = (staticData.events as { year: string }[]).find((e) => e.year === year);
   if (!event) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-  if (pairingsLocked(event)) return NextResponse.json({ error: 'Not available yet' }, { status: 403 });
 
   try {
     const file = fs.readFileSync(path.join(process.cwd(), 'private', 'programs', `program-${year}.pdf`));
