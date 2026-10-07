@@ -65,6 +65,7 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
               <div className="flex items-baseline justify-between border-b border-gray pb-2 mb-1">
                 <h3 className="font-serif text-lg text-blue font-normal">
                   {match.name || match.type || `Round ${match.round || i + 1}`}
+                  {locked && <span className="ml-2 font-sans text-[11px] italic text-slate">In no particular order until matchups revealed Wed at 9pm</span>}
                 </h3>
                 {showRoundScore && (
                   <span className="text-sm font-medium text-black">

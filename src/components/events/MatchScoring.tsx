@@ -310,6 +310,7 @@ export function MatchScoring({ year }: { year: string }) {
             <div className="border-b border-gray pb-2 mb-4">
               <h3 className="font-serif text-lg text-blue">
                 {match.name || match.type || `Round ${match.round || ri + 1}`}
+                {locked && <span className="ml-2 font-sans text-[11px] italic text-slate">In no particular order until matchups revealed Wed at 9pm</span>}
               </h3>
               {match.course && <p className="text-slate text-sm">{match.course}</p>}
             </div>
