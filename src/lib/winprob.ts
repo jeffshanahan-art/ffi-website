@@ -205,7 +205,12 @@ function pairHistoryScore(history: any[], names: string[]): number {
   return n === 0 ? 0 : logit((wins + 2) / (n + 4));
 }
 
-export function computeWinProbability(events: any[], event: any, players: PlayerInfo[] = []): WinResult {
+export function computeWinProbability(
+  events: any[],
+  event: any,
+  players: PlayerInfo[] = [],
+  opts: { hideMatchups?: boolean } = {}
+): WinResult {
   const history = events.filter((e) => e.year !== event.year);
   const { teamEdge, homeEdge } = fitHistory(history);
   const hostSign = event.hostCity === 'dc' ? 1 : -1;
@@ -241,6 +246,25 @@ export function computeWinProbability(events: any[], event: any, players: Player
   );
   const rawMean = mean(raw.flat()) ?? 0;
 
+  // With hidden matchups, each round's adjustment compares the average of each team's own pairs, so the
+  // result is the same whichever pair faces whichever and nothing about the draw leaks.
+  const roundExtra: number[] = (event.matches || []).map((m: any) => {
+    const pairs = m.pairings || [];
+    const side = (team: Team) => pairs.map((p: any) => (p[team] || []) as string[]);
+    const avg = (xs: (number | null)[]) => mean(xs.filter((x): x is number => x != null));
+    const [pP, pD] = [side('philly'), side('dc')];
+    const diff = (f: (n: string[]) => number | null) => {
+      const a = avg(pP.map(f));
+      const b = avg(pD.map(f));
+      return a != null && b != null ? b - a : 0;
+    };
+    const hc = clamp(HANDICAP_WEIGHT * diff(avgHandicap), HANDICAP_CAP);
+    const form = clamp(FORM_WEIGHT * diff(avgSlump), FORM_CAP);
+    const home = HOME_COURSE_WEIGHT * -diff((n) => homeShare(n, m.course));
+    const pair = clamp(PAIR_WEIGHT * -diff((n) => pairHistoryScore(history, n)), PAIR_CAP);
+    return hc + form + home + pair;
+  });
+
   const rounds: { match: any; pairing: any; units: number[]; base: number; extra: number }[][] = (event.matches || []).map((m: any, ri: number) =>
     (m.pairings || []).map((pairing: any, pi: number) => {
       const ph: string[] = pairing.philly || [];
@@ -257,8 +281,8 @@ export function computeWinProbability(events: any[], event: any, players: Player
         match: m,
         pairing,
         units: unitValues(m),
-        base: PLAYER_WEIGHT * (raw[ri][pi] - rawMean),
-        extra: hc + form + home + pair,
+        base: opts.hideMatchups ? 0 : PLAYER_WEIGHT * (raw[ri][pi] - rawMean),
+        extra: opts.hideMatchups ? roundExtra[ri] : hc + form + home + pair,
       };
     })
   );
