@@ -123,7 +123,7 @@ export async function GET(request: NextRequest) {
 
   const locked = pairingsLocked(event) && !isAuthenticated(request);
   const shown = locked ? { ...event, matches: redactMatches(event.matches, { showTeamPairs: !!(await getProgram(year)) }) } : event;
-  const { pairings, ...winProbability } = computeWinProbability(data.events as any[], shown);
+  const { pairings, ...winProbability } = computeWinProbability(data.events as any[], shown, data.allPlayers as any[]);
 
   return NextResponse.json({
     active,

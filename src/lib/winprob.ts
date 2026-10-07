@@ -165,7 +165,47 @@ export interface WinResult extends WinProbability {
   pairings: PairingWin[][];
 }
 
-export function computeWinProbability(events: any[], event: any): WinResult {
+interface PlayerInfo {
+  name: string;
+  homeClub?: string | null;
+}
+
+// Handicap, form, home-course and partner-history adjustments per pairing (positive favors Philly).
+const HANDICAP_WEIGHT = 0.05; // per stroke of average handicap advantage
+const HANDICAP_CAP = 0.5;
+const FORM_WEIGHT = 0.04; // per stroke an index sits above the player's low index
+const FORM_CAP = 0.25;
+const HOME_COURSE_WEIGHT = 0.2; // share of the side who are members of the course being played
+const PAIR_WEIGHT = 0.5;
+const PAIR_CAP = 0.4;
+
+const clamp = (v: number, cap: number) => Math.max(-cap, Math.min(cap, v));
+const mean = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null);
+
+// Wins/losses/halves for a two-player team across earlier editions, as a smoothed log-odds score.
+function pairHistoryScore(history: any[], names: string[]): number {
+  if (names.length !== 2) return 0;
+  const key = [...names].sort().join('|');
+  let wins = 0;
+  let n = 0;
+  for (const e of history) {
+    for (const m of e.matches || []) {
+      for (const p of m.pairings || []) {
+        if (!p.score) continue;
+        for (const side of ['philly', 'dc'] as Team[]) {
+          if (p[side]?.length !== 2 || [...p[side]].sort().join('|') !== key) continue;
+          const mine = p.score[side]?.total ?? 0;
+          const theirs = p.score[side === 'philly' ? 'dc' : 'philly']?.total ?? 0;
+          n++;
+          wins += mine > theirs ? 1 : mine === theirs ? 0.5 : 0;
+        }
+      }
+    }
+  }
+  return n === 0 ? 0 : logit((wins + 2) / (n + 4));
+}
+
+export function computeWinProbability(events: any[], event: any, players: PlayerInfo[] = []): WinResult {
   const history = events.filter((e) => e.year !== event.year);
   const { teamEdge, homeEdge } = fitHistory(history);
   const hostSign = event.hostCity === 'dc' ? 1 : -1;
@@ -173,33 +213,74 @@ export function computeWinProbability(events: any[], event: any): WinResult {
   const prePhilly = 1 - preDC;
 
   const ratings = playerRatings(history, event.hostCity);
+  const roster = new Map<string, { handicap?: number; lowIndex?: number }>();
+  for (const r of [...(event.teamPhilly || []), ...(event.teamDC || [])]) {
+    if (typeof r !== 'string') roster.set(r.name, { handicap: r.handicap, lowIndex: r.lowIndex });
+  }
+  const homeClub = new Map(players.map((p) => [p.name, (p.homeClub ?? '').toLowerCase()]));
 
-  // Lineup edge per pairing (positive favors Philly).
-  const rounds: { match: any; pairing: any; units: number[]; delta: number }[][] = (event.matches || []).map((m: any) =>
-    (m.pairings || []).map((pairing: any) => ({
-      match: m,
-      pairing,
-      units: unitValues(m),
-      delta: PLAYER_WEIGHT * (sideRating(pairing.philly || [], ratings) - sideRating(pairing.dc || [], ratings)),
-    }))
+  const avgHandicap = (names: string[]) => mean(names.map((n) => roster.get(n)?.handicap).filter((h): h is number => typeof h === 'number'));
+  const avgSlump = (names: string[]) =>
+    mean(
+      names
+        .map((n) => roster.get(n))
+        .filter((r): r is { handicap: number; lowIndex: number } => typeof r?.handicap === 'number' && typeof r?.lowIndex === 'number')
+        .map((r) => r.handicap - r.lowIndex)
+    );
+  const homeShare = (names: string[], course: string) => {
+    const c = (course ?? '').toLowerCase();
+    if (!names.length || !c) return 0;
+    return names.filter((n) => {
+      const club = homeClub.get(n);
+      return !!club && (c.includes(club) || club.includes(c));
+    }).length / names.length;
+  };
+
+  const raw = (event.matches || []).map((m: any) =>
+    (m.pairings || []).map((pairing: any) => sideRating(pairing.philly || [], ratings) - sideRating(pairing.dc || [], ratings))
+  );
+  const rawMean = mean(raw.flat()) ?? 0;
+
+  const rounds: { match: any; pairing: any; units: number[]; base: number; extra: number }[][] = (event.matches || []).map((m: any, ri: number) =>
+    (m.pairings || []).map((pairing: any, pi: number) => {
+      const ph: string[] = pairing.philly || [];
+      const dc: string[] = pairing.dc || [];
+      const hP = avgHandicap(ph);
+      const hD = avgHandicap(dc);
+      const sP = avgSlump(ph);
+      const sD = avgSlump(dc);
+      const hc = hP != null && hD != null ? clamp(HANDICAP_WEIGHT * (hD - hP), HANDICAP_CAP) : 0;
+      const form = sP != null && sD != null ? clamp(FORM_WEIGHT * (sD - sP), FORM_CAP) : 0;
+      const home = HOME_COURSE_WEIGHT * (homeShare(ph, m.course) - homeShare(dc, m.course));
+      const pair = clamp(PAIR_WEIGHT * (pairHistoryScore(history, ph) - pairHistoryScore(history, dc)), PAIR_CAP);
+      return {
+        match: m,
+        pairing,
+        units: unitValues(m),
+        base: PLAYER_WEIGHT * (raw[ri][pi] - rawMean),
+        extra: hc + form + home + pair,
+      };
+    })
   );
   const flat = rounds.flat();
 
-  const build = (q: number) =>
-    flat.flatMap((r) => r.units.map((pts) => ({ pts, p: sigmoid(logit(q) + r.delta) })));
+  const build = (q: number, withExtras: boolean) =>
+    flat.flatMap((r) => r.units.map((pts) => ({ pts, p: sigmoid(logit(q) + r.base + (withExtras ? r.extra : 0)) })));
 
-  // Shift all pairings equally so the whole-event odds match the team-level prior.
+  // Anchor the intercept so records-only odds match the team-level prior; handicap, home course and
+  // partner history then move the odds from there.
   let q = 0.5;
   if (flat.length) {
     let lo = 0.001;
     let hi = 0.999;
     for (let i = 0; i < 40; i++) {
       const mid = (lo + hi) / 2;
-      if (finishProbability(0, 0, build(mid)) < prePhilly) lo = mid;
+      if (finishProbability(0, 0, build(mid, false)) < prePhilly) lo = mid;
       else hi = mid;
     }
     q = (lo + hi) / 2;
   }
+  const lineupPhilly = flat.length ? finishProbability(0, 0, build(q, true)) : prePhilly;
 
   let phillyNow = 0;
   let dcNow = 0;
@@ -207,7 +288,7 @@ export function computeWinProbability(events: any[], event: any): WinResult {
   const remaining: Unit[] = [];
   const pairingWins: PairingWin[][] = rounds.map((round) =>
     round.map((r) => {
-      const p = sigmoid(logit(q) + r.delta);
+      const p = sigmoid(logit(q) + r.base + r.extra);
       const units = r.units.map((pts) => ({ pts, p }));
       if (r.pairing.score) {
         anyScored = true;
@@ -224,7 +305,7 @@ export function computeWinProbability(events: any[], event: any): WinResult {
     })
   );
 
-  const philly = anyScored ? finishProbability(phillyNow, dcNow, remaining) : prePhilly;
+  const philly = anyScored ? finishProbability(phillyNow, dcNow, remaining) : lineupPhilly;
   const remainingPts = remaining.reduce((a, u) => a + u.pts, 0);
   const expectedRemainingPhilly = remaining.reduce((a, u) => a + u.pts * u.p, 0);
 
@@ -235,7 +316,7 @@ export function computeWinProbability(events: any[], event: any): WinResult {
   return {
     philly,
     dc: 1 - philly,
-    preEvent: { philly: prePhilly, dc: preDC },
+    preEvent: { philly: lineupPhilly, dc: 1 - lineupPhilly },
     live: anyScored,
     score: { philly: phillyNow, dc: dcNow },
     projected: { philly: phillyNow + expectedRemainingPhilly, dc: dcNow + (remainingPts - expectedRemainingPhilly) },

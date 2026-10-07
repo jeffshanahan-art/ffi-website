@@ -3437,18 +3437,8 @@
           "pairings": [
             {
               "philly": [
-                "Pat Shanahan",
-                "Luke Etherington"
-              ],
-              "dc": [
-                "Matt Hopkins",
-                "Brendan Delany"
-              ]
-            },
-            {
-              "philly": [
-                "Jeff Shanahan",
-                "Wayne Lesage"
+                "Wayne Lesage",
+                "Jeff Shanahan"
               ],
               "dc": [
                 "Jon Carr",
@@ -3458,8 +3448,18 @@
             },
             {
               "philly": [
-                "Ben Etherington",
-                "Ben Quereau"
+                "Bear Barton",
+                "Rob Nathan"
+              ],
+              "dc": [
+                "Matt Hopkins",
+                "Brendan Delany"
+              ]
+            },
+            {
+              "philly": [
+                "Ben Quereau",
+                "Ben Etherington"
               ],
               "dc": [
                 "Vince Burke",
@@ -3468,12 +3468,12 @@
             },
             {
               "philly": [
-                "Bear Barton",
-                "Rob Nathan"
+                "Pat Shanahan",
+                "Luke Etherington"
               ],
               "dc": [
-                "Chris Connolly",
-                "Devin Tuohey"
+                "Devin Tuohey",
+                "Chris Connolly"
               ]
             }
           ]
@@ -3493,8 +3493,18 @@
           "pairings": [
             {
               "philly": [
-                "Pat Shanahan",
-                "Jeff Shanahan"
+                "Luke Etherington",
+                "Ben Quereau"
+              ],
+              "dc": [
+                "Vince Burke",
+                "Chris Connolly"
+              ]
+            },
+            {
+              "philly": [
+                "Wayne Lesage",
+                "Bear Barton"
               ],
               "dc": [
                 "Matt Hopkins",
@@ -3504,32 +3514,22 @@
             },
             {
               "philly": [
-                "Wayne Lesage",
-                "Bear Barton"
+                "Ben Etherington",
+                "Rob Nathan"
               ],
               "dc": [
-                "Sean Keegan",
-                "Roland Miller"
+                "Brendan Delany",
+                "Jon Carr"
               ]
             },
             {
               "philly": [
-                "Luke Etherington",
-                "Ben Quereau"
+                "Pat Shanahan",
+                "Jeff Shanahan"
               ],
               "dc": [
-                "Jon Carr",
-                "Brendan Delany"
-              ]
-            },
-            {
-              "philly": [
-                "Rob Nathan",
-                "Ben Etherington"
-              ],
-              "dc": [
-                "Vince Burke",
-                "Chris Connolly"
+                "Roland Miller",
+                "Sean Keegan"
               ]
             }
           ]

@@ -134,7 +134,7 @@ export async function getTournamentByYear(
       : 'matches' in event
         ? (event as any).champion
           ? (event as any).matches
-          : withPairingWinPct((event as any).matches, computeWinProbability(ffiData.events as any[], event).pairings)
+          : withPairingWinPct((event as any).matches, computeWinProbability(ffiData.events as any[], event, ffiData.allPlayers as any[]).pairings)
         : undefined,
     pairingsRevealAt: (event as any).pairingsRevealAt ?? undefined,
     pairingsLocked: locked ? true : undefined,
