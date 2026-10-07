@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { upload as blobUpload } from '@vercel/blob/client';
 
 interface Edition {
   value: string;
@@ -12,6 +13,7 @@ interface Edition {
 interface Item {
   id: string;
   file: File;
+  isVideo: boolean;
   preview: string;
   takenOn: string | null; // YYYY-MM-DD from the photo's EXIF data
   auto: string | null; // edition matched by date
@@ -27,7 +29,35 @@ function matchEdition(takenOn: string | null, editions: Edition[]): string | nul
   return hit?.value ?? null;
 }
 
+const pad2 = (n: number) => String(n).padStart(2, '0');
+const localDay = (d: Date) => `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+
+// MP4/MOV files record their creation time in the 'mvhd' box; fall back to the file's modified date.
+async function readVideoDate(file: File): Promise<string | null> {
+  try {
+    const SPAN = 2_000_000;
+    const chunks = [file.slice(0, SPAN)];
+    if (file.size > SPAN) chunks.push(file.slice(Math.max(SPAN, file.size - SPAN)));
+    for (const chunk of chunks) {
+      const b = new Uint8Array(await chunk.arrayBuffer());
+      for (let i = 0; i + 20 < b.length; i++) {
+        if (b[i] === 0x6d && b[i + 1] === 0x76 && b[i + 2] === 0x68 && b[i + 3] === 0x64) {
+          const view = new DataView(b.buffer, b.byteOffset + i + 4);
+          const version = view.getUint8(0);
+          const secs = version === 1 ? Number(view.getBigUint64(4)) : view.getUint32(4);
+          const d = new Date((secs - 2082844800) * 1000);
+          if (d.getFullYear() >= 2000 && d.getFullYear() <= 2100) return localDay(d);
+        }
+      }
+    }
+  } catch {
+    // fall through
+  }
+  return file.lastModified ? localDay(new Date(file.lastModified)) : null;
+}
+
 async function readTakenDate(file: File): Promise<string | null> {
+  if (file.type.startsWith('video/')) return readVideoDate(file);
   try {
     const exifr = (await import('exifr')).default;
     const tags = await exifr.parse(file, ['DateTimeOriginal', 'CreateDate']);
@@ -60,18 +90,37 @@ async function prepareForUpload(file: File): Promise<File> {
   return file;
 }
 
+function Thumb({ item, className }: { item: Item; className: string }) {
+  if (item.isVideo) {
+    return (
+      <div className="relative">
+        <video src={`${item.preview}#t=0.1`} muted playsInline preload="metadata" className={className} />
+        <span className="absolute inset-0 flex items-center justify-center text-white text-lg drop-shadow">&#9654;</span>
+      </div>
+    );
+  }
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={item.preview} alt="" className={className} title={item.takenOn ?? ''} />;
+}
+
 export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
   const [editions, setEditions] = useState<Edition[]>([]);
   const [items, setItems] = useState<Item[]>([]);
   const [reading, setReading] = useState(false);
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null);
   const [status, setStatus] = useState<string | null>(null);
+  const [mode, setMode] = useState<'blob' | 'local'>('blob');
+  const [current, setCurrent] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     fetch('/api/photos/editions')
       .then((r) => r.json())
       .then(setEditions)
+      .catch(() => {});
+    fetch('/api/photos/upload')
+      .then((r) => r.json())
+      .then((d) => setMode(d.mode))
       .catch(() => {});
   }, []);
 
@@ -81,7 +130,7 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
   }, []);
 
   const addFiles = async (list: File[]) => {
-    const images = list.filter((f) => f.type.startsWith('image/'));
+    const images = list.filter((f) => f.type.startsWith('image/') || f.type.startsWith('video/'));
     if (!images.length) return;
     setReading(true);
     setStatus(null);
@@ -91,6 +140,7 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
       added.push({
         id: `${file.name}-${file.size}-${file.lastModified}-${Math.random().toString(36).slice(2, 6)}`,
         file,
+        isVideo: file.type.startsWith('video/'),
         preview: URL.createObjectURL(file),
         takenOn,
         auto: matchEdition(takenOn, editions),
@@ -130,14 +180,32 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
     const failedItems: Item[] = [];
     for (const item of assigned) {
       try {
-        const file = await prepareForUpload(item.file);
-        const form = new FormData();
-        form.append('file', file);
-        form.append('year', editionOf(item));
-        if (item.takenOn) form.append('takenAt', item.takenOn);
-        const res = await fetch('/api/photos', { method: 'POST', body: form });
-        if (res.ok) success++;
-        else failedItems.push(item);
+        if (item.isVideo && mode === 'blob') {
+          setCurrent(`Uploading ${item.file.name}…`);
+          const ext = item.file.name.split('.').pop()?.toLowerCase() || 'mp4';
+          const blob = await blobUpload(`photos/${editionOf(item)}/video-${Date.now()}.${ext}`, item.file, {
+            access: 'public',
+            handleUploadUrl: '/api/photos/upload',
+            contentType: item.file.type,
+            onUploadProgress: ({ percentage }) => setCurrent(`Uploading ${item.file.name}… ${Math.round(percentage)}%`),
+          });
+          const res = await fetch('/api/photos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ src: blob.url, year: editionOf(item), takenAt: item.takenOn }),
+          });
+          if (res.ok) success++;
+          else failedItems.push(item);
+        } else {
+          const file = item.isVideo ? item.file : await prepareForUpload(item.file);
+          const form = new FormData();
+          form.append('file', file);
+          form.append('year', editionOf(item));
+          if (item.takenOn) form.append('takenAt', item.takenOn);
+          const res = await fetch('/api/photos', { method: 'POST', body: form });
+          if (res.ok) success++;
+          else failedItems.push(item);
+        }
       } catch {
         failedItems.push(item);
       }
@@ -146,10 +214,11 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
     items.filter((i) => !failedItems.includes(i)).forEach((i) => URL.revokeObjectURL(i.preview));
     setItems(failedItems);
     setProgress(null);
+    setCurrent(null);
     setStatus(
       failedItems.length
         ? `Uploaded ${success}, ${failedItems.length} failed (still listed below so you can retry)`
-        : `${success} photo${success !== 1 ? 's' : ''} uploaded`
+        : `${success} file${success !== 1 ? 's' : ''} uploaded`
     );
     if (success) onUploaded();
   };
@@ -158,9 +227,9 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
 
   return (
     <div className="mb-8 border border-gray bg-gray-light p-4">
-      <h3 className="font-serif text-lg text-blue mb-1">Bulk Upload Photos</h3>
+      <h3 className="font-serif text-lg text-blue mb-1">Bulk Upload Photos &amp; Videos</h3>
       <p className="text-xs text-slate mb-3">
-        Photos are sorted into editions by the date they were taken. Anything we can&apos;t place, you choose.
+        Photos and videos (MP4, MOV, WebM) are sorted into editions by the date they were taken. Anything we can&apos;t place, you choose.
       </p>
 
       <div
@@ -172,12 +241,12 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
         onClick={() => inputRef.current?.click()}
         className="border-2 border-dashed border-gray hover:border-blue transition-colors px-3 py-6 text-sm text-slate cursor-pointer bg-white text-center"
       >
-        {reading ? 'Reading photo dates…' : 'Drop photos here or click to browse (select as many as you like)'}
+        {reading ? 'Reading photo dates…' : 'Drop photos or videos here, or click to browse (select as many as you like)'}
       </div>
       <input
         ref={inputRef}
         type="file"
-        accept="image/*"
+        accept="image/*,video/*"
         multiple
         className="hidden"
         onChange={(e) => {
@@ -211,8 +280,7 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {unassigned.map((i) => (
               <div key={i.id} className="text-xs">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={i.preview} alt="" className="w-full h-24 object-cover bg-gray" />
+                <Thumb item={i} className="w-full h-24 object-cover bg-gray" />
                 <p className="mt-1 text-slate truncate">{i.takenOn ?? 'No date found'}</p>
                 <select
                   value={i.override}
@@ -257,8 +325,7 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
           <div className="flex flex-wrap gap-2">
             {list.map((i) => (
               <div key={i.id} className="relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={i.preview} alt="" className="w-16 h-16 object-cover bg-gray" title={i.takenOn ?? ''} />
+                <Thumb item={i} className="w-16 h-16 object-cover bg-gray" />
                 <button
                   type="button"
                   onClick={() => remove(i.id)}
@@ -286,6 +353,7 @@ export function PhotoUpload({ onUploaded }: { onUploaded: () => void }) {
         </div>
       )}
 
+      {current && <p className="mt-3 text-xs text-slate">{current}</p>}
       {status && <p className="mt-3 text-sm text-blue">{status}</p>}
     </div>
   );

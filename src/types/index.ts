@@ -120,6 +120,7 @@ export interface Photo {
   src: string;
   year: string;
   caption?: string;
+  type?: 'image' | 'video';
 }
 
 export interface SiteConfig {

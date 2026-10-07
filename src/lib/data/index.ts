@@ -208,6 +208,7 @@ export async function getPhotos(): Promise<(Photo & { id?: string })[]> {
     src: p.src,
     year: p.year,
     caption: p.caption,
+    type: p.type === 'video' ? 'video' : undefined,
   }));
 }
 

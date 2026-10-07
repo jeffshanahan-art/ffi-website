@@ -17,7 +17,36 @@ export async function GET() {
   return NextResponse.json(photos);
 }
 
+const VIDEO_TYPES = ['video/mp4', 'video/quicktime', 'video/webm', 'video/x-m4v'];
+
 export async function POST(request: NextRequest) {
+  // Videos uploaded directly to Blob storage are registered with a small JSON request.
+  if (request.headers.get('content-type')?.includes('application/json')) {
+    try {
+      const body = await request.json();
+      const { src, year, takenAt } = body ?? {};
+      if (!year || !VALID_YEARS.includes(year)) {
+        return NextResponse.json({ error: 'Invalid edition year' }, { status: 400 });
+      }
+      if (typeof src !== 'string' || !/^https:\/\/[\w-]+\.public\.blob\.vercel-storage\.com\/photos\//.test(src)) {
+        return NextResponse.json({ error: 'Invalid video location' }, { status: 400 });
+      }
+      const photo = {
+        id: generateId(),
+        src,
+        year,
+        type: 'video' as const,
+        takenAt: typeof takenAt === 'string' ? takenAt : undefined,
+        uploadedAt: new Date().toISOString(),
+      };
+      await addPhoto(photo);
+      return NextResponse.json(photo, { status: 201 });
+    } catch (err) {
+      console.error('Video register error:', err);
+      return NextResponse.json({ error: 'Upload failed' }, { status: 500 });
+    }
+  }
+
   try {
     const formData = await request.formData();
     const file = formData.get('file') as File | null;
@@ -33,14 +62,15 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate file type
+    const isVideo = VIDEO_TYPES.includes(file.type);
     const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/heic'];
-    if (!allowedTypes.includes(file.type)) {
-      return NextResponse.json({ error: 'File must be JPEG, PNG, or WebP' }, { status: 400 });
+    if (!isVideo && !allowedTypes.includes(file.type)) {
+      return NextResponse.json({ error: 'File must be a JPEG, PNG, WebP, or MP4/MOV/WebM video' }, { status: 400 });
     }
 
-    // Validate file size (10MB max)
-    if (file.size > 10 * 1024 * 1024) {
-      return NextResponse.json({ error: 'File must be under 10MB' }, { status: 400 });
+    // Validate file size (10MB for photos, 500MB for videos)
+    if (file.size > (isVideo ? 500 : 10) * 1024 * 1024) {
+      return NextResponse.json({ error: `File must be under ${isVideo ? 500 : 10}MB` }, { status: 400 });
     }
 
     const id = generateId();
@@ -51,6 +81,7 @@ export async function POST(request: NextRequest) {
       src,
       year,
       caption: caption || undefined,
+      type: isVideo ? ('video' as const) : undefined,
       takenAt: takenAt || undefined,
       uploadedAt: new Date().toISOString(),
     };

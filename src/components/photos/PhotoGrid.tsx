@@ -62,7 +62,7 @@ function Lightbox({
         <button
           onClick={(e) => {
             e.stopPropagation();
-            if (confirm('Delete this photo?')) {
+            if (confirm(`Delete this ${photo.type === 'video' ? 'video' : 'photo'}?`)) {
               onDelete(photo.id!);
               onClose();
             }
@@ -100,14 +100,25 @@ function Lightbox({
         className="relative max-w-[90vw] max-h-[85vh] w-full h-full"
         onClick={(e) => e.stopPropagation()}
       >
-        <Image
-          src={photo.src}
-          alt={photo.caption || `Photo ${index + 1}`}
-          fill
-          className="object-contain"
-          sizes="90vw"
-          priority
-        />
+        {photo.type === 'video' ? (
+          <video
+            key={photo.src}
+            src={photo.src}
+            controls
+            autoPlay
+            playsInline
+            className="absolute inset-0 w-full h-full object-contain bg-black"
+          />
+        ) : (
+          <Image
+            src={photo.src}
+            alt={photo.caption || `Photo ${index + 1}`}
+            fill
+            className="object-contain"
+            sizes="90vw"
+            priority
+          />
+        )}
       </div>
 
       {/* Caption */}
@@ -152,13 +163,30 @@ export function PhotoGrid({
               onClick={() => setLightboxIndex(i)}
               className="relative aspect-square overflow-hidden bg-gray-light w-full cursor-pointer"
             >
-              <Image
-                src={photo.src}
-                alt={photo.caption || `Photo ${i + 1}`}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
-              />
+              {photo.type === 'video' ? (
+                <>
+                  <video
+                    src={`${photo.src}#t=0.1`}
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="w-12 h-12 rounded-full bg-black/55 text-white flex items-center justify-center text-lg pl-1">
+                      &#9654;
+                    </span>
+                  </span>
+                </>
+              ) : (
+                <Image
+                  src={photo.src}
+                  alt={photo.caption || `Photo ${i + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                />
+              )}
             </button>
             {/* Admin delete overlay */}
             {isAdmin && photo.id && onDelete && (
