@@ -14,6 +14,10 @@ interface PairingResults {
   total: Result;
 }
 
+function withHandicaps(names: string[] | undefined, handicaps?: Record<string, number>): string {
+  return (names ?? []).map((n) => (handicaps && handicaps[n] != null ? `${n} (${handicaps[n]})` : n)).join(' & ');
+}
+
 function fmt(n: number): string {
   if (n === 0) return '0';
   const whole = Math.floor(n);
@@ -334,14 +338,20 @@ export function MatchScoring({ year }: { year: string }) {
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <span className="text-sm font-medium text-black">
-                          {pairing.philly?.join(' & ')}
+                          {withHandicaps(pairing.philly, match.handicaps)}
                         </span>
+                        {pairing.combinedHandicap && (
+                          <span className="block text-[11px] text-slate">Combined handicap: {pairing.combinedHandicap.philly}</span>
+                        )}
                       </div>
                       <span className="text-xs text-slate px-2">vs</span>
                       <div className="text-right">
                         <span className="text-sm font-medium text-black">
-                          {pairing.dc?.join(' & ')}
+                          {withHandicaps(pairing.dc, match.handicaps)}
                         </span>
+                        {pairing.combinedHandicap && (
+                          <span className="block text-[11px] text-slate">Combined handicap: {pairing.combinedHandicap.dc}</span>
+                        )}
                       </div>
                     </div>
 

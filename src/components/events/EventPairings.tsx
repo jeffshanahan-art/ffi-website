@@ -2,6 +2,10 @@ import type { TournamentDetail } from '@/types';
 import { PairingWinPct } from './PairingWinPct';
 import { TeamPairs } from './TeamPairs';
 
+function withHandicaps(names: string[], handicaps?: Record<string, number>): string {
+  return names.map((n) => (handicaps && handicaps[n] != null ? `${n} (${handicaps[n]})` : n)).join(' & ');
+}
+
 function fmt(n: number): string {
   if (n === 0) return '0';
   const whole = Math.floor(n);
@@ -93,8 +97,11 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                     <div className="flex items-center">
                       <div className="flex-1 text-right">
                         <span className="text-black text-sm">
-                          {pairing.philly.join(' & ')}
+                          {withHandicaps(pairing.philly, match.handicaps)}
                         </span>
+                        {pairing.combinedHandicap && (
+                          <span className="block text-[11px] text-slate">Combined handicap: {pairing.combinedHandicap.philly}</span>
+                        )}
                       </div>
                       {score ? (
                         <div className="w-[100px] text-center shrink-0 mx-3">
@@ -107,8 +114,11 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                       )}
                       <div className="flex-1 text-left">
                         <span className="text-black text-sm">
-                          {pairing.dc.join(' & ')}
+                          {withHandicaps(pairing.dc, match.handicaps)}
                         </span>
+                        {pairing.combinedHandicap && (
+                          <span className="block text-[11px] text-slate">Combined handicap: {pairing.combinedHandicap.dc}</span>
+                        )}
                       </div>
                     </div>
                     <PairingWinPct winPct={pairing.winPct} scored={!!score} placeholder={locked} />

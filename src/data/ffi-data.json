@@ -3555,7 +3555,11 @@
               "dc": [
                 "Vince Burke",
                 "Chris Connolly"
-              ]
+              ],
+              "combinedHandicap": {
+                "philly": 11,
+                "dc": 18
+              }
             },
             {
               "philly": [
@@ -3566,7 +3570,11 @@
                 "Matt Hopkins",
                 "Devin Tuohey"
               ],
-              "featured": true
+              "featured": true,
+              "combinedHandicap": {
+                "philly": 9,
+                "dc": 26
+              }
             },
             {
               "philly": [
@@ -3576,7 +3584,11 @@
               "dc": [
                 "Brendan Delany",
                 "Jon Carr"
-              ]
+              ],
+              "combinedHandicap": {
+                "philly": 18,
+                "dc": 27
+              }
             },
             {
               "philly": [
@@ -3586,9 +3598,31 @@
               "dc": [
                 "Roland Miller",
                 "Sean Keegan"
-              ]
+              ],
+              "combinedHandicap": {
+                "philly": 5,
+                "dc": 10
+              }
             }
-          ]
+          ],
+          "handicaps": {
+            "Bear Barton": 6,
+            "Jeff Shanahan": 4,
+            "Wayne Lesage": 3,
+            "Pat Shanahan": 1,
+            "Ben Etherington": 7,
+            "Luke Etherington": 7,
+            "Rob Nathan": 11,
+            "Ben Quereau": 4,
+            "Sean Keegan": 4,
+            "Jon Carr": 6,
+            "Roland Miller": 6,
+            "Brendan Delany": 21,
+            "Vince Burke": 13,
+            "Matt Hopkins": 13,
+            "Chris Connolly": 5,
+            "Devin Tuohey": 13
+          }
         }
       ],
       "bannerImage": "/images/hero-2026-pair-3.jpg",
