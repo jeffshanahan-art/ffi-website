@@ -3300,7 +3300,7 @@
         "Chevy Chase Club"
       ],
       "score": {
-        "philly": 3,
+        "philly": 6,
         "dc": 0
       },
       "champion": null,
@@ -3488,7 +3488,21 @@
               "dc": [
                 "Devin Tuohey",
                 "Chris Connolly"
-              ]
+              ],
+              "score": {
+                "philly": {
+                  "front": 1,
+                  "back": 1,
+                  "overall": 1,
+                  "total": 3
+                },
+                "dc": {
+                  "front": 0,
+                  "back": 0,
+                  "overall": 0,
+                  "total": 0
+                }
+              }
             }
           ]
         },
