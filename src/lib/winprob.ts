@@ -176,6 +176,7 @@ const HANDICAP_CAP = 0.5;
 const FORM_WEIGHT = 0.04; // per stroke an index sits above the player's low index
 const FORM_CAP = 0.25;
 const HOME_COURSE_WEIGHT = 0.2; // share of the side who are members of the course being played
+const EVENT_FORM_WEIGHT = 0.6; // today's results: points won minus lost, per player
 const PAIR_WEIGHT = 0.5;
 const PAIR_CAP = 0.4;
 
@@ -241,6 +242,26 @@ export function computeWinProbability(
     }).length / names.length;
   };
 
+  // In-event form: each player's points won vs lost in matches already finished this edition.
+  const eventPts = new Map<string, { w: number; l: number }>();
+  for (const m of event.matches || []) {
+    for (const pr of m.pairings || []) {
+      if (!pr.score) continue;
+      for (const side of ['philly', 'dc'] as Team[]) {
+        const won = pr.score[side]?.total ?? 0;
+        const lost = pr.score[side === 'philly' ? 'dc' : 'philly']?.total ?? 0;
+        for (const name of pr[side] || []) {
+          const t = eventPts.get(name) ?? { w: 0, l: 0 };
+          t.w += won;
+          t.l += lost;
+          eventPts.set(name, t);
+        }
+      }
+    }
+  }
+  const eventForm = (names: string[]) =>
+    mean(names.map((n) => { const t = eventPts.get(n); return t ? (t.w - t.l) / (t.w + t.l + 3) : 0; })) ?? 0;
+
   const raw = (event.matches || []).map((m: any) =>
     (m.pairings || []).map((pairing: any) => sideRating(pairing.philly || [], ratings) - sideRating(pairing.dc || [], ratings))
   );
@@ -277,12 +298,13 @@ export function computeWinProbability(
       const form = sP != null && sD != null ? clamp(FORM_WEIGHT * (sD - sP), FORM_CAP) : 0;
       const home = HOME_COURSE_WEIGHT * (homeShare(ph, m.course) - homeShare(dc, m.course));
       const pair = clamp(PAIR_WEIGHT * (pairHistoryScore(history, ph) - pairHistoryScore(history, dc)), PAIR_CAP);
+      const today = EVENT_FORM_WEIGHT * (eventForm(ph) - eventForm(dc));
       return {
         match: m,
         pairing,
         units: unitValues(m),
         base: opts.hideMatchups ? 0 : PLAYER_WEIGHT * (raw[ri][pi] - rawMean),
-        extra: opts.hideMatchups ? roundExtra[ri] : hc + form + home + pair,
+        extra: opts.hideMatchups ? roundExtra[ri] : hc + form + home + pair + today,
       };
     })
   );
