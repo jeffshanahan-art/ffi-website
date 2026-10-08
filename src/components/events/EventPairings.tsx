@@ -6,6 +6,10 @@ function withHandicaps(names: string[], handicaps?: Record<string, number>): str
   return names.map((n) => (handicaps && handicaps[n] != null ? `${n} (${handicaps[n]})` : n)).join(' & ');
 }
 
+function seg(n: number | undefined): string {
+  return n == null ? '–' : fmt(n);
+}
+
 function fmt(n: number): string {
   if (n === 0) return '0';
   const whole = Math.floor(n);
@@ -115,7 +119,7 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                         </span>
                       </div>
                     </div>
-                    <PairingWinPct winPct={pairing.winPct} scored={!!score} placeholder={locked} />
+                    <PairingWinPct winPct={pairing.winPct} scored={!!score && !score.partial} placeholder={locked} />
                     {pairing.featured && (
                       <div className="text-center mt-1 text-[10px] uppercase tracking-wide text-blue font-semibold">
                         Featured Pairing
@@ -124,9 +128,9 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                     {score && roundHasFBO && (
                       <div className="hidden sm:flex justify-center mt-1 text-xs text-slate">
                         <span>
-                          {fmt(score.philly.front)}/{fmt(score.philly.back)}/{fmt(score.philly.overall)}
+                          {seg(score.philly.front)}/{seg(score.philly.back)}/{seg(score.philly.overall)}
                           {' · '}
-                          {fmt(score.dc.front)}/{fmt(score.dc.back)}/{fmt(score.dc.overall)}
+                          {seg(score.dc.front)}/{seg(score.dc.back)}/{seg(score.dc.overall)}
                         </span>
                       </div>
                     )}

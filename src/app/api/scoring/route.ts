@@ -182,23 +182,28 @@ export async function POST(request: NextRequest) {
     }
 
     if (match.holes === 18) {
-      const front = results.front ? computeScore(results.front, pv.front || 0) : { philly: 0, dc: 0 };
-      const back = results.back ? computeScore(results.back, pv.back || 0) : { philly: 0, dc: 0 };
-      const overall = results.overall ? computeScore(results.overall, pv.overall || 0) : { philly: 0, dc: 0 };
-
+      // Only record the nines that have a result; a match with some nines still open is marked partial.
+      const philly: Record<string, number> = {};
+      const dc: Record<string, number> = {};
+      let tp = 0;
+      let td = 0;
+      let open = false;
+      for (const seg of ['front', 'back', 'overall'] as const) {
+        const max = pv[seg] || 0;
+        if (results[seg]) {
+          const s = computeScore(results[seg], max);
+          philly[seg] = s.philly;
+          dc[seg] = s.dc;
+          tp += s.philly;
+          td += s.dc;
+        } else if (max > 0) {
+          open = true;
+        }
+      }
       pairing.score = {
-        philly: {
-          front: front.philly,
-          back: back.philly,
-          overall: overall.philly,
-          total: front.philly + back.philly + overall.philly,
-        },
-        dc: {
-          front: front.dc,
-          back: back.dc,
-          overall: overall.dc,
-          total: front.dc + back.dc + overall.dc,
-        },
+        philly: { ...philly, total: tp },
+        dc: { ...dc, total: td },
+        ...(open ? { partial: true } : {}),
       };
     } else {
       const total = results.total ? computeScore(results.total, pv.total || 0) : { philly: 0, dc: 0 };
@@ -206,6 +211,7 @@ export async function POST(request: NextRequest) {
         philly: { total: total.philly },
         dc: { total: total.dc },
       };
+      delete pairing.score.partial;
     }
 
     let totalPhilly = 0;

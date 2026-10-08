@@ -43,17 +43,17 @@ function reverseFromScore(
     return { front: '', back: '', overall: '', total: 'halved' };
   }
 
-  function detect(phillyVal: number, maxVal: number): Result {
-    if (!maxVal) return '';
+  function detect(phillyVal: number | undefined, maxVal: number): Result {
+    if (!maxVal || phillyVal === undefined) return '';
     if (phillyVal === maxVal) return 'philly';
     if (phillyVal === 0) return 'dc';
     return 'halved';
   }
 
   return {
-    front: detect(score.philly?.front ?? 0, pointValues?.front || 0),
-    back: detect(score.philly?.back ?? 0, pointValues?.back || 0),
-    overall: detect(score.philly?.overall ?? 0, pointValues?.overall || 0),
+    front: detect(score.philly?.front, pointValues?.front || 0),
+    back: detect(score.philly?.back, pointValues?.back || 0),
+    overall: detect(score.philly?.overall, pointValues?.overall || 0),
     total: '',
   };
 }
@@ -350,7 +350,7 @@ export function MatchScoring({ year }: { year: string }) {
                     </div>
 
                     <div className="-mt-2 mb-4">
-                      <PairingWinPct winPct={pairing.winPct} scored={!!pairing.score} placeholder={locked} />
+                      <PairingWinPct winPct={pairing.winPct} scored={!!pairing.score && !pairing.score.partial} placeholder={locked} />
                     </div>
 
                     {!isAdmin && (

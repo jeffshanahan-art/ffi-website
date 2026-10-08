@@ -56,10 +56,17 @@ interface Unit {
   p: number; // chance Philly wins this point
 }
 
-function unitValues(match: any): number[] {
+function unitSegments(match: any): { seg: string; pts: number }[] {
   const pv = match.pointValues || {};
-  const units = match.holes === 18 ? [pv.front, pv.back, pv.overall] : [pv.total];
-  return units.filter((u: number) => u > 0);
+  const segs =
+    match.holes === 18
+      ? [['front', pv.front], ['back', pv.back], ['overall', pv.overall]]
+      : [['total', pv.total]];
+  return segs.filter(([, pts]) => pts > 0).map(([seg, pts]) => ({ seg: seg as string, pts: pts as number }));
+}
+
+function unitValues(match: any): number[] {
+  return unitSegments(match).map((u) => u.pts);
 }
 
 // P(Philly finishes ahead) given current points and remaining independent point units.
@@ -286,7 +293,7 @@ export function computeWinProbability(
     return hc + form + home + pair;
   });
 
-  const rounds: { match: any; pairing: any; units: number[]; base: number; extra: number }[][] = (event.matches || []).map((m: any, ri: number) =>
+  const rounds: { match: any; pairing: any; units: number[]; segs: string[]; base: number; extra: number }[][] = (event.matches || []).map((m: any, ri: number) =>
     (m.pairings || []).map((pairing: any, pi: number) => {
       const ph: string[] = pairing.philly || [];
       const dc: string[] = pairing.dc || [];
@@ -298,11 +305,12 @@ export function computeWinProbability(
       const form = sP != null && sD != null ? clamp(FORM_WEIGHT * (sD - sP), FORM_CAP) : 0;
       const home = HOME_COURSE_WEIGHT * (homeShare(ph, m.course) - homeShare(dc, m.course));
       const pair = clamp(PAIR_WEIGHT * (pairHistoryScore(history, ph) - pairHistoryScore(history, dc)), PAIR_CAP);
-      const today = EVENT_FORM_WEIGHT * (eventForm(ph) - eventForm(dc));
+      const today = pairing.score ? 0 : EVENT_FORM_WEIGHT * (eventForm(ph) - eventForm(dc));
       return {
         match: m,
         pairing,
         units: unitValues(m),
+        segs: unitSegments(m).map((u) => u.seg),
         base: opts.hideMatchups ? 0 : PLAYER_WEIGHT * (raw[ri][pi] - rawMean),
         extra: opts.hideMatchups ? roundExtra[ri] : hc + form + home + pair + today,
       };
@@ -336,6 +344,18 @@ export function computeWinProbability(
     round.map((r) => {
       const p = sigmoid(logit(q) + r.base + r.extra);
       const units = r.units.map((pts) => ({ pts, p }));
+      if (r.pairing.score?.partial) {
+        // Some nines decided: bank those points and keep pricing the nines still to play.
+        anyScored = true;
+        const ph = r.pairing.score.philly?.total ?? 0;
+        const dc = r.pairing.score.dc?.total ?? 0;
+        phillyNow += ph;
+        dcNow += dc;
+        const open = units.filter((_, i) => r.pairing.score.philly?.[r.segs[i]] === undefined);
+        remaining.push(...open);
+        const w = finishProbability(ph, dc, open);
+        return { philly: w, dc: 1 - w };
+      }
       if (r.pairing.score) {
         anyScored = true;
         const ph = r.pairing.score.philly?.total ?? 0;

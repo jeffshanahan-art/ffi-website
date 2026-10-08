@@ -19,7 +19,7 @@ function eachScoredPairing(events: any[], fn: (pairing: any, side: Side) => void
   for (const e of events) {
     for (const m of e.matches || []) {
       for (const p of m.pairings || []) {
-        if (!p.score) continue;
+        if (!p.score || p.score.partial) continue;
         fn(p, 'philly');
         fn(p, 'dc');
       }
@@ -55,7 +55,7 @@ export function missingYears(events: any[]): Map<string, string[]> {
         for (const side of ['philly', 'dc'] as Side[]) {
           for (const name of p[side] || []) {
             const s = stats.get(name) ?? { scored: 0, unscored: 0 };
-            if (p.score) s.scored++;
+            if (p.score && !p.score.partial) s.scored++;
             else s.unscored++;
             stats.set(name, s);
           }
