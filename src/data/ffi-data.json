@@ -3555,11 +3555,7 @@
               "dc": [
                 "Vince Burke",
                 "Chris Connolly"
-              ],
-              "combinedHandicap": {
-                "philly": 11,
-                "dc": 18
-              }
+              ]
             },
             {
               "philly": [
@@ -3570,11 +3566,7 @@
                 "Matt Hopkins",
                 "Devin Tuohey"
               ],
-              "featured": true,
-              "combinedHandicap": {
-                "philly": 9,
-                "dc": 26
-              }
+              "featured": true
             },
             {
               "philly": [
@@ -3584,11 +3576,7 @@
               "dc": [
                 "Brendan Delany",
                 "Jon Carr"
-              ],
-              "combinedHandicap": {
-                "philly": 18,
-                "dc": 27
-              }
+              ]
             },
             {
               "philly": [
@@ -3598,11 +3586,7 @@
               "dc": [
                 "Roland Miller",
                 "Sean Keegan"
-              ],
-              "combinedHandicap": {
-                "philly": 5,
-                "dc": 10
-              }
+              ]
             }
           ],
           "handicaps": {

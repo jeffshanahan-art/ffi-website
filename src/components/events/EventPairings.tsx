@@ -99,9 +99,6 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                         <span className="text-black text-sm">
                           {withHandicaps(pairing.philly, match.handicaps)}
                         </span>
-                        {pairing.combinedHandicap && (
-                          <span className="block text-[11px] text-slate">Combined handicap: {pairing.combinedHandicap.philly}</span>
-                        )}
                       </div>
                       {score ? (
                         <div className="w-[100px] text-center shrink-0 mx-3">
@@ -116,9 +113,6 @@ export function EventPairings({ tournament }: { tournament: TournamentDetail }) 
                         <span className="text-black text-sm">
                           {withHandicaps(pairing.dc, match.handicaps)}
                         </span>
-                        {pairing.combinedHandicap && (
-                          <span className="block text-[11px] text-slate">Combined handicap: {pairing.combinedHandicap.dc}</span>
-                        )}
                       </div>
                     </div>
                     <PairingWinPct winPct={pairing.winPct} scored={!!score} placeholder={locked} />

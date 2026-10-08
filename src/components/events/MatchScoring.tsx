@@ -340,18 +340,12 @@ export function MatchScoring({ year }: { year: string }) {
                         <span className="text-sm font-medium text-black">
                           {withHandicaps(pairing.philly, match.handicaps)}
                         </span>
-                        {pairing.combinedHandicap && (
-                          <span className="block text-[11px] text-slate">Combined handicap: {pairing.combinedHandicap.philly}</span>
-                        )}
                       </div>
                       <span className="text-xs text-slate px-2">vs</span>
                       <div className="text-right">
                         <span className="text-sm font-medium text-black">
                           {withHandicaps(pairing.dc, match.handicaps)}
                         </span>
-                        {pairing.combinedHandicap && (
-                          <span className="block text-[11px] text-slate">Combined handicap: {pairing.combinedHandicap.dc}</span>
-                        )}
                       </div>
                     </div>
 
