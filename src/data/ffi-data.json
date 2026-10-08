@@ -3301,7 +3301,7 @@
       ],
       "score": {
         "philly": 6,
-        "dc": 0
+        "dc": 3
       },
       "champion": null,
       "notes": "The 10th Edition returns to Washington, with Team DC playing host. Foursomes tee off Thursday morning at Columbia Country Club, and the fourball matches follow in the afternoon at Chevy Chase Club, with Wednesday practice rounds at Chevy Chase and Congressional. Despite its best efforts, Team Philly has made a roster adjustment for the ninth consecutive tournament: the Good Doctor Kurd is out, and Bear Barton is back. Bear, you have been missed. Inspired by the recently completed Presidents Cup, the matchups will be drafted at Wednesday's Welcome Dinner at Rolando's House of Meat (and Cheese). The captains have already chosen their pairings: Team Philly with a highly advanced and proprietary algorithm that balances winning and not-losing, and Team DC with the appropriate diversity of thought and jovial spirit.",
@@ -3468,7 +3468,21 @@
               "dc": [
                 "Matt Hopkins",
                 "Brendan Delany"
-              ]
+              ],
+              "score": {
+                "philly": {
+                  "front": 0,
+                  "back": 0,
+                  "overall": 0,
+                  "total": 0
+                },
+                "dc": {
+                  "front": 1,
+                  "back": 1,
+                  "overall": 1,
+                  "total": 3
+                }
+              }
             },
             {
               "philly": [
