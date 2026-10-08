@@ -27,7 +27,7 @@ export default async function Home() {
       <div className="max-w-5xl mx-auto px-4 pt-12">
         <SectionHeading
           title="Tournament History"
-          subtitle="Nine Editions and Counting"
+          subtitle="Ten Editions and Counting"
         />
       </div>
       <TournamentTimeline tournaments={tournaments} />

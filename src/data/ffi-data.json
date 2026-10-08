@@ -3300,11 +3300,11 @@
         "Chevy Chase Club"
       ],
       "score": {
-        "philly": 7,
-        "dc": 5
+        "philly": 29.5,
+        "dc": 9.5
       },
-      "champion": null,
-      "notes": "The 10th Edition returns to Washington, with Team DC playing host. Foursomes tee off Thursday morning at Columbia Country Club, and the fourball matches follow in the afternoon at Chevy Chase Club, with Wednesday practice rounds at Chevy Chase and Congressional. Despite its best efforts, Team Philly has made a roster adjustment for the ninth consecutive tournament: the Good Doctor Kurd is out, and Bear Barton is back. Bear, you have been missed. Inspired by the recently completed Presidents Cup, the matchups will be drafted at Wednesday's Welcome Dinner at Rolando's House of Meat (and Cheese). The captains have already chosen their pairings: Team Philly with a highly advanced and proprietary algorithm that balances winning and not-losing, and Team DC with the appropriate diversity of thought and jovial spirit.",
+      "champion": "philly",
+      "notes": "The 10th Edition returns to Washington, with Team DC playing host. Foursomes tee off Thursday morning at Columbia Country Club, and the fourball matches follow in the afternoon at Chevy Chase Club, with Wednesday practice rounds at Chevy Chase and Congressional. Despite its best efforts, Team Philly has made a roster adjustment for the ninth consecutive tournament: the Good Doctor Kurd is out, and Bear Barton is back. Bear, you have been missed. Inspired by the recently completed Presidents Cup, the matchups will be drafted at Wednesday's Welcome Dinner at Rolando's House of Meat (and Cheese). The captains have already chosen their pairings: Team Philly with a highly advanced and proprietary algorithm that balances winning and not-losing, and Team DC with the appropriate diversity of thought and jovial spirit. Team Philly took the 10th Edition 29½–9½, winning the morning foursomes 7–5 and the afternoon fourball 22½–4½.",
       "weather": "",
       "teamPhilly": [
         {
@@ -3413,12 +3413,12 @@
             "name": "Afternoon",
             "type": "Fourball",
             "holes": 18,
-            "points": 24,
+            "points": "24 + closeouts",
             "course": "Chevy Chase Club"
           }
         ],
         "totalPoints": 36,
-        "handicapRule": "Foursomes: combined alternate-shot handicaps. Fourball: 90% handicaps. Fourball also has a one-point closeout match on each nine, not tracked in live scoring.",
+        "handicapRule": "Foursomes: combined alternate-shot handicaps. Fourball: 90% handicaps; each nine is worth 2 points plus a 1-point closeout match, and the overall is worth 2.",
         "entryFee": 300
       },
       "matches": [
@@ -3542,8 +3542,8 @@
           "holes": 18,
           "playersPerSide": 2,
           "pointValues": {
-            "front": 2,
-            "back": 2,
+            "front": 3,
+            "back": 3,
             "overall": 2
           },
           "pairings": [
@@ -3555,7 +3555,21 @@
               "dc": [
                 "Vince Burke",
                 "Chris Connolly"
-              ]
+              ],
+              "score": {
+                "philly": {
+                  "front": 2,
+                  "back": 1,
+                  "overall": 2,
+                  "total": 5
+                },
+                "dc": {
+                  "front": 0,
+                  "back": 1,
+                  "overall": 0,
+                  "total": 1
+                }
+              }
             },
             {
               "philly": [
@@ -3566,7 +3580,21 @@
                 "Matt Hopkins",
                 "Devin Tuohey"
               ],
-              "featured": true
+              "featured": true,
+              "score": {
+                "philly": {
+                  "front": 1,
+                  "back": 2,
+                  "overall": 2,
+                  "total": 5
+                },
+                "dc": {
+                  "front": 1,
+                  "back": 0,
+                  "overall": 0,
+                  "total": 1
+                }
+              }
             },
             {
               "philly": [
@@ -3576,7 +3604,21 @@
               "dc": [
                 "Brendan Delany",
                 "Jon Carr"
-              ]
+              ],
+              "score": {
+                "philly": {
+                  "front": 1,
+                  "back": 2,
+                  "overall": 2,
+                  "total": 5
+                },
+                "dc": {
+                  "front": 1,
+                  "back": 1,
+                  "overall": 0,
+                  "total": 2
+                }
+              }
             },
             {
               "philly": [
@@ -3586,7 +3628,21 @@
               "dc": [
                 "Roland Miller",
                 "Sean Keegan"
-              ]
+              ],
+              "score": {
+                "philly": {
+                  "front": 2.5,
+                  "back": 3,
+                  "overall": 2,
+                  "total": 7.5
+                },
+                "dc": {
+                  "front": 0.5,
+                  "back": 0,
+                  "overall": 0,
+                  "total": 0.5
+                }
+              }
             }
           ],
           "handicaps": {
@@ -4386,9 +4442,9 @@
     }
   ],
   "seriesRecord": {
-    "note": "All results confirmed through 9 editions.",
+    "note": "All results confirmed through 10 editions.",
     "confirmed": {
-      "philly": 3,
+      "philly": 4,
       "dc": 6
     },
     "pending": []
