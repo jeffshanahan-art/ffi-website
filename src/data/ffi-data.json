@@ -3398,8 +3398,14 @@
         "2026-10-08"
       ],
       "date": "October 7–8, 2026",
-      "mvp": null,
-      "patShanahanAward": null,
+      "mvp": {
+        "name": "Wayne Lesage",
+        "team": "philly"
+      },
+      "patShanahanAward": {
+        "name": "Brendan Delany",
+        "team": "dc"
+      },
       "format": {
         "rounds": [
           {
